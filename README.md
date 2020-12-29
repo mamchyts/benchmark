@@ -1,4 +1,6 @@
 # Benchmark
+
+All setting for compiler / interpreter by default
 Some benchmark tests for different programming languages
 
 ```
@@ -30,7 +32,6 @@ L3 cache:            9216K
 NUMA node0 CPU(s):   0-5
 ```
 
-
 ## Prime number benchmark
 
 ### [PHP 7.3.19](./prime-number/cmd.php)
@@ -38,8 +39,8 @@ NUMA node0 CPU(s):   0-5
 $ time php cmd.php 5000
 The latest prime number: 48611
 
-real    0m22.054s
-user    0m22.050s
+real    0m22.373s
+user    0m22.365s
 sys     0m0.004s
 ```
 
@@ -48,9 +49,9 @@ sys     0m0.004s
 $ time python2 cmd.py2 5000
 The latest prime number:  48611
 
-real    0m58.793s
-user    0m58.785s
-sys     0m0.004s
+real    1m0.050s
+user    0m59.733s
+sys     0m0.084s
 ```
 
 ### [Python 3.7.3](./prime-number/cmd.py3)
@@ -58,9 +59,9 @@ sys     0m0.004s
 $ time python3 cmd.py3 5000
 The latest prime number:  48611
 
-real    1m14.123s
-user    1m12.984s
-sys     0m0.021s
+real    1m13.530s
+user    1m13.512s
+sys     0m0.008s
 ```
 
 ### [C/C++](./prime-number/cmd.cpp)
@@ -69,7 +70,18 @@ $ g++ cmd.cpp -o cmd.cpp_bin
 $ time ./cmd.cpp_bin 5000
 The latest prime number: 48611
 
-real    0m2.388s
-user    0m2.383s
-sys     0m0.004s
+real    0m2.926s
+user    0m2.919s
+sys     0m0.005s
+```
+
+### [Pascal](./prime-number/cmd.cpp)
+```
+$ fpc cmd.pas -ocmd.pas_bin
+$ time ./cmd.pas_bin 5000
+The latest prime number: 48611
+
+real    0m8.998s
+user    0m8.997s
+sys     0m0.001s
 ```

@@ -5,15 +5,15 @@ $primeNumberCount = $argv[1] ?? 100;
 $number = 0;
 while ($primeNumberCount > 0) {
     ++$number;
-    $dividers = [];
+    $j = 0;
 
     for ($i = 1; $i <= $number; ++$i) {
         if ($number % $i === 0) {
-            $dividers[] = $i;
+            ++$j;
         }
     }
 
-    if (count($dividers) === 2) {
+    if ($j === 2) {
         --$primeNumberCount;
     }
 }

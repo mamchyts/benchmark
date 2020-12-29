@@ -4,3 +4,4 @@
 
 # compiled bin files
 *_bin
+*.o

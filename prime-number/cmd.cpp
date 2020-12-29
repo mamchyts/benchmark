@@ -9,16 +9,12 @@ int main( int argc, char *argv[] )
     }
 
     int32_t number = 0;
-    int32_t primeNumberCountOrigin = primeNumberCount;
     while (primeNumberCount > 0) {
         ++number;
 
         int32_t j = 0;
-        int32_t dividers[primeNumberCountOrigin];
-
         for (int32_t i = 1; i <= number; ++i) {
             if (number % i == 0) {
-                dividers[j] = i;
                 ++j;
             }
         }
