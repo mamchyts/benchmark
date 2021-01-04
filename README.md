@@ -96,3 +96,13 @@ real    0m8.173s
 user    0m8.176s
 sys     0m0.004s
 ```
+
+### [Node.js/Javascript](./prime-number/cmd.js)
+```
+$ time node ./cmd.js 5000
+The latest prime number: 48611
+
+real    0m4.114s
+user    0m4.103s
+sys     0m0.012s
+```
