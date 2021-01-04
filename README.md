@@ -39,9 +39,9 @@ NUMA node0 CPU(s):   0-5
 $ time php cmd.php 5000
 The latest prime number: 48611
 
-real    0m22.373s
-user    0m22.365s
-sys     0m0.004s
+real    0m19.796s
+user    0m19.649s
+sys     0m0.028s
 ```
 
 ### [Python 2.7.16](./prime-number/cmd.py2)
@@ -49,9 +49,9 @@ sys     0m0.004s
 $ time python2 cmd.py2 5000
 The latest prime number:  48611
 
-real    1m0.050s
-user    0m59.733s
-sys     0m0.084s
+real    0m59.485s
+user    0m59.448s
+sys     0m0.017s
 ```
 
 ### [Python 3.7.3](./prime-number/cmd.py3)
@@ -84,4 +84,15 @@ The latest prime number: 48611
 real    0m8.998s
 user    0m8.997s
 sys     0m0.001s
+```
+
+### [Go](./prime-number/cmd.go)
+```
+$ go build -o ./cmd.go_bin cmd.go
+$ time ./cmd.go_bin 5000
+The latest prime number: 48611
+
+real    0m8.173s
+user    0m8.176s
+sys     0m0.004s
 ```
