@@ -106,3 +106,14 @@ real    0m4.114s
 user    0m4.103s
 sys     0m0.012s
 ```
+
+### [Assembler/NASM](./prime-number/cmd.asm)
+```
+$ nasm -f elf cmd.asm && ld -m elf_i386 cmd.o -o cmd.asm_bin
+$ time ./cmd.asm_bin 5000
+The latest prime number: 000048611
+
+real    0m2.674s
+user    0m2.670s
+sys     0m0.004s
+```
