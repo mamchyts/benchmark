@@ -11,9 +11,7 @@ section .bss
 arg:				resd 1
 arg_len:			resd 1
 prime_number_count:	resd 1
-number:				resd 1
 j_iter:				resd 1
-i_iter:				resd 1
 
 
 section .text
@@ -52,23 +50,22 @@ _start:
 	mov [prime_number_count], ebx	; save integer value into variable
 
 	; main loop for prime numbers detection
-	mov [number], dword 0
+	xor edi, edi 			; `edi` used like `number`
 main_loop:
-	inc dword [number]
+	inc edi
 	mov [j_iter], dword 0
-	mov [i_iter], dword 0
+	xor ecx, ecx			; `ecx` used like `i`
 .nested_main_loop:
-	inc dword [i_iter]
+	inc ecx
 	xor edx, edx
-	mov eax, [number]
-	mov ecx, dword [i_iter]
+	mov eax, edi
 	div ecx
 	cmp edx, 0
 	jnz .skip_loop_step
 	inc dword [j_iter]
 .skip_loop_step:
-	mov eax, [number]		; check loop ending `for ($i = 1; $i <= $number; ++$i)`
-	cmp [i_iter], eax
+	mov eax, edi		; check loop ending `for ($i = 1; $i <= $number; ++$i)`
+	cmp ecx, eax
 	jnz .nested_main_loop
 	cmp [j_iter], dword 2
 	jnz .skip
@@ -79,7 +76,7 @@ main_loop:
 
 	; convert integer to string
 	mov ebx, 10
-	mov eax, [number]
+	mov eax, edi
 	mov ecx, [value_string_len]
 	dec ecx
 	mov [value_string + ecx], byte 10
