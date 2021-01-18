@@ -34,14 +34,34 @@ NUMA node0 CPU(s):   0-5
 
 ## Prime number benchmark
 
-### [PHP 7.3.19](./prime-number/cmd.php)
+### [PHP 7.3.26](./prime-number/cmd.php)
 ```
-$ time php cmd.php 5000
+$ time php7.3 cmd.php 5000
 The latest prime number: 48611
 
-real    0m19.796s
-user    0m19.649s
-sys     0m0.028s
+real    0m22.617s
+user    0m22.530s
+sys     0m0.009s
+```
+
+### [PHP 7.4.14](./prime-number/cmd.php)
+```
+$ time php7.4 cmd.php 5000
+The latest prime number: 48611
+
+real    0m19.167s
+user    0m18.829s
+sys     0m0.030s
+```
+
+### [PHP 8.0.1](./prime-number/cmd.php)
+```
+$ time php8.0 -dopcache.enable_cli=1 -dopcache.jit_buffer_size=100M cmd.php 5000
+The latest prime number: 48611
+
+real    0m14.522s
+user    0m14.478s
+sys     0m0.016s
 ```
 
 ### [Python 2.7.16](./prime-number/cmd.py2)
