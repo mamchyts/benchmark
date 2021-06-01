@@ -32,108 +32,232 @@ L3 cache:            9216K
 NUMA node0 CPU(s):   0-5
 ```
 
+
 ## Prime number benchmark
 
-### [PHP 7.3.26](./prime-number/cmd.php)
+
+### [PHP 5.6](./prime-number/cmd.php)
 ```
-$ time php7.3 cmd.php 5000
+docker build -t benchmark . > /dev/null && \
+docker run --rm benchmark php5.6 -v && echo '' && echo '' && \
+time docker run --rm --volume $(pwd):/app benchmark php5.6 /app/prime-number/cmd.php 5000
+```
+
+```
+PHP 5.6.40-50+ubuntu20.04.1+deb.sury.org+1 (cli)
+Copyright (c) 1997-2016 The PHP Group
+Zend Engine v2.6.0, Copyright (c) 1998-2016 Zend Technologies
+    with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2016, by Zend Technologies
+
+
 The latest prime number: 48611
 
-real    0m22.617s
-user    0m22.530s
-sys     0m0.009s
+real    0m51.251s
+user    0m0.035s
+sys     0m0.051s
 ```
 
-### [PHP 7.4.14](./prime-number/cmd.php)
+
+### [PHP 7.4](./prime-number/cmd.php)
 ```
-$ time php7.4 cmd.php 5000
+docker build -t benchmark . > /dev/null && \
+docker run --rm benchmark php7.4 -v && echo '' && echo '' && \
+time docker run --rm --volume $(pwd):/app benchmark php7.4 /app/prime-number/cmd.php 5000
+```
+```
+PHP 7.4.18 (cli) (built: May  3 2021 11:27:06) ( NTS )
+Copyright (c) The PHP Group
+Zend Engine v3.4.0, Copyright (c) Zend Technologies
+    with Zend OPcache v7.4.18, Copyright (c), by Zend Technologies
+
+
 The latest prime number: 48611
 
-real    0m19.167s
-user    0m18.829s
-sys     0m0.030s
+real    0m19.566s
+user    0m0.036s
+sys     0m0.023s
 ```
 
-### [PHP 8.0.1](./prime-number/cmd.php)
+
+### [PHP 8.0](./prime-number/cmd.php)
 ```
-$ time php8.0 -dopcache.enable_cli=1 -dopcache.jit_buffer_size=100M cmd.php 5000
+docker build -t benchmark . > /dev/null && \
+docker run --rm benchmark php8.0 -v && echo '' && echo '' && \
+time docker run --rm --volume $(pwd):/app benchmark php8.0 /app/prime-number/cmd.php 5000
+```
+```
+PHP 8.0.5 (cli) (built: May  3 2021 11:30:57) ( NTS )
+Copyright (c) The PHP Group
+Zend Engine v4.0.5, Copyright (c) Zend Technologies
+    with Zend OPcache v8.0.5, Copyright (c), by Zend Technologies
+
+
 The latest prime number: 48611
 
-real    0m14.522s
-user    0m14.478s
-sys     0m0.016s
+real    0m19.321s
+user    0m0.037s
+sys     0m0.032s
 ```
 
-### [Python 2.7.16](./prime-number/cmd.py2)
-```
-$ time python2 cmd.py2 5000
-The latest prime number:  48611
 
-real    0m59.485s
-user    0m59.448s
-sys     0m0.017s
+### [PHP 8.0 with JIT](./prime-number/cmd.php)
 ```
+docker build -t benchmark . > /dev/null && \
+docker run --rm benchmark php8.0 -v && echo '' && echo '' && \
+time docker run --rm --volume $(pwd):/app benchmark php8.0 -dopcache.enable_cli=1 -dopcache.jit_buffer_size=10M /app/prime-number/cmd.php 5000
+```
+```
+PHP 8.0.5 (cli) (built: May  3 2021 11:30:57) ( NTS )
+Copyright (c) The PHP Group
+Zend Engine v4.0.5, Copyright (c) Zend Technologies
+    with Zend OPcache v8.0.5, Copyright (c), by Zend Technologies
 
-### [Python 3.7.3](./prime-number/cmd.py3)
-```
-$ time python3 cmd.py3 5000
-The latest prime number:  48611
 
-real    1m13.530s
-user    1m13.512s
-sys     0m0.008s
-```
-
-### [C/C++](./prime-number/cmd.cpp)
-```
-$ g++ cmd.cpp -o cmd.cpp_bin
-$ time ./cmd.cpp_bin 5000
 The latest prime number: 48611
 
-real    0m2.926s
-user    0m2.919s
-sys     0m0.005s
+real    0m15.349s
+user    0m0.038s
+sys     0m0.041s
 ```
 
-### [Pascal](./prime-number/cmd.cpp)
-```
-$ fpc cmd.pas -ocmd.pas_bin
-$ time ./cmd.pas_bin 5000
-The latest prime number: 48611
-
-real    0m8.998s
-user    0m8.997s
-sys     0m0.001s
-```
-
-### [Go](./prime-number/cmd.go)
-```
-$ go build -o ./cmd.go_bin cmd.go
-$ time ./cmd.go_bin 5000
-The latest prime number: 48611
-
-real    0m8.173s
-user    0m8.176s
-sys     0m0.004s
-```
 
 ### [Node.js/Javascript](./prime-number/cmd.js)
 ```
-$ time node ./cmd.js 5000
+docker build -t benchmark . > /dev/null && \
+docker run --rm benchmark nodejs --version && echo '' && echo '' && \
+time docker run --rm --volume $(pwd):/app benchmark nodejs /app/prime-number/cmd.js 5000
+```
+```
+v10.19.0
+
+
 The latest prime number: 48611
 
-real    0m4.114s
-user    0m4.103s
-sys     0m0.012s
+real    0m4.845s
+user    0m0.064s
+sys     0m0.020s
 ```
+
+
+### [Python 2](./prime-number/cmd.py2)
+```
+docker build -t benchmark . > /dev/null && \
+docker run --rm benchmark python2 --version && echo '' && echo '' && \
+time docker run --rm --volume $(pwd):/app benchmark python2 /app/prime-number/cmd.py2 5000
+```
+```
+Python 2.7.18
+
+
+The latest prime number:  48611
+
+real    1m22.335s
+user    0m0.047s
+sys     0m0.017s
+```
+
+
+### [Python 3](./prime-number/cmd.py3)
+```
+docker build -t benchmark . > /dev/null && \
+docker run --rm benchmark python3 --version && echo '' && echo '' && \
+time docker run --rm --volume $(pwd):/app benchmark python3 /app/prime-number/cmd.py3 5000
+```
+```
+Python 3.8.5
+
+
+The latest prime number:  48611
+
+real    1m32.738s
+user    0m0.040s
+sys     0m0.034s
+```
+
+
+### [C/C++](./prime-number/cmd.cpp)
+```
+docker build -t benchmark . > /dev/null && \
+docker run --rm benchmark g++ --version && echo '' && echo '' && \
+docker run --rm --volume $(pwd):/app benchmark g++ /app/prime-number/cmd.cpp -o /app/prime-number/cmd.cpp_bin && \
+time docker run --rm --volume $(pwd):/app benchmark /app/prime-number/cmd.cpp_bin 5000
+```
+```
+g++ (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0
+Copyright (C) 2019 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+
+
+The latest prime number: 48611
+
+real    0m3.767s
+user    0m0.062s
+sys     0m0.025s
+```
+
 
 ### [Assembler/NASM](./prime-number/cmd.asm)
 ```
-$ nasm -f elf cmd.asm && ld -m elf_i386 cmd.o -o cmd.asm_bin
-$ time ./cmd.asm_bin 5000
+docker build -t benchmark . > /dev/null && \
+docker run --rm benchmark nasm --version && echo '' && echo '' && \
+docker run --rm --volume $(pwd):/app benchmark nasm -f elf /app/prime-number/cmd.asm && \
+docker run --rm --volume $(pwd):/app benchmark ld -m elf_i386 /app/prime-number/cmd.o -o /app/prime-number/cmd.asm_bin && \
+time docker run --rm --volume $(pwd):/app benchmark /app/prime-number/cmd.asm_bin 5000
+```
+```
+NASM version 2.14.02
+
+
 The latest prime number: 000048611
 
-real    0m2.383s
-user    0m2.380s
-sys     0m0.003s
+real    0m3.101s
+user    0m0.050s
+sys     0m0.043s
+```
+
+
+### [Pascal](./prime-number/cmd.cpp)
+```
+docker build -t benchmark . > /dev/null && \
+docker run --rm benchmark fpc -iW && echo '' && echo '' && \
+docker run --rm --volume $(pwd):/app benchmark fpc /app/prime-number/cmd.pas -o/app/prime-number/cmd.pas_bin && \
+time docker run --rm --volume $(pwd):/app benchmark /app/prime-number/cmd.pas_bin 5000
+```
+```
+3.0.4+dfsg-23
+
+
+Free Pascal Compiler version 3.0.4+dfsg-23 [2019/11/25] for x86_64
+Copyright (c) 1993-2017 by Florian Klaempfl and others
+Target OS: Linux for x86-64
+Compiling /app/prime-number/cmd.pas
+Linking /app/prime-number/cmd.pas_bin
+/usr/bin/ld.bfd: warning: /app/prime-number/link.res contains output sections; did you forget -T?
+30 lines compiled, 0.1 sec
+The latest prime number: 48611
+
+real    0m9.802s
+user    0m0.060s
+sys     0m0.039s
+```
+
+
+### [Go](./prime-number/cmd.go)
+```
+docker build -t benchmark . > /dev/null && \
+docker run --rm benchmark go version && echo '' && echo '' && \
+docker run --rm --volume $(pwd):/app benchmark go build -o /app/prime-number/cmd.go_bin /app/prime-number/cmd.go && \
+time docker run --rm --volume $(pwd):/app benchmark /app/prime-number/cmd.go_bin 5000
+```
+```
+go version go1.13.8 linux/amd64
+
+
+The latest prime number: 48611
+
+real    0m8.884s
+user    0m0.033s
+sys     0m0.016s
 ```

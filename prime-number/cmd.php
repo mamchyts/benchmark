@@ -1,6 +1,6 @@
 <?php
 
-$primeNumberCount = $argv[1] ?? 100;
+$primeNumberCount = isset($argv[1]) ? $argv[1] : 100;
 
 $number = 0;
 while ($primeNumberCount > 0) {
