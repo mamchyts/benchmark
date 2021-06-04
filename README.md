@@ -39,11 +39,11 @@ NUMA node0 CPU(s):   0-5
 ## Prime number benchmark
 
 
-### [PHP 5.6](./prime-number/cmd.php)
+### [PHP 5.6](./prime-number/php/cmd.php)
 ```
 docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark php5.6 -v && echo '' && echo '' && \
-time docker run --rm --volume $(pwd):/app benchmark php5.6 /app/prime-number/cmd.php 5000
+time docker run --rm --volume $(pwd):/app benchmark php5.6 /app/prime-number/php/cmd.php 5000
 ```
 
 ```
@@ -61,11 +61,11 @@ sys     0m0.051s
 ```
 
 
-### [PHP 7.4](./prime-number/cmd.php)
+### [PHP 7.4](./prime-number/php/cmd.php)
 ```
 docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark php7.4 -v && echo '' && echo '' && \
-time docker run --rm --volume $(pwd):/app benchmark php7.4 /app/prime-number/cmd.php 5000
+time docker run --rm --volume $(pwd):/app benchmark php7.4 /app/prime-number/php/cmd.php 5000
 ```
 ```
 PHP 7.4.18 (cli) (built: May  3 2021 11:27:06) ( NTS )
@@ -82,11 +82,11 @@ sys     0m0.023s
 ```
 
 
-### [PHP 8.0](./prime-number/cmd.php)
+### [PHP 8.0](./prime-number/php/cmd.php)
 ```
 docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark php8.0 -v && echo '' && echo '' && \
-time docker run --rm --volume $(pwd):/app benchmark php8.0 /app/prime-number/cmd.php 5000
+time docker run --rm --volume $(pwd):/app benchmark php8.0 /app/prime-number/php/cmd.php 5000
 ```
 ```
 PHP 8.0.5 (cli) (built: May  3 2021 11:30:57) ( NTS )
@@ -103,11 +103,11 @@ sys     0m0.032s
 ```
 
 
-### [PHP 8.0 with JIT](./prime-number/cmd.php)
+### [PHP 8.0 with JIT](./prime-number/php/cmd.php)
 ```
 docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark php8.0 -v && echo '' && echo '' && \
-time docker run --rm --volume $(pwd):/app benchmark php8.0 -dopcache.enable_cli=1 -dopcache.jit_buffer_size=10M /app/prime-number/cmd.php 5000
+time docker run --rm --volume $(pwd):/app benchmark php8.0 -dopcache.enable_cli=1 -dopcache.jit_buffer_size=10M /app/prime-number/php/cmd.php 5000
 ```
 ```
 PHP 8.0.5 (cli) (built: May  3 2021 11:30:57) ( NTS )
@@ -124,11 +124,11 @@ sys     0m0.041s
 ```
 
 
-### [Node.js/Javascript](./prime-number/cmd.js)
+### [Node.js/Javascript](./prime-number/javascript/cmd.js)
 ```
 docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark nodejs --version && echo '' && echo '' && \
-time docker run --rm --volume $(pwd):/app benchmark nodejs /app/prime-number/cmd.js 5000
+time docker run --rm --volume $(pwd):/app benchmark nodejs /app/prime-number/javascript/cmd.js 5000
 ```
 ```
 v10.19.0
@@ -142,11 +142,11 @@ sys     0m0.020s
 ```
 
 
-### [Python 2](./prime-number/cmd.py2)
+### [Python 2](./prime-number/python/cmd.py2)
 ```
 docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark python2 --version && echo '' && echo '' && \
-time docker run --rm --volume $(pwd):/app benchmark python2 /app/prime-number/cmd.py2 5000
+time docker run --rm --volume $(pwd):/app benchmark python2 /app/prime-number/python/cmd.py2 5000
 ```
 ```
 Python 2.7.18
@@ -160,11 +160,11 @@ sys     0m0.017s
 ```
 
 
-### [Python 3](./prime-number/cmd.py3)
+### [Python 3](./prime-number/python/cmd.py3)
 ```
 docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark python3 --version && echo '' && echo '' && \
-time docker run --rm --volume $(pwd):/app benchmark python3 /app/prime-number/cmd.py3 5000
+time docker run --rm --volume $(pwd):/app benchmark python3 /app/prime-number/python/cmd.py3 5000
 ```
 ```
 Python 3.8.5
@@ -178,12 +178,12 @@ sys     0m0.034s
 ```
 
 
-### [C/C++](./prime-number/cmd.cpp)
+### [C/C++](./prime-number/c++/cmd.cpp)
 ```
 docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark g++ --version && echo '' && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark g++ /app/prime-number/cmd.cpp -o /app/prime-number/cmd.cpp_bin && \
-time docker run --rm --volume $(pwd):/app benchmark /app/prime-number/cmd.cpp_bin 5000
+docker run --rm --volume $(pwd):/app benchmark g++ /app/prime-number/c++/cmd.cpp -o /app/prime-number/c++/cmd.cpp_bin && \
+time docker run --rm --volume $(pwd):/app benchmark /app/prime-number/c++/cmd.cpp_bin 5000
 ```
 ```
 g++ (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0
@@ -201,13 +201,13 @@ sys     0m0.012s
 ```
 
 
-### [Assembler/NASM](./prime-number/cmd.asm)
+### [Assembler/NASM](./prime-number/assembler/cmd.asm)
 ```
 docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark nasm --version && echo '' && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark nasm -f elf /app/prime-number/cmd.asm && \
-docker run --rm --volume $(pwd):/app benchmark ld -m elf_i386 /app/prime-number/cmd.o -o /app/prime-number/cmd.asm_bin && \
-time docker run --rm --volume $(pwd):/app benchmark /app/prime-number/cmd.asm_bin 5000
+docker run --rm --volume $(pwd):/app benchmark nasm -f elf /app/prime-number/assembler/cmd.asm && \
+docker run --rm --volume $(pwd):/app benchmark ld -m elf_i386 /app/prime-number/assembler/cmd.o -o /app/prime-number/assembler/cmd.asm_bin && \
+time docker run --rm --volume $(pwd):/app benchmark /app/prime-number/assembler/cmd.asm_bin 5000
 ```
 ```
 NASM version 2.14.02
@@ -221,12 +221,12 @@ sys     0m0.043s
 ```
 
 
-### [Pascal](./prime-number/cmd.cpp)
+### [Pascal](./prime-number/pascal/cmd.pas)
 ```
 docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark fpc -iW && echo '' && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark fpc /app/prime-number/cmd.pas -o/app/prime-number/cmd.pas_bin && \
-time docker run --rm --volume $(pwd):/app benchmark /app/prime-number/cmd.pas_bin 5000
+docker run --rm --volume $(pwd):/app benchmark fpc /app/prime-number/pascal/cmd.pas -o/app/prime-number/pascal/cmd.pas_bin && \
+time docker run --rm --volume $(pwd):/app benchmark /app/prime-number/pascal/cmd.pas_bin 5000
 ```
 ```
 3.0.4+dfsg-23
@@ -235,8 +235,8 @@ time docker run --rm --volume $(pwd):/app benchmark /app/prime-number/cmd.pas_bi
 Free Pascal Compiler version 3.0.4+dfsg-23 [2019/11/25] for x86_64
 Copyright (c) 1993-2017 by Florian Klaempfl and others
 Target OS: Linux for x86-64
-Compiling /app/prime-number/cmd.pas
-Linking /app/prime-number/cmd.pas_bin
+Compiling /app/prime-number/pascal/cmd.pas
+Linking /app/prime-number/pascal/cmd.pas_bin
 /usr/bin/ld.bfd: warning: /app/prime-number/link.res contains output sections; did you forget -T?
 30 lines compiled, 0.1 sec
 The latest prime number: 48611
@@ -247,12 +247,12 @@ sys     0m0.039s
 ```
 
 
-### [Go](./prime-number/cmd.go)
+### [Go](./prime-number/go/cmd.go)
 ```
 docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark go version && echo '' && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark go build -o /app/prime-number/cmd.go_bin /app/prime-number/cmd.go && \
-time docker run --rm --volume $(pwd):/app benchmark /app/prime-number/cmd.go_bin 5000
+docker run --rm --volume $(pwd):/app benchmark go build -o /app/prime-number/go/cmd.go_bin /app/prime-number/go/cmd.go && \
+time docker run --rm --volume $(pwd):/app benchmark /app/prime-number/go/cmd.go_bin 5000
 ```
 ```
 go version go1.13.8 linux/amd64
@@ -266,11 +266,11 @@ sys     0m0.016s
 ```
 
 
-### [Ruby](./prime-number/cmd.rb)
+### [Ruby](./prime-number/ruby/cmd.rb)
 ```
 docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark ruby --version && echo '' && echo '' && \
-time docker run --rm --volume $(pwd):/app benchmark ruby /app/prime-number/cmd.rb 5000
+time docker run --rm --volume $(pwd):/app benchmark ruby /app/prime-number/ruby/cmd.rb 5000
 ```
 ```
 ruby 2.7.0p0 (2019-12-25 revision 647ee6f091) [x86_64-linux-gnu]
@@ -284,12 +284,12 @@ sys     0m0.041s
 ```
 
 
-### [Java](./prime-number/cmd.java)
+### [Java](./prime-number/java/cmd.java)
 ```
 docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark java --version && echo '' && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark javac /app/prime-number/cmd.java && \
-time docker run --rm --volume $(pwd):/app benchmark java -classpath /app/prime-number/ cmd 5000
+docker run --rm --volume $(pwd):/app benchmark javac /app/prime-number/java/cmd.java && \
+time docker run --rm --volume $(pwd):/app benchmark java -classpath /app/prime-number/java/ cmd 5000
 ```
 ```
 openjdk 16.0.1 2021-04-20
