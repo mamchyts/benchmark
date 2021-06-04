@@ -10,3 +10,4 @@ RUN apt install -y nasm
 RUN apt install -y fpc
 RUN apt install -y golang
 RUN apt install -y ruby
+RUN apt install -y openjdk-16-jdk openjdk-14-source
