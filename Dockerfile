@@ -11,3 +11,5 @@ RUN apt install -y golang
 RUN apt install -y ruby
 RUN apt install -y openjdk-16-jdk
 RUN apt install -y rustc
+RUN apt install -y r-base
+
