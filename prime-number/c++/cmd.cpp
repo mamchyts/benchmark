@@ -10,17 +10,17 @@ int main( int argc, char *argv[] )
 
     int32_t number = 0;
     while (primeNumberCount > 0) {
-        ++number;
+        number++;
 
         int32_t j = 0;
-        for (int32_t i = 1; i <= number; ++i) {
+        for (int32_t i = 1; i <= number; i++) {
             if (number % i == 0) {
-                ++j;
+                j++;
             }
         }
 
         if (j == 2) {
-            --primeNumberCount;
+            primeNumberCount--;
         }
     }
 

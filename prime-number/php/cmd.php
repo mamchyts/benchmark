@@ -4,17 +4,17 @@ $primeNumberCount = isset($argv[1]) ? $argv[1] : 100;
 
 $number = 0;
 while ($primeNumberCount > 0) {
-    ++$number;
+    $number++;
     $j = 0;
 
-    for ($i = 1; $i <= $number; ++$i) {
+    for ($i = 1; $i <= $number; $i++) {
         if ($number % $i === 0) {
-            ++$j;
+            $j++;
         }
     }
 
     if ($j === 2) {
-        --$primeNumberCount;
+        $primeNumberCount--;
     }
 }
 
