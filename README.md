@@ -1,7 +1,6 @@
 # Benchmark
 
 All setting for compiler / interpreter by default
-Some benchmark tests for different programming languages
 
 ```
 $ lscpu
@@ -32,7 +31,7 @@ L3 cache:            9216K
 NUMA node0 CPU(s):   0-5
 ```
 
-![https://quickchart.io/sandbox/#%7B%0A%20%20type%3A%20'bar'%2C%0A%20%20data%3A%20%7B%0A%20%20%20%20labels%3A%20%5B'PHP%205.6'%2C%20'PHP%207.4'%2C%20'PHP%208.0'%2C%20'PHP%208.0%20(JIT)'%2C%20'Node.js'%2C%20'Python%202'%2C%20'Python%203'%2C%20'C%2FC%2B%2B'%2C%20'Asm%2FNASM'%2C%20'Pascal'%2C%20'GO'%2C%20'Ruby'%2C%20'Java'%2C%20'Rust'%2C%20'R'%2C%20'Dart'%5D%2C%0A%20%20%20%20datasets%3A%20%5B%0A%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20label%3A%20'Execution%20time%20in%20seconds%20(lower%20is%20better)'%2C%0A%20%20%20%20%20%20%20%20data%3A%20%5B51.251%2C%2019.566%2C%2019.321%2C%2015.349%2C%204.845%2C%2082.335%2C%2092.738%2C%203.699%2C%203.101%2C%209.802%2C%208.884%2C%2064.091%2C%203.742%2C%2039.774%2C%20256.579%2C%204.865%5D%2C%0A%20%20%20%20%20%20%20%20backgroundColor%3A%20'rgba(54%2C%20162%2C%20235%2C%200.5)'%2C%0A%20%20%20%20%20%20%20%20borderColor%3A%20'rgb(54%2C%20162%2C%20235)'%2C%0A%20%20%20%20%20%20%20%20borderWidth%3A%201%2C%0A%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%5D%2C%0A%20%20%7D%2C%0A%20%20options%3A%20%7B%0A%20%20%20%20plugins%3A%20%7B%0A%20%20%20%20%20%20datalabels%3A%20%7B%0A%20%20%20%20%20%20%20%20anchor%3A%20'center'%2C%0A%20%20%20%20%20%20%20%20align%3A%20'center'%2C%0A%20%20%20%20%20%20%20%20color%3A%20'%23000'%0A%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%7D%2C%0A%20%20%7D%2C%0A%7D%0A](https://quickchart.io/chart?w=1000&h=600&c=%7B%0A%20%20type%3A%20%27bar%27%2C%0A%20%20data%3A%20%7B%0A%20%20%20%20labels%3A%20%5B%27PHP%205.6%27%2C%20%27PHP%207.4%27%2C%20%27PHP%208.0%27%2C%20%27PHP%208.0%20(JIT)%27%2C%20%27Node.js%27%2C%20%27Python%202%27%2C%20%27Python%203%27%2C%20%27C%2FC%2B%2B%27%2C%20%27Asm%2FNASM%27%2C%20%27Pascal%27%2C%20%27GO%27%2C%20%27Ruby%27%2C%20%27Java%27%2C%20%27Rust%27%2C%20%27R%27%2C%20%27Dart%27%5D%2C%0A%20%20%20%20datasets%3A%20%5B%0A%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20label%3A%20%27Execution%20time%20in%20seconds%20(lower%20is%20better)%27%2C%0A%20%20%20%20%20%20%20%20data%3A%20%5B51.251%2C%2019.566%2C%2019.321%2C%2015.349%2C%204.845%2C%2082.335%2C%2092.738%2C%203.699%2C%203.101%2C%209.802%2C%208.884%2C%2064.091%2C%203.742%2C%2039.774%2C%20256.579%2C%204.865%5D%2C%0A%20%20%20%20%20%20%20%20backgroundColor%3A%20%27rgba(54%2C%20162%2C%20235%2C%200.5)%27%2C%0A%20%20%20%20%20%20%20%20borderColor%3A%20%27rgb(54%2C%20162%2C%20235)%27%2C%0A%20%20%20%20%20%20%20%20borderWidth%3A%201%2C%0A%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%5D%2C%0A%20%20%7D%2C%0A%20%20options%3A%20%7B%0A%20%20%20%20plugins%3A%20%7B%0A%20%20%20%20%20%20datalabels%3A%20%7B%0A%20%20%20%20%20%20%20%20anchor%3A%20%27center%27%2C%0A%20%20%20%20%20%20%20%20align%3A%20%27center%27%2C%0A%20%20%20%20%20%20%20%20color%3A%20%27%23000%27%0A%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%7D%2C%0A%20%20%7D%2C%0A%7D%0A)
+![https://quickchart.io/sandbox/#%7B%0A%20%20type%3A%20'bar'%2C%0A%20%20data%3A%20%7B%0A%20%20%20%20labels%3A%20%5B'PHP%205.6'%2C%20'PHP%207.4'%2C%20'PHP%208.0'%2C%20'PHP%208.0%20(JIT)'%2C%20'Node.js'%2C%20'Python%202'%2C%20'Python%203'%2C%20'C%2FC%2B%2B'%2C%20'Asm%2FNASM'%2C%20'Pascal'%2C%20'GO'%2C%20'Ruby'%2C%20'Java'%2C%20'Rust'%2C%20'R'%2C%20'Dart'%2C%20'Perl'%5D%2C%0A%20%20%20%20datasets%3A%20%5B%0A%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20label%3A%20'Execution%20time%20in%20seconds%20(lower%20is%20better)'%2C%0A%20%20%20%20%20%20%20%20data%3A%20%5B51.251%2C%2019.566%2C%2019.321%2C%2015.349%2C%204.845%2C%2082.335%2C%2092.738%2C%203.699%2C%203.101%2C%209.802%2C%208.884%2C%2064.091%2C%203.742%2C%2039.774%2C%20256.579%2C%204.865%2C%2070.362%5D%2C%0A%20%20%20%20%20%20%20%20backgroundColor%3A%20'rgba(54%2C%20162%2C%20235%2C%200.5)'%2C%0A%20%20%20%20%20%20%20%20borderColor%3A%20'rgb(54%2C%20162%2C%20235)'%2C%0A%20%20%20%20%20%20%20%20borderWidth%3A%201%2C%0A%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%5D%2C%0A%20%20%7D%2C%0A%20%20options%3A%20%7B%0A%20%20%20%20plugins%3A%20%7B%0A%20%20%20%20%20%20datalabels%3A%20%7B%0A%20%20%20%20%20%20%20%20anchor%3A%20'center'%2C%0A%20%20%20%20%20%20%20%20align%3A%20'center'%2C%0A%20%20%20%20%20%20%20%20color%3A%20'%23000'%0A%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%7D%2C%0A%20%20%7D%2C%0A%7D%0A](https://quickchart.io/chart?w=1600&h=700&c=%7B%0A%20%20type%3A%20%27bar%27%2C%0A%20%20data%3A%20%7B%0A%20%20%20%20labels%3A%20%5B%27PHP%205.6%27%2C%20%27PHP%207.4%27%2C%20%27PHP%208.0%27%2C%20%27PHP%208.0%20(JIT)%27%2C%20%27Node.js%27%2C%20%27Python%202%27%2C%20%27Python%203%27%2C%20%27C%2FC%2B%2B%27%2C%20%27Asm%2FNASM%27%2C%20%27Pascal%27%2C%20%27GO%27%2C%20%27Ruby%27%2C%20%27Java%27%2C%20%27Rust%27%2C%20%27R%27%2C%20%27Dart%27%2C%20%27Perl%27%5D%2C%0A%20%20%20%20datasets%3A%20%5B%0A%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20label%3A%20%27Execution%20time%20in%20seconds%20(lower%20is%20better)%27%2C%0A%20%20%20%20%20%20%20%20data%3A%20%5B51.251%2C%2019.566%2C%2019.321%2C%2015.349%2C%204.845%2C%2082.335%2C%2092.738%2C%203.699%2C%203.101%2C%209.802%2C%208.884%2C%2064.091%2C%203.742%2C%2039.774%2C%20256.579%2C%204.865%2C%2070.362%5D%2C%0A%20%20%20%20%20%20%20%20backgroundColor%3A%20%27rgba(54%2C%20162%2C%20235%2C%200.5)%27%2C%0A%20%20%20%20%20%20%20%20borderColor%3A%20%27rgb(54%2C%20162%2C%20235)%27%2C%0A%20%20%20%20%20%20%20%20borderWidth%3A%201%2C%0A%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%5D%2C%0A%20%20%7D%2C%0A%20%20options%3A%20%7B%0A%20%20%20%20plugins%3A%20%7B%0A%20%20%20%20%20%20datalabels%3A%20%7B%0A%20%20%20%20%20%20%20%20anchor%3A%20%27center%27%2C%0A%20%20%20%20%20%20%20%20align%3A%20%27center%27%2C%0A%20%20%20%20%20%20%20%20color%3A%20%27%23000%27%0A%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%7D%2C%0A%20%20%7D%2C%0A%7D%0A)
 
 
 
@@ -357,4 +356,33 @@ The latest prime number: 48611
 real    0m4.865s
 user    0m0.053s
 sys     0m0.027s
+```
+
+
+### [Perl](./prime-number/perl/cmd.pl)
+```
+docker build -t benchmark . > /dev/null && \
+docker run --rm benchmark perl --version && echo '' && echo '' && \
+time docker run --rm --volume $(pwd):/app benchmark perl /app/prime-number/perl/cmd.pl 5000
+```
+```
+This is perl 5, version 30, subversion 0 (v5.30.0) built for x86_64-linux-gnu-thread-multi
+(with 50 registered patches, see perl -V for more detail)
+
+Copyright 1987-2019, Larry Wall
+
+Perl may be copied only under the terms of either the Artistic License or the
+GNU General Public License, which may be found in the Perl 5 source kit.
+
+Complete documentation for Perl, including FAQ lists, should be found on
+this system using "man perl" or "perldoc perl".  If you have access to the
+Internet, point your browser at http://www.perl.org/, the Perl Home Page.
+
+
+
+The latest prime number: 48611
+
+real    1m10.362s
+user    0m0.050s
+sys     0m0.056s
 ```
