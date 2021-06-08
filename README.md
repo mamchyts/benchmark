@@ -31,7 +31,7 @@ L3 cache:            9216K
 NUMA node0 CPU(s):   0-5
 ```
 
-![https://quickchart.io/sandbox/#%7B%0A%20%20type%3A%20'bar'%2C%0A%20%20data%3A%20%7B%0A%20%20%20%20labels%3A%20%5B'PHP%205.6'%2C%20'PHP%207.4'%2C%20'PHP%208.0'%2C%20'PHP%208.0%20(JIT)'%2C%20'Node.js'%2C%20'Python%202'%2C%20'Python%203'%2C%20'C%2FC%2B%2B'%2C%20'Asm%2FNASM'%2C%20'Pascal'%2C%20'GO'%2C%20'Ruby'%2C%20'Java'%2C%20'Rust'%2C%20'R'%2C%20'Dart'%2C%20'Perl'%5D%2C%0A%20%20%20%20datasets%3A%20%5B%0A%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20label%3A%20'Execution%20time%20in%20seconds%20(lower%20is%20better)'%2C%0A%20%20%20%20%20%20%20%20data%3A%20%5B51.251%2C%2019.566%2C%2019.321%2C%2015.349%2C%204.845%2C%2082.335%2C%2092.738%2C%203.699%2C%203.101%2C%209.802%2C%208.884%2C%2064.091%2C%203.742%2C%2039.774%2C%20256.579%2C%204.865%2C%2070.362%5D%2C%0A%20%20%20%20%20%20%20%20backgroundColor%3A%20'rgba(54%2C%20162%2C%20235%2C%200.5)'%2C%0A%20%20%20%20%20%20%20%20borderColor%3A%20'rgb(54%2C%20162%2C%20235)'%2C%0A%20%20%20%20%20%20%20%20borderWidth%3A%201%2C%0A%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%5D%2C%0A%20%20%7D%2C%0A%20%20options%3A%20%7B%0A%20%20%20%20plugins%3A%20%7B%0A%20%20%20%20%20%20datalabels%3A%20%7B%0A%20%20%20%20%20%20%20%20anchor%3A%20'center'%2C%0A%20%20%20%20%20%20%20%20align%3A%20'center'%2C%0A%20%20%20%20%20%20%20%20color%3A%20'%23000'%0A%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%7D%2C%0A%20%20%7D%2C%0A%7D%0A](https://quickchart.io/chart?w=1600&h=700&c=%7B%0A%20%20type%3A%20%27bar%27%2C%0A%20%20data%3A%20%7B%0A%20%20%20%20labels%3A%20%5B%27PHP%205.6%27%2C%20%27PHP%207.4%27%2C%20%27PHP%208.0%27%2C%20%27PHP%208.0%20(JIT)%27%2C%20%27Node.js%27%2C%20%27Python%202%27%2C%20%27Python%203%27%2C%20%27C%2FC%2B%2B%27%2C%20%27Asm%2FNASM%27%2C%20%27Pascal%27%2C%20%27GO%27%2C%20%27Ruby%27%2C%20%27Java%27%2C%20%27Rust%27%2C%20%27R%27%2C%20%27Dart%27%2C%20%27Perl%27%5D%2C%0A%20%20%20%20datasets%3A%20%5B%0A%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20label%3A%20%27Execution%20time%20in%20seconds%20(lower%20is%20better)%27%2C%0A%20%20%20%20%20%20%20%20data%3A%20%5B51.251%2C%2019.566%2C%2019.321%2C%2015.349%2C%204.845%2C%2082.335%2C%2092.738%2C%203.699%2C%203.101%2C%209.802%2C%208.884%2C%2064.091%2C%203.742%2C%2039.774%2C%20256.579%2C%204.865%2C%2070.362%5D%2C%0A%20%20%20%20%20%20%20%20backgroundColor%3A%20%27rgba(54%2C%20162%2C%20235%2C%200.5)%27%2C%0A%20%20%20%20%20%20%20%20borderColor%3A%20%27rgb(54%2C%20162%2C%20235)%27%2C%0A%20%20%20%20%20%20%20%20borderWidth%3A%201%2C%0A%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%5D%2C%0A%20%20%7D%2C%0A%20%20options%3A%20%7B%0A%20%20%20%20plugins%3A%20%7B%0A%20%20%20%20%20%20datalabels%3A%20%7B%0A%20%20%20%20%20%20%20%20anchor%3A%20%27center%27%2C%0A%20%20%20%20%20%20%20%20align%3A%20%27center%27%2C%0A%20%20%20%20%20%20%20%20color%3A%20%27%23000%27%0A%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%7D%2C%0A%20%20%7D%2C%0A%7D%0A)
+![https://quickchart.io/sandbox/#%7B%0A%20%20type%3A%20'bar'%2C%0A%20%20data%3A%20%7B%0A%20%20%20%20labels%3A%20%5B'PHP%205.6'%2C%20'PHP%207.4'%2C%20'PHP%208.0'%2C%20'PHP%208.0%20(JIT)'%2C%20'Node.js'%2C%20'Python%202'%2C%20'Python%203'%2C%20'C%2FC%2B%2B'%2C%20'Asm%2FNASM'%2C%20'Pascal'%2C%20'GO'%2C%20'Ruby'%2C%20'Java'%2C%20'Rust'%2C%20'R'%2C%20'Dart'%2C%20'Dart%20(compile)'%2C%20'Perl'%2C%20'Lua'%5D%2C%0A%20%20%20%20datasets%3A%20%5B%0A%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20label%3A%20'Execution%20time%20in%20seconds%20(lower%20is%20better)'%2C%0A%20%20%20%20%20%20%20%20data%3A%20%5B51.251%2C%2019.566%2C%2019.321%2C%2015.349%2C%204.845%2C%2082.335%2C%2092.738%2C%203.699%2C%203.101%2C%209.802%2C%208.884%2C%2064.091%2C%203.742%2C%2039.774%2C%20256.579%2C%204.865%2C%204.594%2C%2070.362%2C%2026.448%5D%2C%0A%20%20%20%20%20%20%20%20backgroundColor%3A%20'rgba(54%2C%20162%2C%20235%2C%200.5)'%2C%0A%20%20%20%20%20%20%20%20borderColor%3A%20'rgb(54%2C%20162%2C%20235)'%2C%0A%20%20%20%20%20%20%20%20borderWidth%3A%201%2C%0A%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%5D%2C%0A%20%20%7D%2C%0A%20%20options%3A%20%7B%0A%20%20%20%20plugins%3A%20%7B%0A%20%20%20%20%20%20datalabels%3A%20%7B%0A%20%20%20%20%20%20%20%20anchor%3A%20'center'%2C%0A%20%20%20%20%20%20%20%20align%3A%20'center'%2C%0A%20%20%20%20%20%20%20%20color%3A%20'%23000'%0A%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%7D%2C%0A%20%20%7D%2C%0A%7D%0A](https://quickchart.io/chart?w=1600&h=700&c=%7B%0A%20%20type%3A%20%27bar%27%2C%0A%20%20data%3A%20%7B%0A%20%20%20%20labels%3A%20%5B%27PHP%205.6%27%2C%20%27PHP%207.4%27%2C%20%27PHP%208.0%27%2C%20%27PHP%208.0%20(JIT)%27%2C%20%27Node.js%27%2C%20%27Python%202%27%2C%20%27Python%203%27%2C%20%27C%2FC%2B%2B%27%2C%20%27Asm%2FNASM%27%2C%20%27Pascal%27%2C%20%27GO%27%2C%20%27Ruby%27%2C%20%27Java%27%2C%20%27Rust%27%2C%20%27R%27%2C%20%27Dart%27%2C%20%27Dart%20(compile)%27%2C%20%27Perl%27%2C%20%27Lua%27%5D%2C%0A%20%20%20%20datasets%3A%20%5B%0A%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20label%3A%20%27Execution%20time%20in%20seconds%20(lower%20is%20better)%27%2C%0A%20%20%20%20%20%20%20%20data%3A%20%5B51.251%2C%2019.566%2C%2019.321%2C%2015.349%2C%204.845%2C%2082.335%2C%2092.738%2C%203.699%2C%203.101%2C%209.802%2C%208.884%2C%2064.091%2C%203.742%2C%2039.774%2C%20256.579%2C%204.865%2C%204.594%2C%2070.362%2C%2026.448%5D%2C%0A%20%20%20%20%20%20%20%20backgroundColor%3A%20%27rgba(54%2C%20162%2C%20235%2C%200.5)%27%2C%0A%20%20%20%20%20%20%20%20borderColor%3A%20%27rgb(54%2C%20162%2C%20235)%27%2C%0A%20%20%20%20%20%20%20%20borderWidth%3A%201%2C%0A%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%5D%2C%0A%20%20%7D%2C%0A%20%20options%3A%20%7B%0A%20%20%20%20plugins%3A%20%7B%0A%20%20%20%20%20%20datalabels%3A%20%7B%0A%20%20%20%20%20%20%20%20anchor%3A%20%27center%27%2C%0A%20%20%20%20%20%20%20%20align%3A%20%27center%27%2C%0A%20%20%20%20%20%20%20%20color%3A%20%27%23000%27%0A%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%7D%2C%0A%20%20%7D%2C%0A%7D%0A)
 
 
 
@@ -44,7 +44,6 @@ docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark php5.6 -v && echo '' && echo '' && \
 time docker run --rm --volume $(pwd):/app benchmark php5.6 /app/prime-number/php/cmd.php 5000
 ```
-
 ```
 PHP 5.6.40-50+ubuntu20.04.1+deb.sury.org+1 (cli)
 Copyright (c) 1997-2016 The PHP Group
@@ -359,6 +358,25 @@ sys     0m0.027s
 ```
 
 
+### [Dart with compilation](./prime-number/dart/cmd.dart)
+```
+docker build -t benchmark . > /dev/null && \
+docker run --rm benchmark dart --version && echo '' && echo '' && \
+docker run --rm --volume $(pwd):/app benchmark dart compile exe /app/prime-number/dart/cmd.dart -o /app/prime-number/dart/cmd.dart_bin > /dev/null && \
+time docker run --rm --volume $(pwd):/app benchmark /app/prime-number/dart/cmd.dart_bin 5000
+```
+```
+Dart SDK version: 2.13.1 (stable) (Unknown timestamp) on "linux_x64"
+
+
+The latest prime number: 48611
+
+real    0m4.594s
+user    0m0.044s
+sys     0m0.038s
+```
+
+
 ### [Perl](./prime-number/perl/cmd.pl)
 ```
 docker build -t benchmark . > /dev/null && \
@@ -385,4 +403,22 @@ The latest prime number: 48611
 real    1m10.362s
 user    0m0.050s
 sys     0m0.056s
+```
+
+
+### [Lua](./prime-number/lua/cmd.lua)
+```
+docker build -t benchmark . > /dev/null && \
+docker run --rm benchmark lua -v && echo '' && echo '' && \
+time docker run --rm --volume $(pwd):/app benchmark lua /app/prime-number/lua/cmd.lua 5000
+```
+```
+Lua 5.3.3  Copyright (C) 1994-2016 Lua.org, PUC-Rio
+
+
+The latest prime number:        48611
+
+real    0m26.448s
+user    0m0.053s
+sys     0m0.036s
 ```
