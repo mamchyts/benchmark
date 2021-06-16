@@ -40,7 +40,7 @@ NUMA node0 CPU(s):   0-5
 ```
 docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark php5.6 -v && echo '' && echo '' && \
-time docker run --rm --volume $(pwd):/app benchmark php5.6 /app/prime-number/php/cmd.php 5000
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time php5.6 /app/prime-number/php/cmd.php 5000'
 ```
 ```
 PHP 5.6.40-50+ubuntu20.04.1+deb.sury.org+1 (cli)
@@ -61,7 +61,7 @@ sys     0m0.051s
 ```
 docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark php7.4 -v && echo '' && echo '' && \
-time docker run --rm --volume $(pwd):/app benchmark php7.4 /app/prime-number/php/cmd.php 5000
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time php7.4 /app/prime-number/php/cmd.php 5000'
 ```
 ```
 PHP 7.4.18 (cli) (built: May  3 2021 11:27:06) ( NTS )
@@ -82,7 +82,7 @@ sys     0m0.023s
 ```
 docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark php8.0 -v && echo '' && echo '' && \
-time docker run --rm --volume $(pwd):/app benchmark php8.0 /app/prime-number/php/cmd.php 5000
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time php8.0 /app/prime-number/php/cmd.php 5000'
 ```
 ```
 PHP 8.0.5 (cli) (built: May  3 2021 11:30:57) ( NTS )
@@ -103,7 +103,7 @@ sys     0m0.032s
 ```
 docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark php8.0 -v && echo '' && echo '' && \
-time docker run --rm --volume $(pwd):/app benchmark php8.0 -dopcache.enable_cli=1 -dopcache.jit_buffer_size=10M /app/prime-number/php/cmd.php 5000
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time php8.0 -dopcache.enable_cli=1 -dopcache.jit_buffer_size=10M /app/prime-number/php/cmd.php 5000'
 ```
 ```
 PHP 8.0.5 (cli) (built: May  3 2021 11:30:57) ( NTS )
@@ -124,7 +124,7 @@ sys     0m0.041s
 ```
 docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark nodejs --version && echo '' && echo '' && \
-time docker run --rm --volume $(pwd):/app benchmark nodejs /app/prime-number/javascript/cmd.js 5000
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time nodejs /app/prime-number/javascript/cmd.js 5000'
 ```
 ```
 v10.19.0
@@ -142,7 +142,7 @@ sys     0m0.015s
 ```
 docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark python2 --version && echo '' && echo '' && \
-time docker run --rm --volume $(pwd):/app benchmark python2 /app/prime-number/python/cmd.py2 5000
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time python2 /app/prime-number/python/cmd.py2 5000'
 ```
 ```
 Python 2.7.18
@@ -160,7 +160,7 @@ sys     0m0.017s
 ```
 docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark python3 --version && echo '' && echo '' && \
-time docker run --rm --volume $(pwd):/app benchmark python3 /app/prime-number/python/cmd.py3 5000
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time python3 /app/prime-number/python/cmd.py3 5000'
 ```
 ```
 Python 3.8.5
@@ -179,7 +179,7 @@ sys     0m0.034s
 docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark g++ --version && echo '' && echo '' && \
 docker run --rm --volume $(pwd):/app benchmark g++ -O0 /app/prime-number/c++/cmd.cpp -o /app/prime-number/c++/cmd.cpp_bin && \
-time docker run --rm --volume $(pwd):/app benchmark /app/prime-number/c++/cmd.cpp_bin 5000
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time /app/prime-number/c++/cmd.cpp_bin 5000'
 ```
 ```
 g++ (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0
@@ -202,7 +202,7 @@ sys     0m0.016s
 docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark g++ --version && echo '' && echo '' && \
 docker run --rm --volume $(pwd):/app benchmark g++ -Ofast /app/prime-number/c++/cmd.cpp -o /app/prime-number/c++/cmd.cpp_bin && \
-time docker run --rm --volume $(pwd):/app benchmark /app/prime-number/c++/cmd.cpp_bin 5000
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time /app/prime-number/c++/cmd.cpp_bin 5000'
 ```
 ```
 g++ (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0
@@ -226,7 +226,7 @@ docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark nasm --version && echo '' && echo '' && \
 docker run --rm --volume $(pwd):/app benchmark nasm -f elf -O0 /app/prime-number/assembler/cmd.asm && \
 docker run --rm --volume $(pwd):/app benchmark ld -m elf_i386 /app/prime-number/assembler/cmd.o -o /app/prime-number/assembler/cmd.asm_bin && \
-time docker run --rm --volume $(pwd):/app benchmark /app/prime-number/assembler/cmd.asm_bin 5000
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time /app/prime-number/assembler/cmd.asm_bin 5000'
 ```
 ```
 NASM version 2.14.02
@@ -246,7 +246,7 @@ docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark nasm --version && echo '' && echo '' && \
 docker run --rm --volume $(pwd):/app benchmark nasm -f elf -Ox /app/prime-number/assembler/cmd.asm && \
 docker run --rm --volume $(pwd):/app benchmark ld -O3 -m elf_i386 /app/prime-number/assembler/cmd.o -o /app/prime-number/assembler/cmd.asm_bin && \
-time docker run --rm --volume $(pwd):/app benchmark /app/prime-number/assembler/cmd.asm_bin 5000
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time /app/prime-number/assembler/cmd.asm_bin 5000'
 ```
 ```
 NASM version 2.14.02
@@ -265,7 +265,7 @@ sys     0m0.018s
 docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark fpc -iW && echo '' && echo '' && \
 docker run --rm --volume $(pwd):/app benchmark fpc -O- /app/prime-number/pascal/cmd.pas -o/app/prime-number/pascal/cmd.pas_bin && \
-time docker run --rm --volume $(pwd):/app benchmark /app/prime-number/pascal/cmd.pas_bin 5000
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time /app/prime-number/pascal/cmd.pas_bin 5000'
 ```
 ```
 3.0.4+dfsg-23
@@ -291,7 +291,7 @@ sys     0m0.011s
 docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark fpc -iW && echo '' && echo '' && \
 docker run --rm --volume $(pwd):/app benchmark fpc -O4 /app/prime-number/pascal/cmd.pas -o/app/prime-number/pascal/cmd.pas_bin && \
-time docker run --rm --volume $(pwd):/app benchmark /app/prime-number/pascal/cmd.pas_bin 5000
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time /app/prime-number/pascal/cmd.pas_bin 5000'
 ```
 ```
 3.0.4+dfsg-23
@@ -317,7 +317,7 @@ sys     0m0.016s
 docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark go version && echo '' && echo '' && \
 docker run --rm --volume $(pwd):/app benchmark go build -o /app/prime-number/go/cmd.go_bin /app/prime-number/go/cmd.go && \
-time docker run --rm --volume $(pwd):/app benchmark /app/prime-number/go/cmd.go_bin 5000
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time /app/prime-number/go/cmd.go_bin 5000'
 ```
 ```
 go version go1.13.8 linux/amd64
@@ -335,7 +335,7 @@ sys     0m0.016s
 ```
 docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark /root/.rbenv/versions/2.7.3/bin/ruby --version && echo '' && echo '' && \
-time docker run --rm --volume $(pwd):/app benchmark /root/.rbenv/versions/2.7.3/bin/ruby /app/prime-number/ruby/cmd.rb 5000
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time /root/.rbenv/versions/2.7.3/bin/ruby /app/prime-number/ruby/cmd.rb 5000'
 ```
 ```
 ruby 2.7.3p183 (2021-04-05 revision 6847ee089d) [x86_64-linux]
@@ -353,7 +353,7 @@ sys     0m0.029s
 ```
 docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark /root/.rbenv/versions/3.0.1/bin/ruby --version && echo '' && echo '' && \
-time docker run --rm --volume $(pwd):/app benchmark /root/.rbenv/versions/3.0.1/bin/ruby /app/prime-number/ruby/cmd.rb 5000
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time /root/.rbenv/versions/3.0.1/bin/ruby /app/prime-number/ruby/cmd.rb 5000'
 ```
 ```
 ruby 3.0.1p64 (2021-04-05 revision 0fb782ee38) [x86_64-linux]
@@ -372,7 +372,7 @@ sys     0m0.040s
 docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark java --version && echo '' && echo '' && \
 docker run --rm --volume $(pwd):/app benchmark javac /app/prime-number/java/cmd.java && \
-time docker run --rm --volume $(pwd):/app benchmark java -classpath /app/prime-number/java/ cmd 5000
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time java -classpath /app/prime-number/java/ cmd 5000'
 ```
 ```
 openjdk 16.0.1 2021-04-20
@@ -393,7 +393,7 @@ sys     0m0.047s
 docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark rustc --version && echo '' && echo '' && \
 docker run --rm --volume $(pwd):/app benchmark rustc /app/prime-number/rust/cmd.rs -o /app/prime-number/rust/cmd.rs_bin && \
-time docker run --rm --volume $(pwd):/app benchmark /app/prime-number/rust/cmd.rs_bin 5000
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time /app/prime-number/rust/cmd.rs_bin 5000'
 ```
 ```
 rustc 1.47.0
@@ -411,8 +411,8 @@ sys     0m0.016s
 ```
 docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark rustc --version && echo '' && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark rustc -O /app/prime-number/rust/cmd.rs -o /app/prime-number/rust/cmd.rs_bin && \
-time docker run --rm --volume $(pwd):/app benchmark /app/prime-number/rust/cmd.rs_bin 5000
+docker run --rm --volume $(pwd):/app benchmark rustc -C opt-level=3 /app/prime-number/rust/cmd.rs -o /app/prime-number/rust/cmd.rs_bin && \
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time /app/prime-number/rust/cmd.rs_bin 5000'
 ```
 ```
 rustc 1.47.0
@@ -430,7 +430,7 @@ sys     0m0.018s
 ```
 docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark Rscript --version && echo '' && echo '' && \
-time docker run --rm --volume $(pwd):/app benchmark Rscript --vanilla /app/prime-number/r/cmd.r 5000
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time Rscript --vanilla /app/prime-number/r/cmd.r 5000'
 ```
 ```
 R scripting front-end version 3.6.3 (2020-02-29)
@@ -448,7 +448,7 @@ sys     0m0.038s
 ```
 docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark dart --version && echo '' && echo '' && \
-time docker run --rm --volume $(pwd):/app benchmark dart run /app/prime-number/dart/cmd.dart 5000
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time dart run /app/prime-number/dart/cmd.dart 5000'
 ```
 ```
 Dart SDK version: 2.13.1 (stable) (Unknown timestamp) on "linux_x64"
@@ -467,7 +467,7 @@ sys     0m0.027s
 docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark dart --version && echo '' && echo '' && \
 docker run --rm --volume $(pwd):/app benchmark dart compile exe /app/prime-number/dart/cmd.dart -o /app/prime-number/dart/cmd.dart_bin > /dev/null && \
-time docker run --rm --volume $(pwd):/app benchmark /app/prime-number/dart/cmd.dart_bin 5000
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time /app/prime-number/dart/cmd.dart_bin 5000'
 ```
 ```
 Dart SDK version: 2.13.1 (stable) (Unknown timestamp) on "linux_x64"
@@ -485,7 +485,7 @@ sys     0m0.038s
 ```
 docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark perl --version && echo '' && echo '' && \
-time docker run --rm --volume $(pwd):/app benchmark perl /app/prime-number/perl/cmd.pl 5000
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time perl /app/prime-number/perl/cmd.pl 5000'
 ```
 ```
 This is perl 5, version 30, subversion 0 (v5.30.0) built for x86_64-linux-gnu-thread-multi
@@ -514,7 +514,7 @@ sys     0m0.056s
 ```
 docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark lua -v && echo '' && echo '' && \
-time docker run --rm --volume $(pwd):/app benchmark lua /app/prime-number/lua/cmd.lua 5000
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time lua /app/prime-number/lua/cmd.lua 5000'
 ```
 ```
 Lua 5.3.3  Copyright (C) 1994-2016 Lua.org, PUC-Rio
@@ -533,7 +533,7 @@ sys     0m0.036s
 docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark gnatmake --version && echo '' && echo '' && \
 docker run --rm --volume $(pwd):/app benchmark gnatmake -q /app/prime-number/ada/cmd.adb -o /app/prime-number/ada/cmd.adb_bin && \
-time docker run --rm --volume $(pwd):/app benchmark /app/prime-number/ada/cmd.adb_bin 5000
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time /app/prime-number/ada/cmd.adb_bin 5000'
 ```
 ```
 GNATMAKE 9.3.0
