@@ -1,11 +1,11 @@
-var primeNumberCount = process.argv[2] ? process.argv[2] : 100;
+let primeNumberCount = process.argv[2] || 100;
+let number = 0;
 
-var number = 0;
 while (primeNumberCount > 0) {
     number++;
-    var j = 0;
+    let j = 0;
 
-    for (i = 1; i <= number; i++) {
+    for (let i = 1; i <= number; i++) {
         if (number % i === 0) {
             j++;
         }
