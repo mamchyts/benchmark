@@ -19,3 +19,4 @@ RUN apt install -y git bison libgdbm-dev libssl-dev libyaml-dev && curl -fsSL ht
 RUN apt install -y ghc
 RUN apt install -y pypy
 RUN apt install -y pypy3
+RUN apt install -y luajit
