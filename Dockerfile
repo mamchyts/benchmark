@@ -17,3 +17,5 @@ RUN apt install -y lua5.3
 RUN apt install -y gnat-gps
 RUN apt install -y git bison libgdbm-dev libssl-dev libyaml-dev && curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash - && /root/.rbenv/bin/rbenv install 2.7.3 && /root/.rbenv/bin/rbenv install 3.0.1
 RUN apt install -y ghc
+RUN apt install -y pypy
+RUN apt install -y pypy3
