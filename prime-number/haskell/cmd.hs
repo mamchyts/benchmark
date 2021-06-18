@@ -1,4 +1,5 @@
 import System.Environment (getArgs)
+import Data.List (findIndex)
 
 firstOrDefault :: [String] -> Int -> Int
 firstOrDefault args defaultValue =
@@ -6,29 +7,18 @@ firstOrDefault args defaultValue =
         then read (head args)
         else defaultValue
 
-getJ :: Int -> Int -> Int -> Int
-getJ j i number =
-    if i > number
-        then j
-        else if number `rem` i == 0
-                then getJ (j + 1) (i + 1) number
-                else getJ j (i + 1) number
+isPrime :: Int -> Bool
+isPrime n = (sum [ if (n `rem` i == 0) then 1 else 0 | i <- [1..n] ]) == 2
 
-getNumber :: Int -> Int -> Int
-getNumber primeNumberCount number =
-    if primeNumberCount == 0
-        then number
-        else do
-            let numberInc = number + 1
-            let j = getJ 0 1 numberInc
-            if j == 2
-                then getNumber (primeNumberCount - 1) numberInc
-                else getNumber primeNumberCount numberInc
+count :: Int -> Bool -> Int
+count np isp
+  | isp == True = np + 1
+  | otherwise = np
 
 main :: IO ()
 main = do
     args <- getArgs
     let primeNumberCount = firstOrDefault args 100
-
-    let number = getNumber primeNumberCount 0
-    putStrLn ("The latest prime number: " ++ (show number))
+    case (findIndex (\n -> n == primeNumberCount) (scanl count 1 [isPrime n | n <- [2..]])) of
+      Just num -> putStrLn ("The latest prime number: " ++ (show (num + 1)))
+      Nothing -> putStrLn ("Cannot find prime")
