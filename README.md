@@ -239,8 +239,8 @@ sys     0m0.000s
 ```
 docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark g++ --version && echo '' && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark g++ -Ofast /app/prime-number/c++/cmd.cpp -o /app/prime-number/c++/cmd.cpp_bin && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time /app/prime-number/c++/cmd.cpp_bin 7000'
+docker run --rm --volume $(pwd):/app benchmark g++ -Ofast /app/prime-number/c++/cmd.cpp -o /app/prime-number/c++/cmd.cpp_opt_bin && \
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time /app/prime-number/c++/cmd.cpp_opt_bin 7000'
 ```
 ```
 g++ (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0
@@ -283,8 +283,8 @@ sys     0m0.000s
 docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark nasm --version && echo '' && echo '' && \
 docker run --rm --volume $(pwd):/app benchmark nasm -f elf -Ox /app/prime-number/assembler/cmd.asm && \
-docker run --rm --volume $(pwd):/app benchmark ld -O3 -m elf_i386 /app/prime-number/assembler/cmd.o -o /app/prime-number/assembler/cmd.asm_bin && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time /app/prime-number/assembler/cmd.asm_bin 7000'
+docker run --rm --volume $(pwd):/app benchmark ld -O3 -m elf_i386 /app/prime-number/assembler/cmd.o -o /app/prime-number/assembler/cmd.asm_opt_bin && \
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time /app/prime-number/assembler/cmd.asm_opt_bin 7000'
 ```
 ```
 NASM version 2.14.02
@@ -328,8 +328,8 @@ sys     0m0.000s
 ```
 docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark fpc -iW && echo '' && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark fpc -O3 /app/prime-number/pascal/cmd.pas -o/app/prime-number/pascal/cmd.pas_bin && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time /app/prime-number/pascal/cmd.pas_bin 7000'
+docker run --rm --volume $(pwd):/app benchmark fpc -O3 /app/prime-number/pascal/cmd.pas -o/app/prime-number/pascal/cmd.pas_opt_bin && \
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time /app/prime-number/pascal/cmd.pas_opt_bin 7000'
 ```
 ```
 3.0.4+dfsg-23
@@ -449,8 +449,8 @@ sys     0m0.000s
 ```
 docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark rustc --version && echo '' && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark rustc -C opt-level=3 /app/prime-number/rust/cmd.rs -o /app/prime-number/rust/cmd.rs_bin && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time /app/prime-number/rust/cmd.rs_bin 7000'
+docker run --rm --volume $(pwd):/app benchmark rustc -C opt-level=3 /app/prime-number/rust/cmd.rs -o /app/prime-number/rust/cmd.rs_opt_bin && \
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time /app/prime-number/rust/cmd.rs_opt_bin 7000'
 ```
 ```
 rustc 1.47.0
@@ -504,8 +504,8 @@ sys     0m0.088s
 ```
 docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark dart --version && echo '' && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark dart compile exe /app/prime-number/dart/cmd.dart -o /app/prime-number/dart/cmd.dart_bin > /dev/null && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time /app/prime-number/dart/cmd.dart_bin 7000'
+docker run --rm --volume $(pwd):/app benchmark dart compile exe /app/prime-number/dart/cmd.dart -o /app/prime-number/dart/cmd.dart_opt_bin > /dev/null && \
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time /app/prime-number/dart/cmd.dart_opt_bin 7000'
 ```
 ```
 Dart SDK version: 2.13.3 (stable) (Unknown timestamp) on "linux_x64"
@@ -630,8 +630,8 @@ sys     0m0.384s
 ```
 docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark ghc --version && echo '' && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark ghc -O /app/prime-number/haskell/cmd.hs -o /app/prime-number/haskell/cmd.hs_bin > /dev/null && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time /app/prime-number/haskell/cmd.hs_bin 7000'
+docker run --rm --volume $(pwd):/app benchmark ghc -O /app/prime-number/haskell/cmd.hs -o /app/prime-number/haskell/cmd.hs_opt_bin > /dev/null && \
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time /app/prime-number/haskell/cmd.hs_opt_bin 7000'
 ```
 ```
 The Glorious Glasgow Haskell Compilation System, version 8.6.5
@@ -642,4 +642,15 @@ The latest prime number: 70657
 real    0m18.971s
 user    0m18.965s
 sys     0m0.000s
+```
+
+
+### [Kotlin](./prime-number/kotlin/cmd.kt)
+```
+docker build -t benchmark . > /dev/null && \
+docker run --rm benchmark /root/kotlinc/bin/kotlinc -version && echo '' && echo '' && \
+docker run --rm --volume $(pwd):/app benchmark /root/kotlinc/bin/kotlinc /app/prime-number/kotlin/cmd.kt -include-runtime -d /app/prime-number/kotlin/cmd.jar && \
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time java -jar /app/prime-number/kotlin/cmd.jar 7000'
+```
+```
 ```

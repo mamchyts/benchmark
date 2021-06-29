@@ -27,3 +27,5 @@ RUN apt install -y git bison libgdbm-dev libssl-dev libyaml-dev && \
     /root/.rbenv/bin/rbenv install 2.7.3 && \
     /root/.rbenv/bin/rbenv install 3.0.1
 RUN apt install -y ghc
+RUN wget https://github.com/JetBrains/kotlin/releases/download/v1.5.20/kotlin-compiler-1.5.20.zip && \
+    unzip kotlin-compiler-1.5.20.zip -d /root/
