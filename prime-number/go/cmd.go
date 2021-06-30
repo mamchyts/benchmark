@@ -31,7 +31,6 @@ func main() {
         if j == 2 {
             primeNumberCount--
         }
-
     }
 
     fmt.Printf("The latest prime number: %d\n", number)

@@ -654,3 +654,46 @@ docker run --rm --volume $(pwd):/app benchmark bash -c 'time java -jar /app/prim
 ```
 ```
 ```
+
+
+### [Crystal](./prime-number/crystal/cmd.cr)
+```
+docker build -t benchmark . > /dev/null && \
+docker run --rm benchmark crystal --version && echo '' && echo '' && \
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time crystal /app/prime-number/crystal/cmd.cr 7000'
+```
+```
+```
+
+
+### [Crystal (compiled)](./prime-number/crystal/cmd.cr)
+```
+docker build -t benchmark . > /dev/null && \
+docker run --rm benchmark crystal --version && echo '' && echo '' && \
+docker run --rm --volume $(pwd):/app benchmark crystal build /app/prime-number/crystal/cmd.cr -o /app/prime-number/crystal/cmd.cr_bin && \
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time /app/prime-number/crystal/cmd.cr_bin 7000'
+```
+```
+```
+
+
+### [Crystal (optimized compilation)](./prime-number/crystal/cmd.cr)
+```
+docker build -t benchmark . > /dev/null && \
+docker run --rm benchmark crystal --version && echo '' && echo '' && \
+docker run --rm --volume $(pwd):/app benchmark crystal build /app/prime-number/crystal/cmd.cr -o /app/prime-number/crystal/cmd.cr_opt_bin --release && \
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time /app/prime-number/crystal/cmd.cr_opt_bin 7000'
+```
+```
+```
+
+
+### [C# (mono)](./prime-number/c#/cmd.cs)
+```
+docker build -t benchmark . > /dev/null && \
+docker run --rm benchmark mono-csc --version && echo '' && echo '' && \
+docker run --rm --volume $(pwd):/app benchmark mono-csc /app/prime-number/c#/cmd.cs -out:/app/prime-number/c#/cmd.cs_bin && \
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time mono /app/prime-number/c#/cmd.cs_bin 7000'
+```
+```
+```

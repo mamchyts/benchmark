@@ -17,7 +17,6 @@ RUN apt install -y wget && \
     sh -c 'wget -qO- https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -' && \
     sh -c 'wget -qO- https://storage.googleapis.com/download.dartlang.org/linux/debian/dart_stable.list > /etc/apt/sources.list.d/dart_stable.list' && \
     apt update && \
-    apt upgrade && \
     apt install -y dart
 RUN apt install -y perl
 RUN apt install -y lua5.3 luajit
@@ -28,4 +27,11 @@ RUN apt install -y git bison libgdbm-dev libssl-dev libyaml-dev && \
     /root/.rbenv/bin/rbenv install 3.0.1
 RUN apt install -y ghc
 RUN wget https://github.com/JetBrains/kotlin/releases/download/v1.5.20/kotlin-compiler-1.5.20.zip && \
-    unzip kotlin-compiler-1.5.20.zip -d /root/
+    unzip kotlin-compiler-1.5.20.zip -d /root/ && \
+    rm -f kotlin-compiler-1.5.20.zip
+RUN curl -fsSL https://crystal-lang.org/install.sh | bash
+RUN apt install gnupg ca-certificates && \
+    apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF && \
+    sh -c 'echo "deb https://download.mono-project.com/repo/ubuntu stable-focal main" > /etc/apt/sources.list.d/mono-official-stable.list' && \
+    apt update && \
+    apt install -y mono-devel
