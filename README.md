@@ -688,7 +688,7 @@ docker run --rm --volume $(pwd):/app benchmark bash -c 'time /app/prime-number/c
 ```
 
 
-### [C# (mono)](./prime-number/c#/cmd.cs)
+### [C# (mono)](./prime-number/c%23/cmd.cs)
 ```
 docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark mono-csc --version && echo '' && echo '' && \
