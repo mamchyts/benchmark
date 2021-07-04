@@ -277,8 +277,8 @@ sys 0.00
 ```
 docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark nasm --version && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark nasm -f elf -O0 /app/prime-number/assembler/cmd.asm && \
-docker run --rm --volume $(pwd):/app benchmark ld -O0 -m elf_i386 /app/prime-number/assembler/cmd.o -o /app/prime-number/assembler/cmd.asm_bin && \
+docker run --rm --volume $(pwd):/app benchmark nasm -f elf64 -O0 /app/prime-number/assembler/cmd.asm && \
+docker run --rm --volume $(pwd):/app benchmark ld -O0 -m elf_x86_64 /app/prime-number/assembler/cmd.o -o /app/prime-number/assembler/cmd.asm_bin && \
 docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-number/assembler/cmd.asm_bin 10000'
 ```
 ```
@@ -295,8 +295,8 @@ sys 0.00
 ```
 docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark nasm --version && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark nasm -f elf -Ox /app/prime-number/assembler/cmd.asm && \
-docker run --rm --volume $(pwd):/app benchmark ld -O3 -m elf_i386 /app/prime-number/assembler/cmd.o -o /app/prime-number/assembler/cmd.asm_opt_bin && \
+docker run --rm --volume $(pwd):/app benchmark nasm -f elf64 -Ox /app/prime-number/assembler/cmd.asm && \
+docker run --rm --volume $(pwd):/app benchmark ld -O3 -m elf_x86_64 /app/prime-number/assembler/cmd.o -o /app/prime-number/assembler/cmd.asm_opt_bin && \
 docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-number/assembler/cmd.asm_opt_bin 10000'
 ```
 ```
@@ -325,6 +325,7 @@ Target OS: Linux for x86-64
 Compiling /app/prime-number/pascal/cmd.pas
 Linking /app/prime-number/pascal/cmd.pas_bin
 30 lines compiled, 0.2 sec
+
 The latest prime number: 104729
 real 67.21
 user 66.66
@@ -348,6 +349,7 @@ Target OS: Linux for x86-64
 Compiling /app/prime-number/pascal/cmd.pas
 Linking /app/prime-number/pascal/cmd.pas_opt_bin
 30 lines compiled, 0.1 sec
+
 The latest prime number: 104729
 real 57.79
 user 57.30
