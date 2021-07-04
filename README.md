@@ -285,8 +285,8 @@ docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-numbe
 NASM version 2.15.05
 
 The latest prime number: 000104729
-real 27.15
-user 26.89
+real 26.10
+user 25.42
 sys 0.00
 ```
 
@@ -303,8 +303,8 @@ docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-numbe
 NASM version 2.15.05
 
 The latest prime number: 000104729
-real 25.91
-user 25.67
+real 24.87
+user 24.84
 sys 0.00
 ```
 
