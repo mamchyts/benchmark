@@ -35,3 +35,10 @@ RUN apt install gnupg ca-certificates && \
     sh -c 'echo "deb https://download.mono-project.com/repo/ubuntu stable-focal main" > /etc/apt/sources.list.d/mono-official-stable.list' && \
     apt update && \
     apt install -y mono-devel
+RUN wget -O /etc/apt/trusted.gpg.d/vkpartner.asc https://repo.vkpartner.ru/GPG-KEY.pub && \
+    echo "deb [arch=amd64] https://repo.vkpartner.ru/kphp-focal focal main" > /etc/apt/sources.list.d/vkpartner.list && \
+    apt update && \
+    apt install -y kphp vk-tl-tools && \
+    mkdir -p /var/www/vkontakte/data/www/vkontakte.com/tl/ && \
+    tl-compiler -e /var/www/vkontakte/data/www/vkontakte.com/tl/scheme.tlo /usr/share/vkontakte/tl-files/common.tl /usr/share/vkontakte/tl-files/tl.tl && \
+    useradd -ms /bin/bash kitten
