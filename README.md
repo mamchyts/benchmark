@@ -723,12 +723,12 @@ docker run --rm --volume $(pwd):/app benchmark dotnet build --runtime linux-x64 
 docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p dotnet run -p /app/prime-number/c#/ 10000'
 ```
 ```
-Mono C# compiler version 6.12.0.122
+5.0.301
 
 The latest prime number: 104729
-real 25.01
-user 24.75
-sys 0.02
+real 29.76
+user 29.46
+sys 0.24
 ```
 
 
@@ -737,7 +737,13 @@ sys 0.02
 docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark scala -version && echo '' && \
 docker run --rm --volume $(pwd):/app benchmark scalac -d /app/prime-number/scala /app/prime-number/scala/cmd.scala && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time scala -classpath /app/prime-number/scala cmd 10000'
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p scala -classpath /app/prime-number/scala cmd 10000'
 ```
 ```
+Scala code runner version 2.11.12 -- Copyright 2002-2017, LAMP/EPFL
+
+The latest prime number: 104729
+real 23.94
+user 23.81
+sys 0.08
 ```
