@@ -42,3 +42,10 @@ RUN wget -O /etc/apt/trusted.gpg.d/vkpartner.asc https://repo.vkpartner.ru/GPG-K
     mkdir -p /var/www/vkontakte/data/www/vkontakte.com/tl/ && \
     tl-compiler -e /var/www/vkontakte/data/www/vkontakte.com/tl/scheme.tlo /usr/share/vkontakte/tl-files/common.tl /usr/share/vkontakte/tl-files/tl.tl && \
     useradd -ms /bin/bash kitten
+RUN apt install -y scala
+RUN wget https://packages.microsoft.com/config/ubuntu/20.10/packages-microsoft-prod.deb -O packages-microsoft-prod.deb && \
+    dpkg -i packages-microsoft-prod.deb && \
+    apt update && \
+    apt install -y apt-transport-https && \
+    apt update && \
+    apt install -y dotnet-sdk-5.0

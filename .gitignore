@@ -3,6 +3,8 @@
 /benchmark.code-workspace
 
 # compiled bin files
+/prime-number/c#/bin
+/prime-number/c#/obj
 *_bin
 *.o
 *.class
