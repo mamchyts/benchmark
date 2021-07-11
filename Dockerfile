@@ -49,3 +49,4 @@ RUN wget https://packages.microsoft.com/config/ubuntu/20.10/packages-microsoft-p
     apt install -y apt-transport-https && \
     apt update && \
     apt install -y dotnet-sdk-5.0
+RUN apt install -y elixir

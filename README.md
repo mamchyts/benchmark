@@ -747,3 +747,13 @@ real 23.94
 user 23.81
 sys 0.08
 ```
+
+
+### [Elixir](./prime-number/elixir/cmd.exs)
+```
+docker build -t benchmark . > /dev/null && \
+docker run --rm benchmark elixir --version && echo '' && \
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p elixir /app/prime-number/elixir/cmd.exs 10000'
+```
+```
+```
