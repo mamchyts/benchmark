@@ -783,34 +783,24 @@ sys 1.12
 ```
 
 
-### [Swift](./prime-number/swift/Sources/cmd/main.swift)
-```
-docker build -t benchmark . > /dev/null && \
-docker run --rm benchmark /root/swift-5.4.2-RELEASE-ubuntu20.04/usr/bin/swift --version && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /root/swift-5.4.2-RELEASE-ubuntu20.04/usr/bin/swift run --package-path /app/prime-number/swift/ cmd 10000'
-```
-```
-```
-
-
-### [Swift (-c release)](./prime-number/swift/Sources/cmd/main.swift)
-```
-docker build -t benchmark . > /dev/null && \
-docker run --rm benchmark /root/swift-5.4.2-RELEASE-ubuntu20.04/usr/bin/swift --version && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /root/swift-5.4.2-RELEASE-ubuntu20.04/usr/bin/swift run -c release --package-path /app/prime-number/swift/ cmd 10000'
-```
-```
-```
-
-
 ### [Swift (compiled)](./prime-number/rust/cmd.rs)
 ```
 docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark /root/swift-5.4.2-RELEASE-ubuntu20.04/usr/bin/swift --version && echo '' && \
 docker run --rm --volume $(pwd):/app benchmark /root/swift-5.4.2-RELEASE-ubuntu20.04/usr/bin/swift build --package-path /app/prime-number/swift/ && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-number/swift/.build/debug/cmd 10000'
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-number/swift/.build/debug/cmd 1000'
 ```
 ```
+Swift version 5.4.2 (swift-5.4.2-RELEASE)
+Target: x86_64-unknown-linux-gnu
+
+[1/1] Planning build
+[0/0] Build complete!
+The latest prime number: 104729
+
+real 1143.17
+user 1139.47
+sys 0.05
 ```
 
 
@@ -819,7 +809,17 @@ docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-numbe
 docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark /root/swift-5.4.2-RELEASE-ubuntu20.04/usr/bin/swift --version && echo '' && \
 docker run --rm --volume $(pwd):/app benchmark /root/swift-5.4.2-RELEASE-ubuntu20.04/usr/bin/swift build -c release --package-path /app/prime-number/swift/ && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-number/swift/.build/debug/cmd 10000'
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-number/swift/.build/release/cmd 10000'
 ```
 ```
+Swift version 5.4.2 (swift-5.4.2-RELEASE)
+Target: x86_64-unknown-linux-gnu
+
+[1/1] Planning build
+[0/0] Build complete!
+The latest prime number: 104729
+
+real 29.10
+user 29.07
+sys 0.00
 ```
