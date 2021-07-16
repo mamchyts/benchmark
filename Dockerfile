@@ -50,3 +50,6 @@ RUN wget https://packages.microsoft.com/config/ubuntu/20.10/packages-microsoft-p
     apt update && \
     apt install -y dotnet-sdk-5.0
 RUN apt install -y elixir
+RUN apt install -y binutils git gnupg2 libc6-dev libcurl4 libedit2 libgcc-9-dev libpython2.7 libsqlite3-0 libstdc++-9-dev libxml2 libz3-dev pkg-config tzdata zlib1g-dev && \
+    wget https://swift.org/builds/swift-5.4.2-release/ubuntu2004/swift-5.4.2-RELEASE/swift-5.4.2-RELEASE-ubuntu20.04.tar.gz && \
+    tar -xvzf swift-5.4.2-RELEASE-ubuntu20.04.tar.gz -C /root

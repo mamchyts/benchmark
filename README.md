@@ -781,3 +781,45 @@ real 120.60
 user 119.33
 sys 1.12
 ```
+
+
+### [Swift](./prime-number/swift/Sources/cmd/main.swift)
+```
+docker build -t benchmark . > /dev/null && \
+docker run --rm benchmark /root/swift-5.4.2-RELEASE-ubuntu20.04/usr/bin/swift --version && echo '' && \
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /root/swift-5.4.2-RELEASE-ubuntu20.04/usr/bin/swift run --package-path /app/prime-number/swift/ cmd 10000'
+```
+```
+```
+
+
+### [Swift (-c release)](./prime-number/swift/Sources/cmd/main.swift)
+```
+docker build -t benchmark . > /dev/null && \
+docker run --rm benchmark /root/swift-5.4.2-RELEASE-ubuntu20.04/usr/bin/swift --version && echo '' && \
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /root/swift-5.4.2-RELEASE-ubuntu20.04/usr/bin/swift run -c release --package-path /app/prime-number/swift/ cmd 10000'
+```
+```
+```
+
+
+### [Swift (compiled)](./prime-number/rust/cmd.rs)
+```
+docker build -t benchmark . > /dev/null && \
+docker run --rm benchmark /root/swift-5.4.2-RELEASE-ubuntu20.04/usr/bin/swift --version && echo '' && \
+docker run --rm --volume $(pwd):/app benchmark /root/swift-5.4.2-RELEASE-ubuntu20.04/usr/bin/swift build --package-path /app/prime-number/swift/ && \
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-number/swift/.build/debug/cmd 10000'
+```
+```
+```
+
+
+### [Swift (optimized compilation)](./prime-number/rust/cmd.rs)
+```
+docker build -t benchmark . > /dev/null && \
+docker run --rm benchmark /root/swift-5.4.2-RELEASE-ubuntu20.04/usr/bin/swift --version && echo '' && \
+docker run --rm --volume $(pwd):/app benchmark /root/swift-5.4.2-RELEASE-ubuntu20.04/usr/bin/swift build -c release --package-path /app/prime-number/swift/ && \
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-number/swift/.build/debug/cmd 10000'
+```
+```
+```
