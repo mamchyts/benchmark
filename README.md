@@ -1,6 +1,6 @@
 # Benchmark
 
-AWS t2.small:
+Test PC - **AWS t2.small**:
 ```
 $ free -h
               total        used        free      shared  buff/cache   available
@@ -51,8 +51,7 @@ Flags:                           fpu vme de pse tsc msr pae mce cx8 apic sep mtr
 ![https://quickchart.io/sandbox/#%7B%0A%20%20%22type%22%3A%20%22horizontalBar%22%2C%0A%20%20%22data%22%3A%20%7B%0A%20%20%20%20%22labels%22%3A%20%5B%0A%20%20%20%20%20%20%22C%2FC%2B%2B%20(optimized%20compilation)%22%2C%0A%20%20%20%20%20%20%22Rust%20(optimized%20compilation)%22%2C%0A%20%20%20%20%20%20%22Crystal%20(optimized%20compilation)%22%2C%0A%20%20%20%20%20%20%22C%2FC%2B%2B%22%2C%0A%20%20%20%20%20%20%22Ada%22%2C%0A%20%20%20%20%20%20%22Java%22%2C%0A%20%20%20%20%20%20%22C%23%20(mono)%22%2C%0A%20%20%20%20%20%20%22Kotlin%22%2C%0A%20%20%20%20%20%20%22Assembler%2FNASM%20(optimized%20compilation)%22%2C%0A%20%20%20%20%20%20%22Assembler%2FNASM%22%2C%0A%20%20%20%20%20%20%22Lua%20(LuaJIT)%22%2C%0A%20%20%20%20%20%20%22Dart%20(compiled)%22%2C%0A%20%20%20%20%20%20%22Dart%22%2C%0A%20%20%20%20%20%20%22Node.js%2FJavascript%22%2C%0A%20%20%20%20%20%20%22Pascal%20(optimized%20compilation)%22%2C%0A%20%20%20%20%20%20%22Crystal%20(compiled)%22%2C%0A%20%20%20%20%20%20%22Haskell%20(optimized%20compilation)%22%2C%0A%20%20%20%20%20%20%22Go%22%2C%0A%20%20%20%20%20%20%22PHP%20(KPHP)%22%2C%0A%20%20%20%20%20%20%22Crystal%22%2C%0A%20%20%20%20%20%20%22Pascal%22%2C%0A%20%20%20%20%20%20%22Python%203%20(PyPy)%22%2C%0A%20%20%20%20%20%20%22Python%202%20(PyPy)%22%2C%0A%20%20%20%20%20%20%22PHP%208.0%20(JIT)%22%2C%0A%20%20%20%20%20%20%22Elixir%22%2C%0A%20%20%20%20%20%20%22PHP%208.0%22%2C%0A%20%20%20%20%20%20%22PHP%207.4%22%2C%0A%20%20%20%20%20%20%22Lua%22%2C%0A%20%20%20%20%20%20%22Rust%22%2C%0A%20%20%20%20%20%20%22Haskell%22%2C%0A%20%20%20%20%20%20%22PHP%205.6%22%2C%0A%20%20%20%20%20%20%22Perl%22%2C%0A%20%20%20%20%20%20%22Python%202%22%2C%0A%20%20%20%20%20%20%22Ruby%202%22%2C%0A%20%20%20%20%20%20%22Ruby%203%22%2C%0A%20%20%20%20%20%20%22Python%203%22%2C%0A%20%20%20%20%20%20%22R%22%0A%20%20%20%20%5D%2C%0A%20%20%20%20%22datasets%22%3A%20%5B%0A%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%22label%22%3A%20%22Execution%20time%20in%20seconds%20(lower%20is%20better)%22%2C%0A%20%20%20%20%20%20%20%20%22backgroundColor%22%3A%20%22rgba(54%2C%20162%2C%20235%2C%200.5)%22%2C%0A%20%20%20%20%20%20%20%20%22borderColor%22%3A%20%22rgb(54%2C%20162%2C%20235)%22%2C%0A%20%20%20%20%20%20%20%20%22borderWidth%22%3A%201%2C%0A%20%20%20%20%20%20%20%20%22data%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%20%2018.71%2C%0A%20%20%20%20%20%20%20%20%20%2018.75%2C%0A%20%20%20%20%20%20%20%20%20%2020.88%2C%0A%20%20%20%20%20%20%20%20%20%2022.48%2C%0A%20%20%20%20%20%20%20%20%20%2022.93%2C%0A%20%20%20%20%20%20%20%20%20%2023.01%2C%0A%20%20%20%20%20%20%20%20%20%2025.01%2C%0A%20%20%20%20%20%20%20%20%20%2025.38%2C%0A%20%20%20%20%20%20%20%20%20%2025.91%2C%0A%20%20%20%20%20%20%20%20%20%2027.15%2C%0A%20%20%20%20%20%20%20%20%20%2029.14%2C%0A%20%20%20%20%20%20%20%20%20%2030.30%2C%0A%20%20%20%20%20%20%20%20%20%2031.51%2C%0A%20%20%20%20%20%20%20%20%20%2031.63%2C%0A%20%20%20%20%20%20%20%20%20%2057.79%2C%0A%20%20%20%20%20%20%20%20%20%2060.98%2C%0A%20%20%20%20%20%20%20%20%20%2062.72%2C%0A%20%20%20%20%20%20%20%20%20%2063.00%2C%0A%20%20%20%20%20%20%20%20%20%2064.88%2C%0A%20%20%20%20%20%20%20%20%20%2065.42%2C%0A%20%20%20%20%20%20%20%20%20%2067.21%2C%0A%20%20%20%20%20%20%20%20%20%2089.38%2C%0A%20%20%20%20%20%20%20%20%20%2089.89%2C%0A%20%20%20%20%20%20%20%20%20%20100.98%2C%0A%20%20%20%20%20%20%20%20%20%20120.60%2C%0A%20%20%20%20%20%20%20%20%20%20130.07%2C%0A%20%20%20%20%20%20%20%20%20%20151.49%2C%0A%20%20%20%20%20%20%20%20%20%20193.32%2C%0A%20%20%20%20%20%20%20%20%20%20240.39%2C%0A%20%20%20%20%20%20%20%20%20%20278.64%2C%0A%20%20%20%20%20%20%20%20%20%20310.77%2C%0A%20%20%20%20%20%20%20%20%20%20411.23%2C%0A%20%20%20%20%20%20%20%20%20%20455.96%2C%0A%20%20%20%20%20%20%20%20%20%20462.49%2C%0A%20%20%20%20%20%20%20%20%20%20471.97%2C%0A%20%20%20%20%20%20%20%20%20%20560.91%2C%0A%20%20%20%20%20%20%20%20%20%201227.41%0A%20%20%20%20%20%20%20%20%5D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%5D%0A%20%20%7D%2C%0A%20%20%22options%22%3A%20%7B%0A%20%20%20%20%22plugins%22%3A%20%7B%0A%20%20%20%20%20%20%22datalabels%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%22anchor%22%3A%20%22end%22%2C%0A%20%20%20%20%20%20%20%20%22align%22%3A%20%22end%22%2C%0A%20%20%20%20%20%20%20%20%22color%22%3A%20%22%23000%22%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22responsive%22%3A%20true%2C%0A%20%20%20%20%22legend%22%3A%20%7B%0A%20%20%20%20%20%20%22position%22%3A%20%22top%22%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22title%22%3A%20%7B%0A%20%20%20%20%20%20%22display%22%3A%20false%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D](./chart.png)
 
 
-
-## Prime number benchmark
+## Single run of prime number benchmark
 
 
 ### [PHP 5.6](./prime-number/php/cmd.php)
@@ -377,11 +376,11 @@ sys 0.00
 ### [Ruby 2](./prime-number/ruby/cmd.rb)
 ```
 docker build -t benchmark . > /dev/null && \
-docker run --rm benchmark /root/.rbenv/versions/2.7.3/bin/ruby --version && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /root/.rbenv/versions/2.7.3/bin/ruby /app/prime-number/ruby/cmd.rb 10000'
+docker run --rm benchmark /root/.rbenv/versions/2.7.4/bin/ruby --version && echo '' && \
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /root/.rbenv/versions/2.7.4/bin/ruby /app/prime-number/ruby/cmd.rb 10000'
 ```
 ```
-ruby 2.7.3p183 (2021-04-05 revision 6847ee089d) [x86_64-linux]
+ruby 2.7.4p183 (2021-04-05 revision 6847ee089d) [x86_64-linux]
 
 The latest prime number: 104729
 real 462.49
@@ -393,11 +392,11 @@ sys 0.09
 ### [Ruby 3](./prime-number/ruby/cmd.rb)
 ```
 docker build -t benchmark . > /dev/null && \
-docker run --rm benchmark /root/.rbenv/versions/3.0.1/bin/ruby --version && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /root/.rbenv/versions/3.0.1/bin/ruby /app/prime-number/ruby/cmd.rb 10000'
+docker run --rm benchmark /root/.rbenv/versions/3.0.2/bin/ruby --version && echo '' && \
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /root/.rbenv/versions/3.0.2/bin/ruby /app/prime-number/ruby/cmd.rb 10000'
 ```
 ```
-ruby 3.0.1p64 (2021-04-05 revision 0fb782ee38) [x86_64-linux]
+ruby 3.0.2p64 (2021-04-05 revision 0fb782ee38) [x86_64-linux]
 
 The latest prime number: 104729
 real 471.97
@@ -822,4 +821,34 @@ The latest prime number: 104729
 real 29.10
 user 29.07
 sys 0.00
+```
+
+
+## Run all prime number benchmarks
+
+```
+php run/php/run.php
+```
+```
+----------------------- PHP 5.6 -----------------------
+...
+----------------------- PHP 7.4 -----------------------
+...
+----------------------- PHP 8.0 -----------------------
+...
+```
+
+
+## Multiply run of prime number benchmark
+
+```
+php run/php/run.php 'Node.js/Javascript' 'C/C++' 'Assembler/NASM (optimized compilation)'
+```
+```
+----------------------- Node.js/Javascript -----------------------
+...
+----------------------- C/C++ -----------------------
+...
+----------------------- Assembler/NASM (optimized compilation) -----------------------
+...
 ```
