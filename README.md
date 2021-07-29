@@ -912,6 +912,17 @@ docker run --rm --volume $(pwd):/app benchmark nim compile --verbosity:0 -o:/app
 docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-number/nim/cmd.nim_bin 10000'
 ```
 ```
+Nim Compiler Version 1.4.2 [Linux: amd64]
+Compiled at 2020-12-02
+Copyright (c) 2006-2020 by Andreas Rumpf
+
+active boot switches: -d:release
+
+The latest prime number: 104729
+
+real 66.46
+user 66.46
+sys 0
 ```
 
 
@@ -923,6 +934,17 @@ docker run --rm --volume $(pwd):/app benchmark nim compile -d:release --verbosit
 docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-number/nim/cmd.nim_bin 10000'
 ```
 ```
+Nim Compiler Version 1.4.2 [Linux: amd64]
+Compiled at 2020-12-02
+Copyright (c) 2006-2020 by Andreas Rumpf
+
+active boot switches: -d:release
+
+The latest prime number: 104729
+
+real 50.68
+user 50.67
+sys 0
 ```
 
 
