@@ -904,6 +904,28 @@ sys 0
 ```
 
 
+### [Nim (compiled)](./prime-number/nim/cmd.nim)
+```
+docker build -t benchmark . > /dev/null && \
+docker run --rm benchmark nim --version && echo '' && \
+docker run --rm --volume $(pwd):/app benchmark nim compile --verbosity:0 -o:/app/prime-number/nim/cmd.nim_bin /app/prime-number/nim/cmd.nim 2> /dev/null && \
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-number/nim/cmd.nim_bin 10000'
+```
+```
+```
+
+
+### [Nim (optimized compilation)](./prime-number/nim/cmd.nim)
+```
+docker build -t benchmark . > /dev/null && \
+docker run --rm benchmark nim --version && echo '' && \
+docker run --rm --volume $(pwd):/app benchmark nim compile -d:release --verbosity:0 -o:/app/prime-number/nim/cmd.nim_bin /app/prime-number/nim/cmd.nim 2> /dev/null && \
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-number/nim/cmd.nim_bin 10000'
+```
+```
+```
+
+
 ## Run all prime number benchmarks
 
 ```
