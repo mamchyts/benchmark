@@ -1,6 +1,6 @@
 # Benchmark
 
-Test PC - **AWS t2.small**:
+Test PC - **AWS t3.small**:
 ```
 $ free -h
               total        used        free      shared  buff/cache   available
@@ -13,26 +13,26 @@ Architecture:                    x86_64
 CPU op-mode(s):                  32-bit, 64-bit
 Byte Order:                      Little Endian
 Address sizes:                   46 bits physical, 48 bits virtual
-CPU(s):                          1
-On-line CPU(s) list:             0
-Thread(s) per core:              1
+CPU(s):                          2
+On-line CPU(s) list:             0,1
+Thread(s) per core:              2
 Core(s) per socket:              1
 Socket(s):                       1
 NUMA node(s):                    1
 Vendor ID:                       GenuineIntel
 CPU family:                      6
-Model:                           63
-Model name:                      Intel(R) Xeon(R) CPU E5-2676 v3 @ 2.40GHz
-Stepping:                        2
-CPU MHz:                         2398.100
-BogoMIPS:                        4800.05
-Hypervisor vendor:               Xen
+Model:                           85
+Model name:                      Intel(R) Xeon(R) Platinum 8259CL CPU @ 2.50GHz
+Stepping:                        7
+CPU MHz:                         2499.996
+BogoMIPS:                        4999.99
+Hypervisor vendor:               KVM
 Virtualization type:             full
 L1d cache:                       32 KiB
 L1i cache:                       32 KiB
-L2 cache:                        256 KiB
-L3 cache:                        30 MiB
-NUMA node0 CPU(s):               0
+L2 cache:                        1 MiB
+L3 cache:                        35.8 MiB
+NUMA node0 CPU(s):               0,1
 Vulnerability Itlb multihit:     KVM: Mitigation: VMX unsupported
 Vulnerability L1tf:              Mitigation; PTE Inversion
 Vulnerability Mds:               Vulnerable: Clear CPU buffers attempted, no microcode; SMT Host state unknown
@@ -42,10 +42,12 @@ Vulnerability Spectre v1:        Mitigation; usercopy/swapgs barriers and __user
 Vulnerability Spectre v2:        Mitigation; Full generic retpoline, STIBP disabled, RSB filling
 Vulnerability Srbds:             Not affected
 Vulnerability Tsx async abort:   Not affected
-Flags:                           fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht
-                                  syscall nx rdtscp lm constant_tsc rep_good nopl xtopology cpuid pni pclmulqdq ssse3 fma cx16 pcid s
-                                 se4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm
-                                  cpuid_fault invpcid_single pti fsgsbase bmi1 avx2 smep bmi2 erms invpcid xsaveopt
+Flags:                           fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss
+                                 ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq
+                                  pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx
+                                  f16c rdrand hypervisor lahf_lm abm 3dnowprefetch invpcid_single pti fsgsbase tsc_adjust bmi1 avx2 sm
+                                 ep bmi2 erms invpcid mpx avx512f avx512dq rdseed adx smap clflushopt clwb avx512cd avx512bw avx512vl
+                                 xsaveopt xsavec xgetbv1 xsaves ida arat pku ospke
 ```
 
 ![https://quickchart.io/sandbox/#%7B%0A%20%20%22type%22%3A%20%22horizontalBar%22%2C%0A%20%20%22data%22%3A%20%7B%0A%20%20%20%20%22labels%22%3A%20%5B%0A%20%20%20%20%20%20%22C%2FC%2B%2B%20(optimized%20compilation)%22%2C%0A%20%20%20%20%20%20%22Rust%20(optimized%20compilation)%22%2C%0A%20%20%20%20%20%20%22Crystal%20(optimized%20compilation)%22%2C%0A%20%20%20%20%20%20%22C%2FC%2B%2B%22%2C%0A%20%20%20%20%20%20%22Ada%22%2C%0A%20%20%20%20%20%20%22Java%22%2C%0A%20%20%20%20%20%20%22C%23%20(mono)%22%2C%0A%20%20%20%20%20%20%22Kotlin%22%2C%0A%20%20%20%20%20%20%22Assembler%2FNASM%20(optimized%20compilation)%22%2C%0A%20%20%20%20%20%20%22Assembler%2FNASM%22%2C%0A%20%20%20%20%20%20%22Lua%20(LuaJIT)%22%2C%0A%20%20%20%20%20%20%22Dart%20(compiled)%22%2C%0A%20%20%20%20%20%20%22Dart%22%2C%0A%20%20%20%20%20%20%22Node.js%2FJavascript%22%2C%0A%20%20%20%20%20%20%22Pascal%20(optimized%20compilation)%22%2C%0A%20%20%20%20%20%20%22Crystal%20(compiled)%22%2C%0A%20%20%20%20%20%20%22Haskell%20(optimized%20compilation)%22%2C%0A%20%20%20%20%20%20%22Go%22%2C%0A%20%20%20%20%20%20%22PHP%20(KPHP)%22%2C%0A%20%20%20%20%20%20%22Crystal%22%2C%0A%20%20%20%20%20%20%22Pascal%22%2C%0A%20%20%20%20%20%20%22Python%203%20(PyPy)%22%2C%0A%20%20%20%20%20%20%22Python%202%20(PyPy)%22%2C%0A%20%20%20%20%20%20%22PHP%208.0%20(JIT)%22%2C%0A%20%20%20%20%20%20%22Elixir%22%2C%0A%20%20%20%20%20%20%22PHP%208.0%22%2C%0A%20%20%20%20%20%20%22PHP%207.4%22%2C%0A%20%20%20%20%20%20%22Lua%22%2C%0A%20%20%20%20%20%20%22Rust%22%2C%0A%20%20%20%20%20%20%22Haskell%22%2C%0A%20%20%20%20%20%20%22PHP%205.6%22%2C%0A%20%20%20%20%20%20%22Perl%22%2C%0A%20%20%20%20%20%20%22Python%202%22%2C%0A%20%20%20%20%20%20%22Ruby%202%22%2C%0A%20%20%20%20%20%20%22Ruby%203%22%2C%0A%20%20%20%20%20%20%22Python%203%22%2C%0A%20%20%20%20%20%20%22R%22%0A%20%20%20%20%5D%2C%0A%20%20%20%20%22datasets%22%3A%20%5B%0A%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%22label%22%3A%20%22Execution%20time%20in%20seconds%20(lower%20is%20better)%22%2C%0A%20%20%20%20%20%20%20%20%22backgroundColor%22%3A%20%22rgba(54%2C%20162%2C%20235%2C%200.5)%22%2C%0A%20%20%20%20%20%20%20%20%22borderColor%22%3A%20%22rgb(54%2C%20162%2C%20235)%22%2C%0A%20%20%20%20%20%20%20%20%22borderWidth%22%3A%201%2C%0A%20%20%20%20%20%20%20%20%22data%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%20%2018.71%2C%0A%20%20%20%20%20%20%20%20%20%2018.75%2C%0A%20%20%20%20%20%20%20%20%20%2020.88%2C%0A%20%20%20%20%20%20%20%20%20%2022.48%2C%0A%20%20%20%20%20%20%20%20%20%2022.93%2C%0A%20%20%20%20%20%20%20%20%20%2023.01%2C%0A%20%20%20%20%20%20%20%20%20%2025.01%2C%0A%20%20%20%20%20%20%20%20%20%2025.38%2C%0A%20%20%20%20%20%20%20%20%20%2025.91%2C%0A%20%20%20%20%20%20%20%20%20%2027.15%2C%0A%20%20%20%20%20%20%20%20%20%2029.14%2C%0A%20%20%20%20%20%20%20%20%20%2030.30%2C%0A%20%20%20%20%20%20%20%20%20%2031.51%2C%0A%20%20%20%20%20%20%20%20%20%2031.63%2C%0A%20%20%20%20%20%20%20%20%20%2057.79%2C%0A%20%20%20%20%20%20%20%20%20%2060.98%2C%0A%20%20%20%20%20%20%20%20%20%2062.72%2C%0A%20%20%20%20%20%20%20%20%20%2063.00%2C%0A%20%20%20%20%20%20%20%20%20%2064.88%2C%0A%20%20%20%20%20%20%20%20%20%2065.42%2C%0A%20%20%20%20%20%20%20%20%20%2067.21%2C%0A%20%20%20%20%20%20%20%20%20%2089.38%2C%0A%20%20%20%20%20%20%20%20%20%2089.89%2C%0A%20%20%20%20%20%20%20%20%20%20100.98%2C%0A%20%20%20%20%20%20%20%20%20%20120.60%2C%0A%20%20%20%20%20%20%20%20%20%20130.07%2C%0A%20%20%20%20%20%20%20%20%20%20151.49%2C%0A%20%20%20%20%20%20%20%20%20%20193.32%2C%0A%20%20%20%20%20%20%20%20%20%20240.39%2C%0A%20%20%20%20%20%20%20%20%20%20278.64%2C%0A%20%20%20%20%20%20%20%20%20%20310.77%2C%0A%20%20%20%20%20%20%20%20%20%20411.23%2C%0A%20%20%20%20%20%20%20%20%20%20455.96%2C%0A%20%20%20%20%20%20%20%20%20%20462.49%2C%0A%20%20%20%20%20%20%20%20%20%20471.97%2C%0A%20%20%20%20%20%20%20%20%20%20560.91%2C%0A%20%20%20%20%20%20%20%20%20%201227.41%0A%20%20%20%20%20%20%20%20%5D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%5D%0A%20%20%7D%2C%0A%20%20%22options%22%3A%20%7B%0A%20%20%20%20%22plugins%22%3A%20%7B%0A%20%20%20%20%20%20%22datalabels%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%22anchor%22%3A%20%22end%22%2C%0A%20%20%20%20%20%20%20%20%22align%22%3A%20%22end%22%2C%0A%20%20%20%20%20%20%20%20%22color%22%3A%20%22%23000%22%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22responsive%22%3A%20true%2C%0A%20%20%20%20%22legend%22%3A%20%7B%0A%20%20%20%20%20%20%22position%22%3A%20%22top%22%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22title%22%3A%20%7B%0A%20%20%20%20%20%20%22display%22%3A%20false%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D](./chart.png)
@@ -67,9 +69,10 @@ Zend Engine v2.6.0, Copyright (c) 1998-2016 Zend Technologies
     with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2016, by Zend Technologies
 
 The latest prime number: 104729
-real 310.77
-user 307.57
-sys 0.06
+
+real 233.85
+user 233.83
+sys 0
 ```
 
 
@@ -86,9 +89,10 @@ Zend Engine v3.4.0, Copyright (c) Zend Technologies
     with Zend OPcache v7.4.21, Copyright (c), by Zend Technologies
 
 The latest prime number: 104729
-real 151.49
-user 149.93
-sys 0.02
+
+real 116.27
+user 116.25
+sys 0
 ```
 
 
@@ -105,9 +109,10 @@ Zend Engine v4.0.8, Copyright (c) Zend Technologies
     with Zend OPcache v8.0.8, Copyright (c), by Zend Technologies
 
 The latest prime number: 104729
-real 130.07
-user 128.89
-sys 0.01
+
+real 110.61
+user 110.6
+sys 0
 ```
 
 
@@ -124,9 +129,10 @@ Zend Engine v4.0.8, Copyright (c) Zend Technologies
     with Zend OPcache v8.0.8, Copyright (c), by Zend Technologies
 
 The latest prime number: 104729
-real 100.98
-user 100.00
-sys 0.01
+
+real 82.72
+user 82.7
+sys 0
 ```
 
 
@@ -138,12 +144,13 @@ docker run --rm --volume $(pwd):/app benchmark kphp --mode=cli /app/prime-number
 docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-number/php/cmd.php_bin 10000'
 ```
 ```
-kphp2cpp compiled at May 13 2021 16:36:36 UTC by gcc 9.3.0 64-bit after commit 1ab01d83379fb91db57f7e734c363a00ba4033f0 build 2412
+kphp2cpp compiled at Jul  6 2021 12:43:16 UTC by gcc 9.3.0 64-bit after commit 527923b4e21ea67dc4cbf27ce85a5a2daf53d81f build 2443
 
 The latest prime number: 104729
-real 64.88
-user 64.17
-sys 0.01
+
+real 55.8
+user 55.67
+sys 0
 ```
 
 
@@ -157,9 +164,20 @@ docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p nodejs /app/prim
 v12.21.0
 
 The latest prime number: 104729
-real 31.63
-user 31.14
+
+real 21.2
+user 21.15
 sys 0.02
+```
+
+
+### [Node.js/TypeScript](./prime-number/typescript/cmd.ts)
+```
+docker build -t benchmark . > /dev/null && \
+docker run --rm benchmark ts-node --version && echo '' && \
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p ts-node /app/prime-number/typescript/cmd.ts 10000'
+```
+```
 ```
 
 
@@ -173,9 +191,10 @@ docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p python2 /app/pri
 Python 2.7.18
 
 The latest prime number:  104729
-real 455.96
-user 451.66
-sys 0.09
+
+real 361.97
+user 361.93
+sys 0
 ```
 
 
@@ -190,9 +209,10 @@ Python 2.7.18 (7.3.3+dfsg-1, Nov 22 2020, 05:23:32)
 [PyPy 7.3.3 with GCC 10.2.0]
 
 The latest prime number:  104729
-real 89.89
-user 88.77
-sys 0.05
+
+real 65.37
+user 65.31
+sys 0.02
 ```
 
 
@@ -206,9 +226,10 @@ docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p python3 /app/pri
 Python 3.9.5
 
 The latest prime number:  104729
-real 560.91
-user 555.80
-sys 0.06
+
+real 446.52
+user 446.48
+sys 0
 ```
 
 
@@ -223,8 +244,9 @@ Python 3.6.12 (7.3.3+dfsg-3, Feb 26 2021, 04:58:43)
 [PyPy 7.3.3 with GCC 10.2.1 20210220]
 
 The latest prime number:  104729
-real 89.38
-user 88.54
+
+real 65.76
+user 65.71
 sys 0.02
 ```
 
@@ -244,9 +266,10 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 
 The latest prime number: 104729
-real 22.48
-user 22.31
-sys 0.00
+
+real 18.17
+user 18.16
+sys 0
 ```
 
 
@@ -264,11 +287,11 @@ This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 
-
 The latest prime number: 104729
-real 18.90
-user 18.73
-sys 0.00
+
+real 14.04
+user 14.04
+sys 0
 ```
 
 
@@ -284,9 +307,10 @@ docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-numbe
 NASM version 2.15.05
 
 The latest prime number: 000104729
-real 26.10
-user 25.42
-sys 0.00
+
+real 16.27
+user 16.26
+sys 0
 ```
 
 
@@ -302,9 +326,10 @@ docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-numbe
 NASM version 2.15.05
 
 The latest prime number: 000104729
-real 24.87
-user 24.84
-sys 0.00
+
+real 15.68
+user 15.67
+sys 0
 ```
 
 
@@ -323,12 +348,13 @@ Copyright (c) 1993-2020 by Florian Klaempfl and others
 Target OS: Linux for x86-64
 Compiling /app/prime-number/pascal/cmd.pas
 Linking /app/prime-number/pascal/cmd.pas_bin
-30 lines compiled, 0.2 sec
+30 lines compiled, 0.1 sec
 
 The latest prime number: 104729
-real 67.21
-user 66.66
-sys 0.01
+
+real 53.88
+user 53.87
+sys 0
 ```
 
 
@@ -350,9 +376,10 @@ Linking /app/prime-number/pascal/cmd.pas_opt_bin
 30 lines compiled, 0.1 sec
 
 The latest prime number: 104729
-real 57.79
-user 57.30
-sys 0.00
+
+real 49.34
+user 49.34
+sys 0
 ```
 
 
@@ -367,9 +394,10 @@ docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-numbe
 go version go1.16.2 linux/amd64
 
 The latest prime number: 104729
-real 63.00
-user 62.45
-sys 0.00
+
+real 50.01
+user 50.04
+sys 0.02
 ```
 
 
@@ -380,12 +408,13 @@ docker run --rm benchmark /root/.rbenv/versions/2.7.4/bin/ruby --version && echo
 docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /root/.rbenv/versions/2.7.4/bin/ruby /app/prime-number/ruby/cmd.rb 10000'
 ```
 ```
-ruby 2.7.4p183 (2021-04-05 revision 6847ee089d) [x86_64-linux]
+ruby 2.7.4p191 (2021-07-07 revision a21a3b7d23) [x86_64-linux]
 
 The latest prime number: 104729
-real 462.49
-user 458.28
-sys 0.09
+
+real 419.41
+user 419.35
+sys 0.01
 ```
 
 
@@ -396,12 +425,13 @@ docker run --rm benchmark /root/.rbenv/versions/3.0.2/bin/ruby --version && echo
 docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /root/.rbenv/versions/3.0.2/bin/ruby /app/prime-number/ruby/cmd.rb 10000'
 ```
 ```
-ruby 3.0.2p64 (2021-04-05 revision 0fb782ee38) [x86_64-linux]
+ruby 3.0.2p107 (2021-07-07 revision 0db68f0233) [x86_64-linux]
 
 The latest prime number: 104729
-real 471.97
-user 467.68
-sys 0.08
+
+real 369.09
+user 369.02
+sys 0.02
 ```
 
 
@@ -418,8 +448,9 @@ OpenJDK Runtime Environment (build 16.0.1+9-Ubuntu-1)
 OpenJDK 64-Bit Server VM (build 16.0.1+9-Ubuntu-1, mixed mode, sharing)
 
 The latest prime number: 104729
-real 23.01
-user 22.83
+
+real 17.56
+user 17.55
 sys 0.01
 ```
 
@@ -435,9 +466,10 @@ docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-numbe
 rustc 1.50.0
 
 The latest prime number: 104729
-real 240.39
-user 238.20
-sys 0.01
+
+real 228.52
+user 228.5
+sys 0
 ```
 
 
@@ -452,9 +484,10 @@ docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-numbe
 rustc 1.50.0
 
 The latest prime number: 104729
-real 18.75
-user 18.58
-sys 0.00
+
+real 14
+user 13.99
+sys 0
 ```
 
 
@@ -468,9 +501,10 @@ docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p Rscript --vanill
 R scripting front-end version 4.0.4 (2021-02-15)
 
 [1] "The latest prime number:  104729"
-real 1227.41
-user 1215.75
-sys 0.24
+
+real 1021.93
+user 1021.74
+sys 0.05
 ```
 
 
@@ -484,9 +518,10 @@ docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p dart run /app/pr
 Dart SDK version: 2.13.4 (stable) (Unknown timestamp) on "linux_x64"
 
 The latest prime number: 104729
-real 31.51
-user 29.89
-sys 0.10
+
+real 26.72
+user 26.61
+sys 0.11
 ```
 
 
@@ -501,9 +536,10 @@ docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-numbe
 Dart SDK version: 2.13.4 (stable) (Unknown timestamp) on "linux_x64"
 
 The latest prime number: 104729
-real 30.30
-user 29.02
-sys 0.00
+
+real 24.92
+user 24.58
+sys 0
 ```
 
 
@@ -528,9 +564,10 @@ Internet, point your browser at http://www.perl.org/, the Perl Home Page.
 
 
 The latest prime number: 104729
-real 411.23
-user 407.41
-sys 0.04
+
+real 312.44
+user 312.41
+sys 0
 ```
 
 
@@ -544,9 +581,10 @@ docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p lua /app/prime-n
 Lua 5.3.3  Copyright (C) 1994-2016 Lua.org, PUC-Rio
 
 The latest prime number:        104729
-real 193.32
-user 191.64
-sys 0.02
+
+real 151.43
+user 151.41
+sys 0
 ```
 
 
@@ -560,9 +598,10 @@ docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p luajit -j on /ap
 LuaJIT 2.1.0-beta3 -- Copyright (C) 2005-2017 Mike Pall. http://luajit.org/
 
 The latest prime number:        104729
-real 29.14
-user 28.87
-sys 0.00
+
+real 9.59
+user 9.59
+sys 0
 ```
 
 
@@ -576,9 +615,10 @@ docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p luajit -j off /a
 LuaJIT 2.1.0-beta3 -- Copyright (C) 2005-2017 Mike Pall. http://luajit.org/
 
 The latest prime number:        104729
-real 72.32
-user 72.25
-sys 0.00
+
+real 52.22
+user 52.21
+sys 0
 ```
 
 
@@ -597,9 +637,10 @@ There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR P
 
 
 The latest prime number:  104729
-real 22.93
-user 22.72
-sys 0.00
+
+real 22.28
+user 22.28
+sys 0
 ```
 
 
@@ -614,9 +655,10 @@ docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-numbe
 The Glorious Glasgow Haskell Compilation System, version 8.8.4
 
 The latest prime number: 104729
-real 278.64
-user 275.07
-sys 1.00
+
+real 231
+user 230.34
+sys 0.63
 ```
 
 
@@ -631,9 +673,10 @@ docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-numbe
 The Glorious Glasgow Haskell Compilation System, version 8.8.4
 
 The latest prime number: 104729
-real 62.72
-user 62.17
-sys 0.00
+
+real 48.02
+user 48.02
+sys 0
 ```
 
 
@@ -648,8 +691,9 @@ docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p java -jar /app/p
 info: kotlinc-jvm 1.5.20 (JRE 16.0.1+9-Ubuntu-1)
 
 The latest prime number: 104729
-real 25.38
-user 25.11
+
+real 19.26
+user 19.26
 sys 0.01
 ```
 
@@ -661,15 +705,16 @@ docker run --rm benchmark crystal --version && echo '' && \
 docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p crystal /app/prime-number/crystal/cmd.cr 10000'
 ```
 ```
-Crystal 1.0.0 [dd40a2442] (2021-03-22)
+Crystal 1.1.1 [6d9a1d583] (2021-07-26)
 
-LLVM: 10.0.0
+LLVM: 10.0.1
 Default target: x86_64-unknown-linux-gnu
 
 The latest prime number: 104729
-real 65.42
-user 64.14
-sys 0.33
+
+real 58.55
+user 59.42
+sys 0.44
 ```
 
 
@@ -681,15 +726,16 @@ docker run --rm --volume $(pwd):/app benchmark crystal build /app/prime-number/c
 docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-number/crystal/cmd.cr_bin 10000'
 ```
 ```
-Crystal 1.0.0 [dd40a2442] (2021-03-22)
+Crystal 1.1.1 [6d9a1d583] (2021-07-26)
 
-LLVM: 10.0.0
+LLVM: 10.0.1
 Default target: x86_64-unknown-linux-gnu
 
 The latest prime number: 104729
-real 60.98
-user 60.40
-sys 0.00
+
+real 55.61
+user 55.61
+sys 0
 ```
 
 
@@ -701,15 +747,16 @@ docker run --rm --volume $(pwd):/app benchmark crystal build --release /app/prim
 docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-number/crystal/cmd.cr_opt_bin 10000'
 ```
 ```
-Crystal 1.0.0 [dd40a2442] (2021-03-22)
+Crystal 1.1.1 [6d9a1d583] (2021-07-26)
 
-LLVM: 10.0.0
+LLVM: 10.0.1
 Default target: x86_64-unknown-linux-gnu
 
 The latest prime number: 104729
-real 20.88
-user 20.67
-sys 0.00
+
+real 15.72
+user 15.71
+sys 0
 ```
 
 
@@ -724,9 +771,10 @@ docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p mono /app/prime-
 Mono C# compiler version 6.12.0.122
 
 The latest prime number: 104729
-real 25.01
-user 24.75
-sys 0.02
+
+real 22.71
+user 22.7
+sys 0
 ```
 
 
@@ -738,12 +786,35 @@ docker run --rm --volume $(pwd):/app benchmark dotnet build --runtime linux-x64 
 docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p dotnet run -p /app/prime-number/c#/ 10000'
 ```
 ```
-5.0.301
+5.0.302
 
+
+Welcome to .NET 5.0!
+---------------------
+SDK Version: 5.0.302
+
+Telemetry
+---------
+The .NET tools collect usage data in order to help us improve your experience. It is collected by Microsoft and shared with the community. You can opt-out of telemetry by setting the DOTNET_CLI_TELEMETRY_OPTOUT environment variable to '1' or 'true' using your favorite shell.
+
+Read more about .NET CLI Tools telemetry: https://aka.ms/dotnet-cli-telemetry
+
+----------------
+Installed an ASP.NET Core HTTPS development certificate.
+To trust the certificate run 'dotnet dev-certs https --trust' (Windows and macOS only).
+Learn about HTTPS: https://aka.ms/dotnet-https
+----------------
+Write your first app: https://aka.ms/dotnet-hello-world
+Find out what's new: https://aka.ms/dotnet-whats-new
+Explore documentation: https://aka.ms/dotnet-docs
+Report issues and find source on GitHub: https://github.com/dotnet/core
+Use 'dotnet --help' to see available commands or visit: https://aka.ms/dotnet-cli
+--------------------------------------------------------------------------------------
 The latest prime number: 104729
-real 29.76
-user 29.46
-sys 0.24
+
+real 24.01
+user 24.29
+sys 0.27
 ```
 
 
@@ -758,9 +829,10 @@ docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p scala -classpath
 Scala code runner version 2.11.12 -- Copyright 2002-2017, LAMP/EPFL
 
 The latest prime number: 104729
-real 23.94
-user 23.81
-sys 0.08
+
+real 18.12
+user 18.49
+sys 0.06
 ```
 
 
@@ -771,23 +843,24 @@ docker run --rm benchmark elixir --version && echo '' && \
 docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p elixir /app/prime-number/elixir/cmd.exs 10000'
 ```
 ```
-Erlang/OTP 23 [erts-11.1.8] [source] [64-bit] [smp:1:1] [ds:1:1:10] [async-threads:1]
+Erlang/OTP 23 [erts-11.1.8] [source] [64-bit] [smp:2:2] [ds:2:2:10] [async-threads:1]
 
 Elixir 1.10.3 (compiled with Erlang/OTP 22)
 
 The latest prime number: 104729
-real 120.60
-user 119.33
-sys 1.12
+
+real 97.44
+user 97.42
+sys 0.11
 ```
 
 
-### [Swift (compiled)](./prime-number/rust/cmd.rs)
+### [Swift (compiled)](./prime-number/swift/Sources/cmd/main.swift)
 ```
 docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark /root/swift-5.4.2-RELEASE-ubuntu20.04/usr/bin/swift --version && echo '' && \
 docker run --rm --volume $(pwd):/app benchmark /root/swift-5.4.2-RELEASE-ubuntu20.04/usr/bin/swift build --package-path /app/prime-number/swift/ && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-number/swift/.build/debug/cmd 1000'
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-number/swift/.build/debug/cmd 10000'
 ```
 ```
 Swift version 5.4.2 (swift-5.4.2-RELEASE)
@@ -797,13 +870,13 @@ Target: x86_64-unknown-linux-gnu
 [0/0] Build complete!
 The latest prime number: 104729
 
-real 1143.17
-user 1139.47
-sys 0.05
+real 933.37
+user 933.29
+sys 0.00
 ```
 
 
-### [Swift (optimized compilation)](./prime-number/rust/cmd.rs)
+### [Swift (optimized compilation)](./prime-number/swift/Sources/cmd/main.swift)
 ```
 docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark /root/swift-5.4.2-RELEASE-ubuntu20.04/usr/bin/swift --version && echo '' && \
@@ -818,9 +891,9 @@ Target: x86_64-unknown-linux-gnu
 [0/0] Build complete!
 The latest prime number: 104729
 
-real 29.10
-user 29.07
-sys 0.00
+real 16.24
+user 16.24
+sys 0
 ```
 
 
