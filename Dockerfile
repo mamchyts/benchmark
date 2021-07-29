@@ -5,7 +5,7 @@ RUN apt -y install software-properties-common \
     && add-apt-repository -y ppa:ondrej/php \
     && apt install -y php5.6-cli php7.4-cli php8.0-cli
 RUN apt install -y nodejs npm \
-    && npm install -g typescript
+    && npm install -g ts-node
 RUN apt install -y python2 python3 pypy pypy3
 RUN apt install -y g++
 RUN apt install -y nasm
