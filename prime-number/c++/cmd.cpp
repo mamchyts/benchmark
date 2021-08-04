@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main( int argc, char *argv[] )
+int main(int argc, char *argv[])
 {
     int32_t primeNumberCount = 100;
     if (argc == 2) {
