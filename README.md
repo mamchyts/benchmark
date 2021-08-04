@@ -930,8 +930,8 @@ sys 0
 ```
 docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark nim --version && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark nim compile -d:release --verbosity:0 -o:/app/prime-number/nim/cmd.nim_bin /app/prime-number/nim/cmd.nim 2> /dev/null && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-number/nim/cmd.nim_bin 10000'
+docker run --rm --volume $(pwd):/app benchmark nim compile -d:release --verbosity:0 -o:/app/prime-number/nim/cmd.nim_opt_bin /app/prime-number/nim/cmd.nim 2> /dev/null && \
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-number/nim/cmd.nim_opt_bin 10000'
 ```
 ```
 Nim Compiler Version 1.4.2 [Linux: amd64]
@@ -945,6 +945,28 @@ The latest prime number: 104729
 real 50.68
 user 50.67
 sys 0
+```
+
+
+### [D (compiled)](./prime-number/d/cmd.d)
+```
+docker build -t benchmark . > /dev/null && \
+docker run --rm benchmark dmd --version && echo '' && \
+docker run --rm --volume $(pwd):/app benchmark dmd -of=/app/prime-number/d/cmd.d_bin /app/prime-number/d/cmd.d && \
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-number/d/cmd.d_bin 10000'
+```
+```
+```
+
+
+### [D (optimized compilation)](./prime-number/d/cmd.d)
+```
+docker build -t benchmark . > /dev/null && \
+docker run --rm benchmark dmd --version && echo '' && \
+docker run --rm --volume $(pwd):/app benchmark dmd -O -release -of=/app/prime-number/d/cmd.d_opt_bin /app/prime-number/d/cmd.d && \
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-number/d/cmd.d_opt_bin 10000'
+```
+```
 ```
 
 
