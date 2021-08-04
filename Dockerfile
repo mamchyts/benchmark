@@ -55,3 +55,8 @@ RUN apt install -y binutils git gnupg2 libc6-dev libcurl4 libedit2 libgcc-9-dev 
     && wget https://swift.org/builds/swift-5.4.2-release/ubuntu2004/swift-5.4.2-RELEASE/swift-5.4.2-RELEASE-ubuntu20.04.tar.gz \
     && tar -xvzf swift-5.4.2-RELEASE-ubuntu20.04.tar.gz -C /root
 RUN apt install -y nim
+RUN wget https://netcologne.dl.sourceforge.net/project/d-apt/files/d-apt.list -O /etc/apt/sources.list.d/d-apt.list \
+    && apt update --allow-insecure-repositories \
+    && apt -y --allow-unauthenticated install --reinstall d-apt-keyring \
+    && apt update \
+    && apt install -y dmd-compiler dub
