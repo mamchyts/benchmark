@@ -952,7 +952,7 @@ sys 0
 ```
 docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark dmd --version && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark dmd -of=/app/prime-number/d/cmd.d_bin /app/prime-number/d/cmd.d && \
+docker run --rm --volume $(pwd):/app benchmark dmd -debug -of=/app/prime-number/d/cmd.d_bin /app/prime-number/d/cmd.d && \
 docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-number/d/cmd.d_bin 10000'
 ```
 ```
@@ -963,8 +963,18 @@ docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-numbe
 ```
 docker build -t benchmark . > /dev/null && \
 docker run --rm benchmark dmd --version && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark dmd -O -release -of=/app/prime-number/d/cmd.d_opt_bin /app/prime-number/d/cmd.d && \
+docker run --rm --volume $(pwd):/app benchmark dmd -O -release -inline -boundscheck=off -of=/app/prime-number/d/cmd.d_opt_bin /app/prime-number/d/cmd.d && \
 docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-number/d/cmd.d_opt_bin 10000'
+```
+```
+```
+
+
+### [Bash](./prime-number/bash/cmd.sh)
+```
+docker build -t benchmark . > /dev/null && \
+docker run --rm benchmark bash --version && echo '' && \
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p bash /app/prime-number/bash/cmd.sh 10000'
 ```
 ```
 ```
