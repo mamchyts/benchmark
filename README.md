@@ -956,6 +956,14 @@ docker run --rm --volume $(pwd):/app benchmark dmd -debug -of=/app/prime-number/
 docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-number/d/cmd.d_bin 10000'
 ```
 ```
+DMD64 D Compiler v2.097.1
+Copyright (C) 1999-2021 by The D Language Foundation, All Rights Reserved written by Walter Bright
+
+The latest prime number: 104729
+
+real 17.45
+user 17.44
+sys 0
 ```
 
 
@@ -967,6 +975,14 @@ docker run --rm --volume $(pwd):/app benchmark dmd -O -release -inline -boundsch
 docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-number/d/cmd.d_opt_bin 10000'
 ```
 ```
+DMD64 D Compiler v2.097.1
+Copyright (C) 1999-2021 by The D Language Foundation, All Rights Reserved written by Walter Bright
+
+The latest prime number: 104729
+
+real 17.2
+user 17.2
+sys 0
 ```
 
 
@@ -977,6 +993,18 @@ docker run --rm benchmark bash --version && echo '' && \
 docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p bash /app/prime-number/bash/cmd.sh 10000'
 ```
 ```
+GNU bash, version 5.1.4(1)-release (x86_64-pc-linux-gnu)
+Copyright (C) 2020 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+
+This is free software; you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+The latest prime number: 104729
+
+real 14748.86
+user 14242.45
+sys 902.84
 ```
 
 
