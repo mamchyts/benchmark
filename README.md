@@ -1008,10 +1008,20 @@ sys 902.84
 ```
 
 
+### [Lisp](./prime-number/lisp/cmd.lisp)
+```
+docker build -t benchmark . > /dev/null && \
+docker run --rm benchmark clisp --version && echo '' && \
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p clisp /app/prime-number/lisp/cmd.lisp 10000'
+```
+```
+```
+
+
 ## Run all prime number benchmarks
 
 ```
-php run/php/run.php
+php run/run.php
 ```
 ```
 ----------------------- PHP 5.6 -----------------------
@@ -1026,7 +1036,7 @@ php run/php/run.php
 ## Multiply run of prime number benchmark
 
 ```
-php run/php/run.php 'Node.js/Javascript' 'C/C++' 'Assembler/NASM (optimized compilation)'
+php run/run.php 'Node.js/Javascript' 'C/C++' 'Assembler/NASM (optimized compilation)'
 ```
 ```
 ----------------------- Node.js/Javascript -----------------------

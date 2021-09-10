@@ -34,7 +34,7 @@ function getTests(array $testTitles = [])
 
 function getAllTests(): array
 {
-    $readmeFileContent = file_get_contents(__DIR__ . '/../../README.md');
+    $readmeFileContent = getReadmeFileContent();
     preg_match_all('/### \[(?<title>.*)\]\((?<file>.*)\)/iU', $readmeFileContent, $matches, PREG_SET_ORDER);
 
     $tests = [];
@@ -51,7 +51,7 @@ function getAllTests(): array
 
 function getCommands(array $tests): array
 {
-    $readmeFileContent = file_get_contents(__DIR__ . '/../../README.md');
+    $readmeFileContent = getReadmeFileContent();
 
     $commands = [];
     foreach ($tests as $test) {
@@ -126,4 +126,10 @@ function run(string $cmd): array
     }
 
     throw new Exception('Can\'t run command: ' . $cmd);
+}
+
+
+function getReadmeFileContent(): string
+{
+    return file_get_contents(__DIR__ . '/../README.md');
 }

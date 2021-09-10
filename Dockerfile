@@ -60,3 +60,4 @@ RUN wget https://netcologne.dl.sourceforge.net/project/d-apt/files/d-apt.list -O
     && apt -y --allow-unauthenticated install --reinstall d-apt-keyring \
     && apt update \
     && apt install -y dmd-compiler dub
+RUN apt install -y clisp
