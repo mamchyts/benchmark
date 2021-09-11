@@ -61,3 +61,4 @@ RUN wget https://netcologne.dl.sourceforge.net/project/d-apt/files/d-apt.list -O
     && apt update \
     && apt install -y dmd-compiler dub
 RUN apt install -y clisp
+RUN apt install -y haxe

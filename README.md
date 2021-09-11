@@ -1041,6 +1041,18 @@ sys 3.09
 ```
 
 
+### [Haxe](./prime-number/haxe/Cmd.hx)
+```
+docker build -t benchmark . > /dev/null && \
+docker run --rm benchmark haxe --version && echo '' && \
+docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p haxe --cwd /app/prime-number/haxe --run Cmd 10000'
+```
+```
+4.1.5
+
+```
+
+
 ## Run all prime number benchmarks
 
 ```
