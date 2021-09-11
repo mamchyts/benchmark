@@ -1015,6 +1015,29 @@ docker run --rm benchmark clisp --version && echo '' && \
 docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p clisp /app/prime-number/lisp/cmd.lisp 10000'
 ```
 ```
+GNU CLISP 2.49.92 (2018-02-18) (built on lgw01-amd64-022.buildd [127.0.1.1])
+Software: GNU C 9.2.1 20190905
+gcc -g -O2 -fdebug-prefix-map=/build/clisp-jJhQLN/clisp-2.49.20180218+really2.49.92=. -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -no-integrated-cpp
+-W -Wswitch -Wcomment -Wpointer-arith -Wreturn-type -Wmissing-declarations -Wimplicit -Wno-sign-compare -Wno-format-nonliteral -Wno-shift-negative-value -O -fwrapv
+-fno-strict-aliasing -DNO_ASM -DENABLE_UNICODE -DDYNAMIC_FFI -DDYNAMIC_MODULES -Wl,-Bsymbolic-functions -Wl,-z,relro  libgnu.a  -lreadline -lncurses -ldl -lffcall  -lsigsegv -lunistring
+SAFETY=0 HEAPCODES ONE_FREE_BIT_HEAPCODES WIDE_HARD GENERATIONAL_GC SPVW_BLOCKS SPVW_MIXED TRIVIALMAP_MEMORY
+libsigsegv 2.12
+libreadline 8.0
+libffcall 2.1
+Features:
+(READLINE REGEXP WILDCARD SYSCALLS I18N LOOP COMPILER CLOS MOP CLISP ANSI-CL
+ COMMON-LISP LISP=CL INTERPRETER LOGICAL-PATHNAMES SOCKETS GENERIC-STREAMS
+ SCREEN FFI GETTEXT UNICODE BASE-CHAR=CHARACTER WORD-SIZE=64 PC386 UNIX)
+C Modules: (clisp i18n syscalls regexp readline)
+Installation directory: /usr/lib/clisp-2.49.92/
+User language: ENGLISH
+Machine: X86_64 (X86_64) a90922821a77 [172.17.0.2]
+
+The latest prime number: 104729
+
+real 8143.46
+user 8139.79
+sys 3.09
 ```
 
 
