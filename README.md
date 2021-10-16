@@ -61,9 +61,8 @@ Flags:                           fpu vme de pse tsc msr pae mce cx8 apic sep mtr
 
 ### [PHP 5.6](./prime-number/php/cmd.php)
 ```
-docker build -t benchmark . > /dev/null && \
-docker run --rm benchmark php5.6 -v && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p php5.6 /app/prime-number/php/cmd.php 10000'
+docker run --rm mamchyts/benchmark:latest php5.6 -v && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p php5.6 /app/prime-number/php/cmd.php 10000'
 ```
 ```
 PHP 5.6.40-53+ubuntu21.04.1+deb.sury.org+1 (cli)
@@ -81,9 +80,8 @@ sys 0.01
 
 ### [PHP 7.4](./prime-number/php/cmd.php)
 ```
-docker build -t benchmark . > /dev/null && \
-docker run --rm benchmark php7.4 -v && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p php7.4 /app/prime-number/php/cmd.php 10000'
+docker run --rm mamchyts/benchmark:latest php7.4 -v && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p php7.4 /app/prime-number/php/cmd.php 10000'
 ```
 ```
 PHP 7.4.23 (cli) (built: Aug 26 2021 15:51:55) ( NTS )
@@ -101,9 +99,8 @@ sys 0
 
 ### [PHP 8.0](./prime-number/php/cmd.php)
 ```
-docker build -t benchmark . > /dev/null && \
-docker run --rm benchmark php8.0 -v && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p php8.0 /app/prime-number/php/cmd.php 10000'
+docker run --rm mamchyts/benchmark:latest php8.0 -v && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p php8.0 /app/prime-number/php/cmd.php 10000'
 ```
 ```
 PHP 8.0.10 (cli) (built: Aug 26 2021 15:50:25) ( NTS )
@@ -121,9 +118,8 @@ sys 0
 
 ### [PHP 8.0 (JIT)](./prime-number/php/cmd.php)
 ```
-docker build -t benchmark . > /dev/null && \
-docker run --rm benchmark php8.0 -v && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p php8.0 -dopcache.enable_cli=1 -dopcache.jit_buffer_size=10M /app/prime-number/php/cmd.php 10000'
+docker run --rm mamchyts/benchmark:latest php8.0 -v && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p php8.0 -dopcache.enable_cli=1 -dopcache.jit_buffer_size=10M /app/prime-number/php/cmd.php 10000'
 ```
 ```
 PHP 8.0.10 (cli) (built: Aug 26 2021 15:50:25) ( NTS )
@@ -141,10 +137,9 @@ sys 0
 
 ### [PHP (KPHP)](./prime-number/php/cmd.php)
 ```
-docker build -t benchmark . > /dev/null && \
-docker run --rm benchmark kphp --version && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark kphp --mode=cli /app/prime-number/php/cmd.php -o /app/prime-number/php/cmd.php_bin 2> /dev/null && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-number/php/cmd.php_bin 10000'
+docker run --rm mamchyts/benchmark:latest kphp --version && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest kphp --mode=cli /app/prime-number/php/cmd.php -o /app/prime-number/php/cmd.php_bin 2> /dev/null && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/php/cmd.php_bin 10000'
 ```
 ```
 kphp2cpp compiled at Jul  6 2021 12:43:16 UTC by gcc 9.3.0 64-bit after commit 527923b4e21ea67dc4cbf27ce85a5a2daf53d81f build 2443
@@ -159,9 +154,8 @@ sys 0
 
 ### [Node.js/Javascript](./prime-number/javascript/cmd.js)
 ```
-docker build -t benchmark . > /dev/null && \
-docker run --rm benchmark nodejs --version && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p nodejs /app/prime-number/javascript/cmd.js 10000'
+docker run --rm mamchyts/benchmark:latest nodejs --version && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p nodejs /app/prime-number/javascript/cmd.js 10000'
 ```
 ```
 v12.21.0
@@ -176,9 +170,8 @@ sys 0
 
 ### [Node.js/TypeScript](./prime-number/typescript/cmd.ts)
 ```
-docker build -t benchmark . > /dev/null && \
-docker run --rm benchmark ts-node --version && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p ts-node /app/prime-number/typescript/cmd.ts 10000'
+docker run --rm mamchyts/benchmark:latest ts-node --version && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p ts-node /app/prime-number/typescript/cmd.ts 10000'
 ```
 ```
 v10.2.1
@@ -193,9 +186,8 @@ sys 0.1
 
 ### [Python 2](./prime-number/python/cmd.py2)
 ```
-docker build -t benchmark . > /dev/null && \
-docker run --rm benchmark python2 --version && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p python2 /app/prime-number/python/cmd.py2 10000'
+docker run --rm mamchyts/benchmark:latest python2 --version && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p python2 /app/prime-number/python/cmd.py2 10000'
 ```
 ```
 Python 2.7.18
@@ -210,9 +202,8 @@ sys 0.01
 
 ### [Python 2 (PyPy)](./prime-number/python/cmd.py2)
 ```
-docker build -t benchmark . > /dev/null && \
-docker run --rm benchmark pypy --version && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p pypy /app/prime-number/python/cmd.py2 10000'
+docker run --rm mamchyts/benchmark:latest pypy --version && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p pypy /app/prime-number/python/cmd.py2 10000'
 ```
 ```
 Python 2.7.18 (7.3.3+dfsg-1, Nov 22 2020, 05:23:32)
@@ -228,9 +219,8 @@ sys 0.03
 
 ### [Python 3](./prime-number/python/cmd.py3)
 ```
-docker build -t benchmark . > /dev/null && \
-docker run --rm benchmark python3 --version && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p python3 /app/prime-number/python/cmd.py3 10000'
+docker run --rm mamchyts/benchmark:latest python3 --version && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p python3 /app/prime-number/python/cmd.py3 10000'
 ```
 ```
 Python 3.9.5
@@ -245,9 +235,8 @@ sys 0
 
 ### [Python 3 (PyPy)](./prime-number/python/cmd.py3)
 ```
-docker build -t benchmark . > /dev/null && \
-docker run --rm benchmark pypy3 --version && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p pypy3 /app/prime-number/python/cmd.py3 10000'
+docker run --rm mamchyts/benchmark:latest pypy3 --version && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p pypy3 /app/prime-number/python/cmd.py3 10000'
 ```
 ```
 Python 3.6.12 (7.3.3+dfsg-3, Feb 26 2021, 04:58:43)
@@ -263,10 +252,9 @@ sys 0.02
 
 ### [C/C++](./prime-number/c++/cmd.cpp)
 ```
-docker build -t benchmark . > /dev/null && \
-docker run --rm benchmark g++ --version && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark g++ -O0 /app/prime-number/c++/cmd.cpp -o /app/prime-number/c++/cmd.cpp_bin && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-number/c++/cmd.cpp_bin 10000'
+docker run --rm mamchyts/benchmark:latest g++ --version && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest g++ -O0 /app/prime-number/c++/cmd.cpp -o /app/prime-number/c++/cmd.cpp_bin && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/c++/cmd.cpp_bin 10000'
 ```
 ```
 g++ (Ubuntu 10.3.0-1ubuntu1) 10.3.0
@@ -285,10 +273,9 @@ sys 0
 
 ### [C/C++ (optimized compilation)](./prime-number/c++/cmd.cpp)
 ```
-docker build -t benchmark . > /dev/null && \
-docker run --rm benchmark g++ --version && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark g++ -Ofast /app/prime-number/c++/cmd.cpp -o /app/prime-number/c++/cmd.cpp_opt_bin && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-number/c++/cmd.cpp_opt_bin 10000'
+docker run --rm mamchyts/benchmark:latest g++ --version && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest g++ -Ofast /app/prime-number/c++/cmd.cpp -o /app/prime-number/c++/cmd.cpp_opt_bin && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/c++/cmd.cpp_opt_bin 10000'
 ```
 ```
 g++ (Ubuntu 10.3.0-1ubuntu1) 10.3.0
@@ -307,11 +294,10 @@ sys 0
 
 ### [Assembler/NASM](./prime-number/assembler/cmd.asm)
 ```
-docker build -t benchmark . > /dev/null && \
-docker run --rm benchmark nasm --version && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark nasm -f elf64 -O0 /app/prime-number/assembler/cmd.asm && \
-docker run --rm --volume $(pwd):/app benchmark ld -O0 -m elf_x86_64 /app/prime-number/assembler/cmd.o -o /app/prime-number/assembler/cmd.asm_bin && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-number/assembler/cmd.asm_bin 10000'
+docker run --rm mamchyts/benchmark:latest nasm --version && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest nasm -f elf64 -O0 /app/prime-number/assembler/cmd.asm && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest ld -O0 -m elf_x86_64 /app/prime-number/assembler/cmd.o -o /app/prime-number/assembler/cmd.asm_bin && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/assembler/cmd.asm_bin 10000'
 ```
 ```
 NASM version 2.15.05
@@ -326,11 +312,10 @@ sys 0
 
 ### [Assembler/NASM (optimized compilation)](./prime-number/assembler/cmd.asm)
 ```
-docker build -t benchmark . > /dev/null && \
-docker run --rm benchmark nasm --version && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark nasm -f elf64 -Ox /app/prime-number/assembler/cmd.asm && \
-docker run --rm --volume $(pwd):/app benchmark ld -O3 -m elf_x86_64 /app/prime-number/assembler/cmd.o -o /app/prime-number/assembler/cmd.asm_opt_bin && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-number/assembler/cmd.asm_opt_bin 10000'
+docker run --rm mamchyts/benchmark:latest nasm --version && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest nasm -f elf64 -Ox /app/prime-number/assembler/cmd.asm && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest ld -O3 -m elf_x86_64 /app/prime-number/assembler/cmd.o -o /app/prime-number/assembler/cmd.asm_opt_bin && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/assembler/cmd.asm_opt_bin 10000'
 ```
 ```
 NASM version 2.15.05
@@ -345,10 +330,9 @@ sys 0
 
 ### [Pascal](./prime-number/pascal/cmd.pas)
 ```
-docker build -t benchmark . > /dev/null && \
-docker run --rm benchmark fpc -iW && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark fpc -O- /app/prime-number/pascal/cmd.pas -o/app/prime-number/pascal/cmd.pas_bin && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-number/pascal/cmd.pas_bin 10000'
+docker run --rm mamchyts/benchmark:latest fpc -iW && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest fpc -O- /app/prime-number/pascal/cmd.pas -o/app/prime-number/pascal/cmd.pas_bin && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/pascal/cmd.pas_bin 10000'
 ```
 ```
 3.2.0+dfsg-12
@@ -370,10 +354,9 @@ sys 0
 
 ### [Pascal (optimized compilation)](./prime-number/pascal/cmd.pas)
 ```
-docker build -t benchmark . > /dev/null && \
-docker run --rm benchmark fpc -iW && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark fpc -O3 /app/prime-number/pascal/cmd.pas -o/app/prime-number/pascal/cmd.pas_opt_bin && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-number/pascal/cmd.pas_opt_bin 10000'
+docker run --rm mamchyts/benchmark:latest fpc -iW && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest fpc -O3 /app/prime-number/pascal/cmd.pas -o/app/prime-number/pascal/cmd.pas_opt_bin && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/pascal/cmd.pas_opt_bin 10000'
 ```
 ```
 3.2.0+dfsg-12
@@ -394,10 +377,9 @@ sys 0
 
 ### [Go](./prime-number/go/cmd.go)
 ```
-docker build -t benchmark . > /dev/null && \
-docker run --rm benchmark go version && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark go build -o /app/prime-number/go/cmd.go_bin /app/prime-number/go/cmd.go && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-number/go/cmd.go_bin 10000'
+docker run --rm mamchyts/benchmark:latest go version && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest go build -o /app/prime-number/go/cmd.go_bin /app/prime-number/go/cmd.go && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/go/cmd.go_bin 10000'
 ```
 ```
 go version go1.16.2 linux/amd64
@@ -412,9 +394,8 @@ sys 0.03
 
 ### [Ruby 2](./prime-number/ruby/cmd.rb)
 ```
-docker build -t benchmark . > /dev/null && \
-docker run --rm benchmark /root/.rbenv/versions/2.7.4/bin/ruby --version && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /root/.rbenv/versions/2.7.4/bin/ruby /app/prime-number/ruby/cmd.rb 10000'
+docker run --rm mamchyts/benchmark:latest /root/.rbenv/versions/2.7.4/bin/ruby --version && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /root/.rbenv/versions/2.7.4/bin/ruby /app/prime-number/ruby/cmd.rb 10000'
 ```
 ```
 ruby 2.7.4p191 (2021-07-07 revision a21a3b7d23) [x86_64-linux]
@@ -429,9 +410,8 @@ sys 0.02
 
 ### [Ruby 3](./prime-number/ruby/cmd.rb)
 ```
-docker build -t benchmark . > /dev/null && \
-docker run --rm benchmark /root/.rbenv/versions/3.0.2/bin/ruby --version && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /root/.rbenv/versions/3.0.2/bin/ruby /app/prime-number/ruby/cmd.rb 10000'
+docker run --rm mamchyts/benchmark:latest /root/.rbenv/versions/3.0.2/bin/ruby --version && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /root/.rbenv/versions/3.0.2/bin/ruby /app/prime-number/ruby/cmd.rb 10000'
 ```
 ```
 ruby 3.0.2p107 (2021-07-07 revision 0db68f0233) [x86_64-linux]
@@ -446,10 +426,9 @@ sys 0.02
 
 ### [Java](./prime-number/java/cmd.java)
 ```
-docker build -t benchmark . > /dev/null && \
-docker run --rm benchmark java --version && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark javac /app/prime-number/java/cmd.java && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p java -classpath /app/prime-number/java/ cmd 10000'
+docker run --rm mamchyts/benchmark:latest java --version && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest javac /app/prime-number/java/cmd.java && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p java -classpath /app/prime-number/java/ cmd 10000'
 ```
 ```
 openjdk 16.0.1 2021-04-20
@@ -466,10 +445,9 @@ sys 0.01
 
 ### [Rust](./prime-number/rust/cmd.rs)
 ```
-docker build -t benchmark . > /dev/null && \
-docker run --rm benchmark rustc --version && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark rustc /app/prime-number/rust/cmd.rs -o /app/prime-number/rust/cmd.rs_bin && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-number/rust/cmd.rs_bin 10000'
+docker run --rm mamchyts/benchmark:latest rustc --version && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest rustc /app/prime-number/rust/cmd.rs -o /app/prime-number/rust/cmd.rs_bin && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/rust/cmd.rs_bin 10000'
 ```
 ```
 rustc 1.51.0
@@ -484,10 +462,9 @@ sys 0
 
 ### [Rust (optimized compilation)](./prime-number/rust/cmd.rs)
 ```
-docker build -t benchmark . > /dev/null && \
-docker run --rm benchmark rustc --version && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark rustc -C opt-level=3 /app/prime-number/rust/cmd.rs -o /app/prime-number/rust/cmd.rs_opt_bin && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-number/rust/cmd.rs_opt_bin 10000'
+docker run --rm mamchyts/benchmark:latest rustc --version && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest rustc -C opt-level=3 /app/prime-number/rust/cmd.rs -o /app/prime-number/rust/cmd.rs_opt_bin && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/rust/cmd.rs_opt_bin 10000'
 ```
 ```
 rustc 1.51.0
@@ -502,9 +479,8 @@ sys 0
 
 ### [R](./prime-number/r/cmd.r)
 ```
-docker build -t benchmark . > /dev/null && \
-docker run --rm benchmark Rscript --version && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p Rscript --vanilla /app/prime-number/r/cmd.r 10000'
+docker run --rm mamchyts/benchmark:latest Rscript --version && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p Rscript --vanilla /app/prime-number/r/cmd.r 10000'
 ```
 ```
 R scripting front-end version 4.0.4 (2021-02-15)
@@ -519,9 +495,8 @@ sys 0.05
 
 ### [Dart](./prime-number/dart/cmd.dart)
 ```
-docker build -t benchmark . > /dev/null && \
-docker run --rm benchmark dart --version && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p dart run /app/prime-number/dart/cmd.dart 10000'
+docker run --rm mamchyts/benchmark:latest dart --version && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p dart run /app/prime-number/dart/cmd.dart 10000'
 ```
 ```
 Dart SDK version: 2.14.1 (stable) (Unknown timestamp) on "linux_x64"
@@ -536,10 +511,9 @@ sys 0.12
 
 ### [Dart (optimized compilation)](./prime-number/dart/cmd.dart)
 ```
-docker build -t benchmark . > /dev/null && \
-docker run --rm benchmark dart --version && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark dart --disable-analytics compile exe /app/prime-number/dart/cmd.dart -o /app/prime-number/dart/cmd.dart_opt_bin > /dev/null && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-number/dart/cmd.dart_opt_bin 10000'
+docker run --rm mamchyts/benchmark:latest dart --version && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest dart --disable-analytics compile exe /app/prime-number/dart/cmd.dart -o /app/prime-number/dart/cmd.dart_opt_bin > /dev/null && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/dart/cmd.dart_opt_bin 10000'
 ```
 ```
 Dart SDK version: 2.14.1 (stable) (Unknown timestamp) on "linux_x64"
@@ -554,9 +528,8 @@ sys 0
 
 ### [Perl](./prime-number/perl/cmd.pl)
 ```
-docker build -t benchmark . > /dev/null && \
-docker run --rm benchmark perl --version && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p perl /app/prime-number/perl/cmd.pl 10000'
+docker run --rm mamchyts/benchmark:latest perl --version && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p perl /app/prime-number/perl/cmd.pl 10000'
 ```
 ```
 This is perl 5, version 32, subversion 1 (v5.32.1) built for x86_64-linux-gnu-thread-multi
@@ -582,9 +555,8 @@ sys 0
 
 ### [Lua](./prime-number/lua/cmd.lua)
 ```
-docker build -t benchmark . > /dev/null && \
-docker run --rm benchmark lua -v && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p lua /app/prime-number/lua/cmd.lua 10000'
+docker run --rm mamchyts/benchmark:latest lua -v && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p lua /app/prime-number/lua/cmd.lua 10000'
 ```
 ```
 Lua 5.3.3  Copyright (C) 1994-2016 Lua.org, PUC-Rio
@@ -599,9 +571,8 @@ sys 0
 
 ### [Lua (LuaJIT -j on)](./prime-number/lua/cmd.lua)
 ```
-docker build -t benchmark . > /dev/null && \
-docker run --rm benchmark luajit -v && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p luajit -j on /app/prime-number/lua/cmd.lua 10000'
+docker run --rm mamchyts/benchmark:latest luajit -v && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p luajit -j on /app/prime-number/lua/cmd.lua 10000'
 ```
 ```
 LuaJIT 2.1.0-beta3 -- Copyright (C) 2005-2017 Mike Pall. http://luajit.org/
@@ -616,9 +587,8 @@ sys 0
 
 ### [Lua (LuaJIT -j off)](./prime-number/lua/cmd.lua)
 ```
-docker build -t benchmark . > /dev/null && \
-docker run --rm benchmark luajit -v && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p luajit -j off /app/prime-number/lua/cmd.lua 10000'
+docker run --rm mamchyts/benchmark:latest luajit -v && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p luajit -j off /app/prime-number/lua/cmd.lua 10000'
 ```
 ```
 LuaJIT 2.1.0-beta3 -- Copyright (C) 2005-2017 Mike Pall. http://luajit.org/
@@ -633,10 +603,9 @@ sys 0
 
 ### [Ada](./prime-number/ada/cmd.adb)
 ```
-docker build -t benchmark . > /dev/null && \
-docker run --rm benchmark gnatmake --version && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark gnatmake -q /app/prime-number/ada/cmd.adb -o /app/prime-number/ada/cmd.adb_bin && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-number/ada/cmd.adb_bin 10000'
+docker run --rm mamchyts/benchmark:latest gnatmake --version && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest gnatmake -q /app/prime-number/ada/cmd.adb -o /app/prime-number/ada/cmd.adb_bin && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/ada/cmd.adb_bin 10000'
 ```
 ```
 GNATMAKE 10.3.0
@@ -655,10 +624,9 @@ sys 0
 
 ### [Haskell](./prime-number/haskell/cmd.hs)
 ```
-docker build -t benchmark . > /dev/null && \
-docker run --rm benchmark ghc --version && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark ghc /app/prime-number/haskell/cmd.hs -o /app/prime-number/haskell/cmd.hs_bin > /dev/null && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-number/haskell/cmd.hs_bin 10000'
+docker run --rm mamchyts/benchmark:latest ghc --version && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest ghc /app/prime-number/haskell/cmd.hs -o /app/prime-number/haskell/cmd.hs_bin > /dev/null && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/haskell/cmd.hs_bin 10000'
 ```
 ```
 The Glorious Glasgow Haskell Compilation System, version 8.8.4
@@ -673,10 +641,9 @@ sys 0.6
 
 ### [Haskell (optimized compilation)](./prime-number/haskell/cmd.hs)
 ```
-docker build -t benchmark . > /dev/null && \
-docker run --rm benchmark ghc --version && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark ghc -O /app/prime-number/haskell/cmd.hs -o /app/prime-number/haskell/cmd.hs_opt_bin > /dev/null && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-number/haskell/cmd.hs_opt_bin 10000'
+docker run --rm mamchyts/benchmark:latest ghc --version && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest ghc -O /app/prime-number/haskell/cmd.hs -o /app/prime-number/haskell/cmd.hs_opt_bin > /dev/null && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/haskell/cmd.hs_opt_bin 10000'
 ```
 ```
 The Glorious Glasgow Haskell Compilation System, version 8.8.4
@@ -691,10 +658,9 @@ sys 0
 
 ### [Kotlin](./prime-number/kotlin/cmd.kt)
 ```
-docker build -t benchmark . > /dev/null && \
-docker run --rm benchmark /root/kotlinc/bin/kotlinc -version && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark /root/kotlinc/bin/kotlinc /app/prime-number/kotlin/cmd.kt -include-runtime -d /app/prime-number/kotlin/cmd.jar && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p java -jar /app/prime-number/kotlin/cmd.jar 10000'
+docker run --rm mamchyts/benchmark:latest /root/kotlinc/bin/kotlinc -version && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest /root/kotlinc/bin/kotlinc /app/prime-number/kotlin/cmd.kt -include-runtime -d /app/prime-number/kotlin/cmd.jar && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p java -jar /app/prime-number/kotlin/cmd.jar 10000'
 ```
 ```
 info: kotlinc-jvm 1.5.20 (JRE 16.0.1+9-Ubuntu-1)
@@ -709,9 +675,8 @@ sys 0.01
 
 ### [Crystal](./prime-number/crystal/cmd.cr)
 ```
-docker build -t benchmark . > /dev/null && \
-docker run --rm benchmark crystal --version && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p crystal /app/prime-number/crystal/cmd.cr 10000'
+docker run --rm mamchyts/benchmark:latest crystal --version && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p crystal /app/prime-number/crystal/cmd.cr 10000'
 ```
 ```
 Crystal 1.1.1 [6d9a1d583] (2021-07-26)
@@ -729,10 +694,9 @@ sys 0.43
 
 ### [Crystal (compiled with debug)](./prime-number/crystal/cmd.cr)
 ```
-docker build -t benchmark . > /dev/null && \
-docker run --rm benchmark crystal --version && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark crystal build /app/prime-number/crystal/cmd.cr -o /app/prime-number/crystal/cmd.cr_bin && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-number/crystal/cmd.cr_bin 10000'
+docker run --rm mamchyts/benchmark:latest crystal --version && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest crystal build /app/prime-number/crystal/cmd.cr -o /app/prime-number/crystal/cmd.cr_bin && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/crystal/cmd.cr_bin 10000'
 ```
 ```
 Crystal 1.1.1 [6d9a1d583] (2021-07-26)
@@ -750,10 +714,9 @@ sys 0
 
 ### [Crystal (optimized compilation)](./prime-number/crystal/cmd.cr)
 ```
-docker build -t benchmark . > /dev/null && \
-docker run --rm benchmark crystal --version && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark crystal build --release /app/prime-number/crystal/cmd.cr -o /app/prime-number/crystal/cmd.cr_opt_bin && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-number/crystal/cmd.cr_opt_bin 10000'
+docker run --rm mamchyts/benchmark:latest crystal --version && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest crystal build --release /app/prime-number/crystal/cmd.cr -o /app/prime-number/crystal/cmd.cr_opt_bin && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/crystal/cmd.cr_opt_bin 10000'
 ```
 ```
 Crystal 1.1.1 [6d9a1d583] (2021-07-26)
@@ -771,10 +734,9 @@ sys 0
 
 ### [C# (mono)](./prime-number/c%23/cmd.cs)
 ```
-docker build -t benchmark . > /dev/null && \
-docker run --rm benchmark mono-csc --version && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark mono-csc /app/prime-number/c#/cmd.cs -out:/app/prime-number/c#/cmd.cs_bin && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p mono /app/prime-number/c#/cmd.cs_bin 10000'
+docker run --rm mamchyts/benchmark:latest mono-csc --version && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest mono-csc /app/prime-number/c#/cmd.cs -out:/app/prime-number/c#/cmd.cs_bin && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p mono /app/prime-number/c#/cmd.cs_bin 10000'
 ```
 ```
 Mono C# compiler version 6.12.0.122
@@ -789,10 +751,9 @@ sys 0
 
 ### [C# (dotnet)](./prime-number/c%23/cmd.cs)
 ```
-docker build -t benchmark . > /dev/null && \
-docker run --rm benchmark dotnet --version && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark dotnet build --runtime linux-x64 /app/prime-number/c#/ > /dev/null && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p dotnet run -p /app/prime-number/c#/ 10000'
+docker run --rm mamchyts/benchmark:latest dotnet --version && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest dotnet build --runtime linux-x64 /app/prime-number/c#/ > /dev/null && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p dotnet run -p /app/prime-number/c#/ 10000'
 ```
 ```
 5.0.400
@@ -830,10 +791,9 @@ sys 0.28
 
 ### [Scala](./prime-number/scala/cmd.scala)
 ```
-docker build -t benchmark . > /dev/null && \
-docker run --rm benchmark scala -version && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark scalac -d /app/prime-number/scala /app/prime-number/scala/cmd.scala && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p scala -classpath /app/prime-number/scala cmd 10000'
+docker run --rm mamchyts/benchmark:latest scala -version && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest scalac -d /app/prime-number/scala /app/prime-number/scala/cmd.scala && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p scala -classpath /app/prime-number/scala cmd 10000'
 ```
 ```
 Scala code runner version 2.11.12 -- Copyright 2002-2017, LAMP/EPFL
@@ -848,9 +808,8 @@ sys 0.08
 
 ### [Elixir](./prime-number/elixir/cmd.exs)
 ```
-docker build -t benchmark . > /dev/null && \
-docker run --rm benchmark elixir --version && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p elixir /app/prime-number/elixir/cmd.exs 10000'
+docker run --rm mamchyts/benchmark:latest elixir --version && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p elixir /app/prime-number/elixir/cmd.exs 10000'
 ```
 ```
 Erlang/OTP 23 [erts-11.1.8] [source] [64-bit] [smp:2:2] [ds:2:2:10] [async-threads:1]
@@ -867,10 +826,9 @@ sys 0.11
 
 ### [Swift](./prime-number/swift/Sources/cmd/main.swift)
 ```
-docker build -t benchmark . > /dev/null && \
-docker run --rm benchmark /root/swift-5.4.2-RELEASE-ubuntu20.04/usr/bin/swift --version && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark /root/swift-5.4.2-RELEASE-ubuntu20.04/usr/bin/swift build --package-path /app/prime-number/swift/ && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-number/swift/.build/debug/cmd 10000'
+docker run --rm mamchyts/benchmark:latest /root/swift-5.4.2-RELEASE-ubuntu20.04/usr/bin/swift --version && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest /root/swift-5.4.2-RELEASE-ubuntu20.04/usr/bin/swift build --package-path /app/prime-number/swift/ && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/swift/.build/debug/cmd 10000'
 ```
 ```
 Swift version 5.4.2 (swift-5.4.2-RELEASE)
@@ -888,10 +846,9 @@ sys 0.01
 
 ### [Swift (optimized compilation)](./prime-number/swift/Sources/cmd/main.swift)
 ```
-docker build -t benchmark . > /dev/null && \
-docker run --rm benchmark /root/swift-5.4.2-RELEASE-ubuntu20.04/usr/bin/swift --version && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark /root/swift-5.4.2-RELEASE-ubuntu20.04/usr/bin/swift build -c release --package-path /app/prime-number/swift/ && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-number/swift/.build/release/cmd 10000'
+docker run --rm mamchyts/benchmark:latest /root/swift-5.4.2-RELEASE-ubuntu20.04/usr/bin/swift --version && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest /root/swift-5.4.2-RELEASE-ubuntu20.04/usr/bin/swift build -c release --package-path /app/prime-number/swift/ && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/swift/.build/release/cmd 10000'
 ```
 ```
 Swift version 5.4.2 (swift-5.4.2-RELEASE)
@@ -909,10 +866,9 @@ sys 0
 
 ### [Nim](./prime-number/nim/cmd.nim)
 ```
-docker build -t benchmark . > /dev/null && \
-docker run --rm benchmark nim --version && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark nim compile --verbosity:0 -o:/app/prime-number/nim/cmd.nim_bin /app/prime-number/nim/cmd.nim 2> /dev/null && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-number/nim/cmd.nim_bin 10000'
+docker run --rm mamchyts/benchmark:latest nim --version && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest nim compile --verbosity:0 -o:/app/prime-number/nim/cmd.nim_bin /app/prime-number/nim/cmd.nim 2> /dev/null && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/nim/cmd.nim_bin 10000'
 ```
 ```
 Nim Compiler Version 1.4.2 [Linux: amd64]
@@ -931,10 +887,9 @@ sys 0
 
 ### [Nim (optimized compilation)](./prime-number/nim/cmd.nim)
 ```
-docker build -t benchmark . > /dev/null && \
-docker run --rm benchmark nim --version && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark nim compile -d:release --verbosity:0 -o:/app/prime-number/nim/cmd.nim_opt_bin /app/prime-number/nim/cmd.nim 2> /dev/null && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-number/nim/cmd.nim_opt_bin 10000'
+docker run --rm mamchyts/benchmark:latest nim --version && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest nim compile -d:release --verbosity:0 -o:/app/prime-number/nim/cmd.nim_opt_bin /app/prime-number/nim/cmd.nim 2> /dev/null && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/nim/cmd.nim_opt_bin 10000'
 ```
 ```
 Nim Compiler Version 1.4.2 [Linux: amd64]
@@ -953,10 +908,9 @@ sys 0
 
 ### [D (compiled with debug)](./prime-number/d/cmd.d)
 ```
-docker build -t benchmark . > /dev/null && \
-docker run --rm benchmark dmd --version && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark dmd -debug -of=/app/prime-number/d/cmd.d_bin /app/prime-number/d/cmd.d && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-number/d/cmd.d_bin 10000'
+docker run --rm mamchyts/benchmark:latest dmd --version && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest dmd -debug -of=/app/prime-number/d/cmd.d_bin /app/prime-number/d/cmd.d && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/d/cmd.d_bin 10000'
 ```
 ```
 DMD64 D Compiler v2.097.2
@@ -972,10 +926,9 @@ sys 0
 
 ### [D (optimized compilation)](./prime-number/d/cmd.d)
 ```
-docker build -t benchmark . > /dev/null && \
-docker run --rm benchmark dmd --version && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark dmd -O -release -inline -boundscheck=off -of=/app/prime-number/d/cmd.d_opt_bin /app/prime-number/d/cmd.d && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-number/d/cmd.d_opt_bin 10000'
+docker run --rm mamchyts/benchmark:latest dmd --version && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest dmd -O -release -inline -boundscheck=off -of=/app/prime-number/d/cmd.d_opt_bin /app/prime-number/d/cmd.d && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/d/cmd.d_opt_bin 10000'
 ```
 ```
 DMD64 D Compiler v2.097.2
@@ -991,9 +944,8 @@ sys 0.00
 
 ### [Bash](./prime-number/bash/cmd.sh)
 ```
-docker build -t benchmark . > /dev/null && \
-docker run --rm benchmark bash --version && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p bash /app/prime-number/bash/cmd.sh 10000'
+docker run --rm mamchyts/benchmark:latest bash --version && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p bash /app/prime-number/bash/cmd.sh 10000'
 ```
 ```
 GNU bash, version 5.1.4(1)-release (x86_64-pc-linux-gnu)
@@ -1013,9 +965,8 @@ sys 902.84
 
 ### [Lisp](./prime-number/lisp/cmd.lisp)
 ```
-docker build -t benchmark . > /dev/null && \
-docker run --rm benchmark clisp --version && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p clisp /app/prime-number/lisp/cmd.lisp 10000'
+docker run --rm mamchyts/benchmark:latest clisp --version && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p clisp /app/prime-number/lisp/cmd.lisp 10000'
 ```
 ```
 GNU CLISP 2.49.92 (2018-02-18) (built on lgw01-amd64-022.buildd [127.0.1.1])
@@ -1046,9 +997,8 @@ sys 3.09
 
 ### [Haxe](./prime-number/haxe/Cmd.hx)
 ```
-docker build -t benchmark . > /dev/null && \
-docker run --rm benchmark haxe --version && echo '' && \
-docker run --rm --volume $(pwd):/app benchmark bash -c 'time -p haxe --cwd /app/prime-number/haxe --run Cmd 10000'
+docker run --rm mamchyts/benchmark:latest haxe --version && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p haxe --cwd /app/prime-number/haxe --run Cmd 10000'
 ```
 ```
 4.1.5
@@ -1062,7 +1012,7 @@ sys 0.02
 ```
 
 
-## Run all prime number benchmarks
+## Run all prime number mamchyts/benchmark:latests
 
 ```
 php run/run.php
@@ -1077,7 +1027,7 @@ php run/run.php
 ```
 
 
-## Multiply run of prime number benchmark
+## Multiply run of prime number mamchyts/benchmark:latest
 
 ```
 php run/run.php 'Node.js/Javascript' 'C/C++' 'Assembler/NASM (optimized compilation)'
@@ -1089,4 +1039,14 @@ php run/run.php 'Node.js/Javascript' 'C/C++' 'Assembler/NASM (optimized compilat
 ...
 ----------------------- Assembler/NASM (optimized compilation) -----------------------
 ...
+```
+
+
+## Build and push docker
+
+```
+docker build -t mamchyts/benchmark:latest .
+docker tag mamchyts/benchmark:latest mamchyts/mamchyts/benchmark:latest:X.Y.Z
+docker tag mamchyts/benchmark:latest mamchyts/mamchyts/benchmark:latest:latest
+docker push --all-tags mamchyts/mamchyts/benchmark:latest
 ```
