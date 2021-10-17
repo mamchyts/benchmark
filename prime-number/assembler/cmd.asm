@@ -9,7 +9,6 @@ value_string_len    DB 10
     section .bss
 arg:                resb 64
 arg_len:            resb 64
-prime_number_count: resb 64
 
 
     section .text
@@ -45,31 +44,31 @@ _start:
     add rax, rbx
     mov rbx, rax
     loop .next_symbol
-    mov [prime_number_count], rbx   ; save integer value into variable
+    mov rbp, rbx    ; `rbp` used like `primeNumberCount`
 
     ; main loop for prime numbers detection
-    xor edi, edi    ; `edi` used like `number`
+    xor rcx, rcx    ; `edi` used like `number`
 main_loop:
-    inc edi
-    xor ecx, ecx    ; `ecx` used like `i`
-    xor ebx, ebx    ; `ebx` used like `j`
+    inc rcx
+    xor rdi, rdi    ; `rdi` used like `i`
+    xor rsi, rsi    ; `rsi` used like `j`
 .nested_main_loop:
-    inc ecx
-    xor edx, edx
-    mov eax, edi
-    div ecx
-    cmp edx, 0
+    inc rdi
+    xor rdx, rdx
+    mov rax, rcx
+    div rdi
+    cmp rdx, 0
     jnz .skip_loop_step
-    inc ebx
+    inc rsi
 .skip_loop_step:
-    mov eax, edi    ; check loop ending `for ($i = 1; $i <= $number; ++$i)`
-    cmp ecx, eax
+    mov rax, rcx    ; check loop rnding `for ($i = 1; $i <= $number; ++$i)`
+    cmp rdi, rax
     jnz .nested_main_loop
-    cmp ebx, 2
+    cmp rsi, 2
     jnz .skip
-    dec dword [prime_number_count]
+    dec rbp
 .skip:
-    cmp [prime_number_count], dword 0
+    cmp rbp, 0
     jnz main_loop
 
     ; convert integer to string
