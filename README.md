@@ -135,6 +135,24 @@ sys 0
 ```
 
 
+### [PHP 8.1](./prime-number/php/cmd.php)
+```
+docker run --rm mamchyts/benchmark:latest php8.1 -v && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p php8.1 /app/prime-number/php/cmd.php 10000'
+```
+```
+```
+
+
+### [PHP 8.1 (JIT)](./prime-number/php/cmd.php)
+```
+docker run --rm mamchyts/benchmark:latest php8.1 -v && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p php8.1 -dopcache.enable_cli=1 -dopcache.jit_buffer_size=10M /app/prime-number/php/cmd.php 10000'
+```
+```
+```
+
+
 ### [PHP (KPHP)](./prime-number/php/cmd.php)
 ```
 docker run --rm mamchyts/benchmark:latest kphp --version && echo '' && \
@@ -394,11 +412,11 @@ sys 0.03
 
 ### [Ruby 2](./prime-number/ruby/cmd.rb)
 ```
-docker run --rm mamchyts/benchmark:latest /root/.rbenv/versions/2.7.4/bin/ruby --version && echo '' && \
-docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /root/.rbenv/versions/2.7.4/bin/ruby /app/prime-number/ruby/cmd.rb 10000'
+docker run --rm mamchyts/benchmark:latest /root/.rbenv/versions/2.7.5/bin/ruby --version && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /root/.rbenv/versions/2.7.5/bin/ruby /app/prime-number/ruby/cmd.rb 10000'
 ```
 ```
-ruby 2.7.4p191 (2021-07-07 revision a21a3b7d23) [x86_64-linux]
+ruby 2.7.5p191 (2021-07-07 revision a21a3b7d23) [x86_64-linux]
 
 The latest prime number: 104729
 
@@ -410,11 +428,11 @@ sys 0.02
 
 ### [Ruby 3](./prime-number/ruby/cmd.rb)
 ```
-docker run --rm mamchyts/benchmark:latest /root/.rbenv/versions/3.0.2/bin/ruby --version && echo '' && \
-docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /root/.rbenv/versions/3.0.2/bin/ruby /app/prime-number/ruby/cmd.rb 10000'
+docker run --rm mamchyts/benchmark:latest /root/.rbenv/versions/3.0.3/bin/ruby --version && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /root/.rbenv/versions/3.0.3/bin/ruby /app/prime-number/ruby/cmd.rb 10000'
 ```
 ```
-ruby 3.0.2p107 (2021-07-07 revision 0db68f0233) [x86_64-linux]
+ruby 3.0.3p107 (2021-07-07 revision 0db68f0233) [x86_64-linux]
 
 The latest prime number: 104729
 
@@ -826,12 +844,12 @@ sys 0.11
 
 ### [Swift](./prime-number/swift/Sources/cmd/main.swift)
 ```
-docker run --rm mamchyts/benchmark:latest /root/swift-5.4.2-RELEASE-ubuntu20.04/usr/bin/swift --version && echo '' && \
-docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest /root/swift-5.4.2-RELEASE-ubuntu20.04/usr/bin/swift build --package-path /app/prime-number/swift/ && \
+docker run --rm mamchyts/benchmark:latest /root/swift-5.5.1-RELEASE-ubuntu20.04/usr/bin/swift --version && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest /root/swift-5.5.1-RELEASE-ubuntu20.04/usr/bin/swift build --package-path /app/prime-number/swift/ && \
 docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/swift/.build/debug/cmd 10000'
 ```
 ```
-Swift version 5.4.2 (swift-5.4.2-RELEASE)
+Swift version 5.5.1 (swift-5.5.1-RELEASE)
 Target: x86_64-unknown-linux-gnu
 
 [1/1] Planning build
@@ -846,12 +864,12 @@ sys 0.01
 
 ### [Swift (optimized compilation)](./prime-number/swift/Sources/cmd/main.swift)
 ```
-docker run --rm mamchyts/benchmark:latest /root/swift-5.4.2-RELEASE-ubuntu20.04/usr/bin/swift --version && echo '' && \
-docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest /root/swift-5.4.2-RELEASE-ubuntu20.04/usr/bin/swift build -c release --package-path /app/prime-number/swift/ && \
+docker run --rm mamchyts/benchmark:latest /root/swift-5.5.1-RELEASE-ubuntu20.04/usr/bin/swift --version && echo '' && \
+docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest /root/swift-5.5.1-RELEASE-ubuntu20.04/usr/bin/swift build -c release --package-path /app/prime-number/swift/ && \
 docker run --rm --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/swift/.build/release/cmd 10000'
 ```
 ```
-Swift version 5.4.2 (swift-5.4.2-RELEASE)
+Swift version 5.5.1 (swift-5.5.1-RELEASE)
 Target: x86_64-unknown-linux-gnu
 
 [1/1] Planning build
