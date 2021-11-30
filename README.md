@@ -1064,7 +1064,7 @@ php run/run.php 'Node.js/Javascript' 'C/C++' 'Assembler/NASM (optimized compilat
 
 ```
 docker build -t mamchyts/benchmark:latest .
-docker tag mamchyts/benchmark:latest mamchyts/mamchyts/benchmark:latest:X.Y.Z
-docker tag mamchyts/benchmark:latest mamchyts/mamchyts/benchmark:latest:latest
-docker push --all-tags mamchyts/mamchyts/benchmark:latest
+docker tag mamchyts/benchmark:latest mamchyts/benchmark:X.Y.Z
+docker tag mamchyts/benchmark:latest mamchyts/benchmark:latest
+docker push --all-tags mamchyts/benchmark
 ```
