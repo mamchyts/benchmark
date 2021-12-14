@@ -24,5 +24,5 @@ int main(int argc, char *argv[])
         }
     }
 
-    printf("The latest prime number: %d\n", number);
+    printf("The latest prime number: %ld\n", number);
 }
