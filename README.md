@@ -1048,12 +1048,14 @@ php run/run.php
 ## Multiply run of prime number mamchyts/benchmark:latest
 
 ```
-php run/run.php 'Node.js/Javascript' 'C/C++' 'Assembler/NASM (optimized compilation)'
+php run/run.php 'C/C++' 'C/C++ (optimized compilation)' 'Assembler/NASM' 'Assembler/NASM (optimized compilation)'
 ```
 ```
------------------------ Node.js/Javascript -----------------------
-...
 ----------------------- C/C++ -----------------------
+...
+----------------------- C/C++ (optimized compilation) -----------------------
+...
+----------------------- Assembler/NASM -----------------------
 ...
 ----------------------- Assembler/NASM (optimized compilation) -----------------------
 ...
