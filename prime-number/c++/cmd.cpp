@@ -3,17 +3,17 @@
 
 int main(int argc, char *argv[])
 {
-    int64_t primeNumberCount = 100;
+    int32_t primeNumberCount = 100;
     if (argc == 2) {
         primeNumberCount = atoi(argv[1]);
     }
 
-    int64_t number = 0;
+    int32_t number = 0;
     while (primeNumberCount > 0) {
         number++;
 
-        int64_t j = 0;
-        for (int64_t i = 1; i <= number; i++) {
+        int32_t j = 0;
+        for (int32_t i = 1; i <= number; i++) {
             if (number % i == 0) {
                 j++;
             }
@@ -24,5 +24,5 @@ int main(int argc, char *argv[])
         }
     }
 
-    printf("The latest prime number: %ld\n", number);
+    printf("The latest prime number: %d\n", number);
 }

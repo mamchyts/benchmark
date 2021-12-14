@@ -7,68 +7,68 @@ value_string        times 10 DB 48
 value_string_len    DB 10
 
     section .bss
-arg:                resb 64
-arg_len:            resb 64
+arg:                resb 32
+arg_len:            resb 32
 
 
     section .text
 _start:
     ; at the first - detect cmd argument(s)
-    ; rsp + 8 - address of the programm file name
-    ; rsp + 16 - address of the first cmd argument
-    ; rsp + 24 - address of the second cmd argument and etc
-    mov rax, [rsp + 16]
-    mov [arg], rax  ; save argument address into memory
+    ; esp + 4 - address of the programm file name
+    ; esp + 8 - address of the first cmd argument
+    ; esp + 12 - address of the second cmd argument and etc
+    mov eax, [esp + 8]
+    mov [arg], eax  ; save argument address into memory
 
     ; at the second - detect argument length
-    mov rcx, [arg]
-    xor rax, rax    ; set `0`
+    mov ecx, [arg]
+    xor eax, eax    ; set `0`
 .loop:
-    cmp byte [rax + rcx], 0
+    cmp byte [eax + ecx], 0
     jz .quit
-    inc rax ; `rax` will contain argument length
+    inc eax ; `eax` will contain argument length
     jmp short .loop
 .quit:
-    mov [arg_len], rax  ; save argument length into memory
+    mov [arg_len], eax  ; save argument length into memory
 
     ; convert string to integer
-    mov rdx, [arg]
-    mov rcx, [arg_len]
-    xor rax, rax
-    xor rbx, rbx
+    mov edx, [arg]
+    mov ecx, [arg_len]
+    xor eax, eax
+    xor ebx, ebx
 .next_symbol:
-    movzx rax, byte [rdx]   ; get one symbol from string
-    inc rdx
-    sub rax, qword '0'   ; see ASCII codes for more info
-    imul rbx, 10
-    add rax, rbx
-    mov rbx, rax
+    movzx eax, byte [edx]   ; get one symbol from string
+    inc edx
+    sub eax, dword '0'   ; see ASCII codes for more info
+    imul ebx, 10
+    add eax, ebx
+    mov ebx, eax
     loop .next_symbol
-    mov rbp, rbx    ; `rbp` used like `primeNumberCount`
+    mov ebp, ebx    ; `ebp` used like `primeNumberCount`
 
     ; main loop for prime numbers detection
-    xor rcx, rcx    ; `edi` used like `number`
+    xor ecx, ecx    ; `edi` used like `number`
 main_loop:
-    inc rcx
-    xor rdi, rdi    ; `rdi` used like `i`
-    xor rsi, rsi    ; `rsi` used like `j`
+    inc ecx
+    xor edi, edi    ; `edi` used like `i`
+    xor esi, esi    ; `esi` used like `j`
 .nested_main_loop:
-    inc rdi
-    xor rdx, rdx
-    mov rax, rcx
-    div rdi
-    cmp rdx, 0
+    inc edi
+    xor edx, edx
+    mov eax, ecx
+    div edi
+    cmp edx, 0
     jnz .skip_loop_step
-    inc rsi
+    inc esi
 .skip_loop_step:
-    mov rax, rcx    ; check loop rnding `for ($i = 1; $i <= $number; ++$i)`
-    cmp rdi, rax
+    mov eax, ecx    ; check loop rnding `for ($i = 1; $i <= $number; ++$i)`
+    cmp edi, eax
     jnz .nested_main_loop
-    cmp rsi, 2
+    cmp esi, 2
     jnz .skip
-    dec rbp
+    dec ebp
 .skip:
-    cmp rbp, 0
+    cmp ebp, 0
     jnz main_loop
 
     ; convert integer to string
@@ -87,18 +87,18 @@ main_loop:
     jnz .next_digit
 
     ; print results
-    mov rax, 4  ; 4 - code of `write` command
-    mov rbx, 1  ; 1 - code of standart output
-    mov rcx, msg
-    mov rdx, msg_len
+    mov eax, 4  ; 4 - code of `write` command
+    mov ebx, 1  ; 1 - code of standart output
+    mov ecx, msg
+    mov edx, msg_len
     int 0x80    ; make syscall
-    mov rax, 4
-    mov rbx, 1
-    mov rcx, value_string
-    mov rdx, [value_string_len]
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, value_string
+    mov edx, [value_string_len]
     int 0x80
 
     ; return correct exit code
-    mov rax, 1  ; 1 - code of `_exit` command
-    xor rbx, rbx    ; 0 - exit status code
+    mov eax, 1  ; 1 - code of `_exit` command
+    xor ebx, ebx    ; 0 - exit status code
     int 0x80

@@ -313,8 +313,8 @@ sys 0
 ### [Assembler/NASM](./prime-number/assembler/cmd.asm)
 ```
 docker run mamchyts/benchmark:latest nasm --version 2>&1 && echo '' && \
-docker run --volume $(pwd):/app mamchyts/benchmark:latest nasm -f elf64 -O0 /app/prime-number/assembler/cmd.asm && \
-docker run --volume $(pwd):/app mamchyts/benchmark:latest ld -O0 -m elf_x86_64 /app/prime-number/assembler/cmd.o -o /app/prime-number/assembler/cmd.asm_bin && \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest nasm -f elf -O0 /app/prime-number/assembler/cmd.asm && \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest ld -O0 -m elf_i386 /app/prime-number/assembler/cmd.o -o /app/prime-number/assembler/cmd.asm_bin && \
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/assembler/cmd.asm_bin 10000 2>&1'
 ```
 ```
@@ -331,8 +331,8 @@ sys 0
 ### [Assembler/NASM (optimized compilation)](./prime-number/assembler/cmd.asm)
 ```
 docker run mamchyts/benchmark:latest nasm --version 2>&1 && echo '' && \
-docker run --volume $(pwd):/app mamchyts/benchmark:latest nasm -f elf64 -Ox /app/prime-number/assembler/cmd.asm && \
-docker run --volume $(pwd):/app mamchyts/benchmark:latest ld -O3 -m elf_x86_64 /app/prime-number/assembler/cmd.o -o /app/prime-number/assembler/cmd.asm_opt_bin && \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest nasm -f elf -Ox /app/prime-number/assembler/cmd.asm && \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest ld -O3 -m elf_i386 /app/prime-number/assembler/cmd.o -o /app/prime-number/assembler/cmd.asm_opt_bin && \
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/assembler/cmd.asm_opt_bin 10000 2>&1'
 ```
 ```
