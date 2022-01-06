@@ -444,11 +444,11 @@ sys 0.01
 
 ### [Ruby 3](./prime-number/ruby/cmd.rb)
 ```
-docker run mamchyts/benchmark:latest /root/.rbenv/versions/3.0.3/bin/ruby --version 2>&1 && echo '' && \
-docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /root/.rbenv/versions/3.0.3/bin/ruby /app/prime-number/ruby/cmd.rb 10000 2>&1'
+docker run mamchyts/benchmark:latest /root/.rbenv/versions/3.1.0/bin/ruby --version 2>&1 && echo '' && \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /root/.rbenv/versions/3.1.0/bin/ruby /app/prime-number/ruby/cmd.rb 10000 2>&1'
 ```
 ```
-ruby 3.0.3p157 (2021-11-24 revision 3fb7d2cadc) [x86_64-linux]
+ruby 3.1.0p157 (2021-11-24 revision 3fb7d2cadc) [x86_64-linux]
 
 The latest prime number: 104729
 
@@ -697,7 +697,7 @@ docker run --volume $(pwd):/app mamchyts/benchmark:latest /root/kotlinc/bin/kotl
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p java -jar /app/prime-number/kotlin/cmd.jar 10000 2>&1'
 ```
 ```
-info: kotlinc-jvm 1.5.32 (JRE 16.0.1+9-Ubuntu-1)
+info: kotlinc-jvm 1.6.10 (JRE 16.0.1+9-Ubuntu-1)
 
 The latest prime number: 104729
 
@@ -859,12 +859,12 @@ sys 0.87
 
 ### [Swift](./prime-number/swift/Sources/cmd/main.swift)
 ```
-docker run mamchyts/benchmark:latest /root/swift-5.5.1-RELEASE-ubuntu20.04/usr/bin/swift --version 2>&1 && echo '' && \
-docker run --volume $(pwd):/app mamchyts/benchmark:latest /root/swift-5.5.1-RELEASE-ubuntu20.04/usr/bin/swift build --package-path /app/prime-number/swift/ && \
+docker run mamchyts/benchmark:latest /root/swift-5.5.2-RELEASE-ubuntu20.04/usr/bin/swift --version 2>&1 && echo '' && \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest /root/swift-5.5.2-RELEASE-ubuntu20.04/usr/bin/swift build --package-path /app/prime-number/swift/ && \
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/swift/.build/debug/cmd 10000 2>&1'
 ```
 ```
-Swift version 5.5.1 (swift-5.5.1-RELEASE)
+Swift version 5.5.2 (swift-5.5.2-RELEASE)
 Target: x86_64-unknown-linux-gnu
 
 [1/1] Planning build
@@ -879,12 +879,12 @@ sys 0
 
 ### [Swift (optimized compilation)](./prime-number/swift/Sources/cmd/main.swift)
 ```
-docker run mamchyts/benchmark:latest /root/swift-5.5.1-RELEASE-ubuntu20.04/usr/bin/swift --version 2>&1 && echo '' && \
-docker run --volume $(pwd):/app mamchyts/benchmark:latest /root/swift-5.5.1-RELEASE-ubuntu20.04/usr/bin/swift build -c release --package-path /app/prime-number/swift/ && \
+docker run mamchyts/benchmark:latest /root/swift-5.5.2-RELEASE-ubuntu20.04/usr/bin/swift --version 2>&1 && echo '' && \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest /root/swift-5.5.2-RELEASE-ubuntu20.04/usr/bin/swift build -c release --package-path /app/prime-number/swift/ && \
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/swift/.build/release/cmd 10000 2>&1'
 ```
 ```
-Swift version 5.5.1 (swift-5.5.1-RELEASE)
+Swift version 5.5.2 (swift-5.5.2-RELEASE)
 Target: x86_64-unknown-linux-gnu
 
 [1/1] Planning build
@@ -1077,8 +1077,8 @@ php run/run.php 'C/C++' 'C/C++ (optimized compilation)' 'Assembler/NASM' 'Assemb
 ## Build and push docker
 
 ```
-docker build -t mamchyts/benchmark:latest .
-docker tag mamchyts/benchmark:latest mamchyts/benchmark:1.1.1
-docker tag mamchyts/benchmark:latest mamchyts/benchmark:latest
+docker build -t benchmark .
+docker tag benchmark mamchyts/benchmark:1.1.2
+docker tag benchmark mamchyts/benchmark:latest
 docker push --all-tags mamchyts/benchmark
 ```
