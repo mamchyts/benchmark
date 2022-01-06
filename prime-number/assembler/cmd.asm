@@ -1,14 +1,15 @@
     global _start
 
     section .data
-msg                 DB 'The latest prime number: ', 0   ; 0xa (10) - ln code from ASCII
-msg_len             EQU $ - msg
-value_string        times 10 DB 48
-value_string_len    DB 10
+msg                 db 'The latest prime number: ', 0   ; 0 - NUL code from ASCII
+msg_len             equ $ - msg
+value_string        db '0000000000', 0
+value_string_len    equ $ - value_string
 
     section .bss
-arg:                resb 32
-arg_len:            resb 32
+primeNumberCount:   resd 1
+arg:                resd 1
+arg_len:            resd 1
 
 
     section .text
@@ -16,7 +17,7 @@ _start:
     ; at the first - detect cmd argument(s)
     ; esp + 4 - address of the programm file name
     ; esp + 8 - address of the first cmd argument
-    ; esp + 12 - address of the second cmd argument and etc
+    ; esp + 12 - address of the second cmd argument and etc.
     mov eax, [esp + 8]
     mov [arg], eax  ; save argument address into memory
 
@@ -25,9 +26,9 @@ _start:
     xor eax, eax    ; set `0`
 .loop:
     cmp byte [eax + ecx], 0
-    jz .quit
-    inc eax ; `eax` will contain argument length
-    jmp short .loop
+    jz short .quit
+    add eax, 1 ; `eax` will contain argument length
+    jmp .loop
 .quit:
     mov [arg_len], eax  ; save argument length into memory
 
@@ -38,53 +39,53 @@ _start:
     xor ebx, ebx
 .next_symbol:
     movzx eax, byte [edx]   ; get one symbol from string
-    inc edx
+    add edx, 1
     sub eax, dword '0'   ; see ASCII codes for more info
     imul ebx, 10
     add eax, ebx
     mov ebx, eax
-    loop .next_symbol
-    mov ebp, ebx    ; `ebp` used like `primeNumberCount`
+    sub ecx, 1
+    jnz short .next_symbol
+    mov [primeNumberCount], ebx
 
-    ; main loop for prime numbers detection
-    xor ecx, ecx    ; `edi` used like `number`
-main_loop:
-    inc ecx
-    xor edi, edi    ; `edi` used like `i`
-    xor esi, esi    ; `esi` used like `j`
-.nested_main_loop:
-    inc edi
+    ; main loop
+    xor edi, edi    ; `edi` used like `number`
+while_loop:
+    add edi, 1
+    xor ecx, ecx    ; `ecx` used like `i`
+    xor ebx, ebx    ; `ebx` used like `j`
+.nested_for_loop:
+    add ecx, 1
     xor edx, edx
-    mov eax, ecx
-    div edi
+    mov eax, edi
+    div ecx ; check condition `if (number % i == 0)`
     cmp edx, 0
-    jnz .skip_loop_step
-    inc esi
+    jnz short .skip_loop_step
+    add ebx, 1
 .skip_loop_step:
-    mov eax, ecx    ; check loop rnding `for ($i = 1; $i <= $number; ++$i)`
-    cmp edi, eax
-    jnz .nested_main_loop
-    cmp esi, 2
-    jnz .skip
-    dec ebp
+    cmp ecx, edi    ; check loop condition `i <= number`
+    jnz short .nested_for_loop
+    cmp ebx, 2  ; check condition `if (j == 2)`
+    jnz short .skip
+    sub dword [primeNumberCount], 1
 .skip:
-    cmp ebp, 0
-    jnz main_loop
+    cmp [primeNumberCount], dword 0
+    jnz short while_loop
 
     ; convert integer to string
     mov ebx, 10
     mov eax, edi
-    mov ecx, [value_string_len]
-    dec ecx
+    mov ecx, value_string_len
+    sub ecx, 1
     mov [value_string + ecx], byte 10
 .next_digit:
     xor edx, edx
     div ebx
     add edx, '0' ; convert to ASCII code
-    dec ecx
+    sub ecx, 1
     mov [value_string + ecx], dl
     cmp eax, 0  ; finish loop if main result is zero
-    jnz .next_digit
+    jnz short .next_digit
 
     ; print results
     mov eax, 4  ; 4 - code of `write` command
@@ -95,7 +96,7 @@ main_loop:
     mov eax, 4
     mov ebx, 1
     mov ecx, value_string
-    mov edx, [value_string_len]
+    mov edx, value_string_len
     int 0x80
 
     ; return correct exit code
