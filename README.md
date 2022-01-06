@@ -63,16 +63,16 @@ docker run mamchyts/benchmark:latest php5.6 -v 2>&1 && echo '' && \
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p php5.6 /app/prime-number/php/cmd.php 10000 2>&1'
 ```
 ```
-PHP 5.6.40-57+ubuntu21.04.1+deb.sury.org+1 (cli)
+PHP 5.6.40-57+ubuntu21.10.1+deb.sury.org+1 (cli)
 Copyright (c) 1997-2016 The PHP Group
 Zend Engine v2.6.0, Copyright (c) 1998-2016 Zend Technologies
     with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2016, by Zend Technologies
 
 The latest prime number: 104729
 
-real 289.16
-user 288.45
-sys 0.01
+real 306.54
+user 306.09
+sys 0
 ```
 
 
@@ -82,15 +82,15 @@ docker run mamchyts/benchmark:latest php7.4 -v 2>&1 && echo '' && \
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p php7.4 /app/prime-number/php/cmd.php 10000 2>&1'
 ```
 ```
-PHP 7.4.26 (cli) (built: Nov 22 2021 09:48:36) ( NTS )
+PHP 7.4.27 (cli) (built: Dec 20 2021 21:28:51) ( NTS )
 Copyright (c) The PHP Group
 Zend Engine v3.4.0, Copyright (c) Zend Technologies
-    with Zend OPcache v7.4.26, Copyright (c), by Zend Technologies
+    with Zend OPcache v7.4.27, Copyright (c), by Zend Technologies
 
 The latest prime number: 104729
 
-real 141.25
-user 140.85
+real 144.74
+user 144.53
 sys 0.01
 ```
 
@@ -101,16 +101,16 @@ docker run mamchyts/benchmark:latest php8.0 -v 2>&1 && echo '' && \
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p php8.0 /app/prime-number/php/cmd.php 10000 2>&1'
 ```
 ```
-PHP 8.0.13 (cli) (built: Nov 22 2021 09:51:03) ( NTS )
+PHP 8.0.14 (cli) (built: Dec 20 2021 21:23:34) ( NTS )
 Copyright (c) The PHP Group
-Zend Engine v4.0.13, Copyright (c) Zend Technologies
-    with Zend OPcache v8.0.13, Copyright (c), by Zend Technologies
+Zend Engine v4.0.14, Copyright (c) Zend Technologies
+    with Zend OPcache v8.0.14, Copyright (c), by Zend Technologies
 
 The latest prime number: 104729
 
-real 127.01
-user 126.67
-sys 0
+real 129.25
+user 129.05
+sys 0.01
 ```
 
 
@@ -120,16 +120,16 @@ docker run mamchyts/benchmark:latest php8.0 -v 2>&1 && echo '' && \
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p php8.0 -dopcache.enable_cli=1 -dopcache.jit_buffer_size=10M /app/prime-number/php/cmd.php 10000 2>&1'
 ```
 ```
-PHP 8.0.13 (cli) (built: Nov 22 2021 09:51:03) ( NTS )
+PHP 8.0.14 (cli) (built: Dec 20 2021 21:23:34) ( NTS )
 Copyright (c) The PHP Group
-Zend Engine v4.0.13, Copyright (c) Zend Technologies
-    with Zend OPcache v8.0.13, Copyright (c), by Zend Technologies
+Zend Engine v4.0.14, Copyright (c) Zend Technologies
+    with Zend OPcache v8.0.14, Copyright (c), by Zend Technologies
 
 The latest prime number: 104729
 
-real 99.88
-user 99.61
-sys 0
+real 98.6
+user 98.44
+sys 0.01
 ```
 
 
@@ -139,15 +139,15 @@ docker run mamchyts/benchmark:latest php8.1 -v 2>&1 && echo '' && \
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p php8.1 /app/prime-number/php/cmd.php 10000 2>&1'
 ```
 ```
-PHP 8.1.0 (cli) (built: Nov 25 2021 20:22:22) (NTS)
+PHP 8.1.1 (cli) (built: Dec 31 2021 07:26:56) (NTS)
 Copyright (c) The PHP Group
-Zend Engine v4.1.0, Copyright (c) Zend Technologies
-    with Zend OPcache v8.1.0, Copyright (c), by Zend Technologies
+Zend Engine v4.1.1, Copyright (c) Zend Technologies
+    with Zend OPcache v8.1.1, Copyright (c), by Zend Technologies
 
 The latest prime number: 104729
 
-real 125.56
-user 125.2
+real 126.5
+user 126.32
 sys 0.01
 ```
 
@@ -158,15 +158,15 @@ docker run mamchyts/benchmark:latest php8.1 -v 2>&1 && echo '' && \
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p php8.1 -dopcache.enable_cli=1 -dopcache.jit_buffer_size=10M /app/prime-number/php/cmd.php 10000 2>&1'
 ```
 ```
-PHP 8.1.0 (cli) (built: Nov 25 2021 20:22:22) (NTS)
+PHP 8.1.1 (cli) (built: Dec 31 2021 07:26:56) (NTS)
 Copyright (c) The PHP Group
-Zend Engine v4.1.0, Copyright (c) Zend Technologies
-    with Zend OPcache v8.1.0, Copyright (c), by Zend Technologies
+Zend Engine v4.1.1, Copyright (c) Zend Technologies
+    with Zend OPcache v8.1.1, Copyright (c), by Zend Technologies
 
 The latest prime number: 104729
 
-real 99.87
-user 99.61
+real 98.87
+user 98.72
 sys 0.01
 ```
 
@@ -193,13 +193,13 @@ docker run mamchyts/benchmark:latest nodejs --version 2>&1 && echo '' && \
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p nodejs /app/prime-number/javascript/cmd.js 10000 2>&1'
 ```
 ```
-v12.21.0
+v12.22.5
 
 The latest prime number: 104729
 
-real 30.97
-user 30.82
-sys 0.01
+real 30.91
+user 30.8
+sys 0.02
 ```
 
 
@@ -213,9 +213,9 @@ v10.4.0
 
 The latest prime number: 104729
 
-real 33.51
-user 33.23
-sys 0.1
+real 33.37
+user 33.2
+sys 0.09
 ```
 
 
@@ -229,9 +229,9 @@ Python 2.7.18
 
 The latest prime number:  104729
 
-real 428.05
-user 426.94
-sys 0.01
+real 450.74
+user 450.17
+sys 0
 ```
 
 
@@ -241,14 +241,14 @@ docker run mamchyts/benchmark:latest pypy --version 2>&1 && echo '' && \
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p pypy /app/prime-number/python/cmd.py2 10000 2>&1'
 ```
 ```
-Python 2.7.18 (7.3.3+dfsg-1, Nov 22 2020, 05:23:32)
-[PyPy 7.3.3 with GCC 10.2.0]
+Python 2.7.18 (7.3.5+dfsg-1, May 24 2021, 00:03:27)
+[PyPy 7.3.5 with GCC 10.3.0]
 
 The latest prime number:  104729
 
-real 84.13
-user 83.81
-sys 0.04
+real 88.42
+user 88.22
+sys 0.02
 ```
 
 
@@ -258,12 +258,12 @@ docker run mamchyts/benchmark:latest python3 --version 2>&1 && echo '' && \
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p python3 /app/prime-number/python/cmd.py3 10000 2>&1'
 ```
 ```
-Python 3.9.5
+Python 3.9.7
 
 The latest prime number:  104729
 
-real 540.43
-user 539.06
+real 622.62
+user 621.78
 sys 0
 ```
 
@@ -274,14 +274,14 @@ docker run mamchyts/benchmark:latest pypy3 --version 2>&1 && echo '' && \
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p pypy3 /app/prime-number/python/cmd.py3 10000 2>&1'
 ```
 ```
-Python 3.6.12 (7.3.3+dfsg-3, Feb 26 2021, 04:58:43)
-[PyPy 7.3.3 with GCC 10.2.1 20210220]
+Python 3.7.10 (7.3.5+dfsg-2, Jun 04 2021, 05:13:55)
+[PyPy 7.3.5 with GCC 10.3.0]
 
 The latest prime number:  104729
 
-real 82.83
-user 82.54
-sys 0.04
+real 88.48
+user 88.28
+sys 0.03
 ```
 
 
@@ -292,37 +292,37 @@ docker run --volume $(pwd):/app mamchyts/benchmark:latest g++ -O0 /app/prime-num
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/c++/cmd.cpp_bin 10000 2>&1'
 ```
 ```
-g++ (Ubuntu 10.3.0-1ubuntu1) 10.3.0
-Copyright (C) 2020 Free Software Foundation, Inc.
+g++ (Ubuntu 11.2.0-7ubuntu2) 11.2.0
+Copyright (C) 2021 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 
 The latest prime number: 104729
 
-real 22.59
-user 22.52
+real 20.39
+user 20.36
 sys 0
 ```
 
 
-### [C/C++ (optimized compilation)](./prime-number/c++/cmd.cpp)
+### [C/C++ (optimized)](./prime-number/c++/cmd.cpp)
 ```
 docker run mamchyts/benchmark:latest g++ --version 2>&1 && echo '' && \
 docker run --volume $(pwd):/app mamchyts/benchmark:latest g++ -Ofast /app/prime-number/c++/cmd.cpp -o /app/prime-number/c++/cmd.cpp_opt_bin && \
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/c++/cmd.cpp_opt_bin 10000 2>&1'
 ```
 ```
-g++ (Ubuntu 10.3.0-1ubuntu1) 10.3.0
-Copyright (C) 2020 Free Software Foundation, Inc.
+g++ (Ubuntu 11.2.0-7ubuntu2) 11.2.0
+Copyright (C) 2021 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 
 The latest prime number: 104729
 
-real 16.41
-user 16.37
+real 18.46
+user 18.43
 sys 0
 ```
 
@@ -339,13 +339,13 @@ NASM version 2.15.05
 
 The latest prime number: 000104729
 
-real 24.15
-user 24.09
+real 24.59
+user 24.55
 sys 0
 ```
 
 
-### [Assembler/NASM (optimized compilation)](./prime-number/assembler/cmd.asm)
+### [Assembler/NASM (optimized)](./prime-number/assembler/cmd.asm)
 ```
 docker run mamchyts/benchmark:latest nasm --version 2>&1 && echo '' && \
 docker run --volume $(pwd):/app mamchyts/benchmark:latest nasm -f elf -Ox /app/prime-number/assembler/cmd.asm && \
@@ -357,8 +357,8 @@ NASM version 2.15.05
 
 The latest prime number: 000104729
 
-real 24.02
-user 23.96
+real 24.56
+user 24.52
 sys 0
 ```
 
@@ -370,41 +370,41 @@ docker run --volume $(pwd):/app mamchyts/benchmark:latest fpc -O- /app/prime-num
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/pascal/cmd.pas_bin 10000 2>&1'
 ```
 ```
-3.2.0+dfsg-12
+3.2.2+dfsg-1ubuntu2
 
-Free Pascal Compiler version 3.2.0+dfsg-12 [2021/01/25] for x86_64
-Copyright (c) 1993-2020 by Florian Klaempfl and others
+Free Pascal Compiler version 3.2.2+dfsg-1ubuntu2 [2021/08/20] for x86_64
+Copyright (c) 1993-2021 by Florian Klaempfl and others
 Target OS: Linux for x86-64
 Compiling /app/prime-number/pascal/cmd.pas
 Linking /app/prime-number/pascal/cmd.pas_bin
 30 lines compiled, 0.1 sec
 The latest prime number: 104729
 
-real 59.89
-user 59.73
+real 65.7
+user 65.61
 sys 0
 ```
 
 
-### [Pascal (optimized compilation)](./prime-number/pascal/cmd.pas)
+### [Pascal (optimized)](./prime-number/pascal/cmd.pas)
 ```
 docker run mamchyts/benchmark:latest fpc -iW 2>&1 && echo '' && \
 docker run --volume $(pwd):/app mamchyts/benchmark:latest fpc -O3 /app/prime-number/pascal/cmd.pas -o/app/prime-number/pascal/cmd.pas_opt_bin && \
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/pascal/cmd.pas_opt_bin 10000 2>&1'
 ```
 ```
-3.2.0+dfsg-12
+3.2.2+dfsg-1ubuntu2
 
-Free Pascal Compiler version 3.2.0+dfsg-12 [2021/01/25] for x86_64
-Copyright (c) 1993-2020 by Florian Klaempfl and others
+Free Pascal Compiler version 3.2.2+dfsg-1ubuntu2 [2021/08/20] for x86_64
+Copyright (c) 1993-2021 by Florian Klaempfl and others
 Target OS: Linux for x86-64
 Compiling /app/prime-number/pascal/cmd.pas
 Linking /app/prime-number/pascal/cmd.pas_opt_bin
 30 lines compiled, 0.1 sec
 The latest prime number: 104729
 
-real 57.06
-user 56.9
+real 56.88
+user 56.81
 sys 0
 ```
 
@@ -416,12 +416,12 @@ docker run --volume $(pwd):/app mamchyts/benchmark:latest go build -o /app/prime
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/go/cmd.go_bin 10000 2>&1'
 ```
 ```
-go version go1.16.2 linux/amd64
+go version go1.17 linux/amd64
 
 The latest prime number: 104729
 
-real 56.93
-user 56.78
+real 61.7
+user 61.62
 sys 0
 ```
 
@@ -436,9 +436,9 @@ ruby 2.7.5p203 (2021-11-24 revision f69aeb8314) [x86_64-linux]
 
 The latest prime number: 104729
 
-real 516.11
-user 514.76
-sys 0.01
+real 521.2
+user 520.44
+sys 0.02
 ```
 
 
@@ -448,12 +448,12 @@ docker run mamchyts/benchmark:latest /root/.rbenv/versions/3.1.0/bin/ruby --vers
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /root/.rbenv/versions/3.1.0/bin/ruby /app/prime-number/ruby/cmd.rb 10000 2>&1'
 ```
 ```
-ruby 3.1.0p157 (2021-11-24 revision 3fb7d2cadc) [x86_64-linux]
+ruby 3.1.0p0 (2021-12-25 revision fb4df44d16) [x86_64-linux]
 
 The latest prime number: 104729
 
-real 458.42
-user 457.2
+real 490.87
+user 490
 sys 0.02
 ```
 
@@ -465,14 +465,14 @@ docker run --volume $(pwd):/app mamchyts/benchmark:latest javac /app/prime-numbe
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p java -classpath /app/prime-number/java/ cmd 10000 2>&1'
 ```
 ```
-openjdk 16.0.1 2021-04-20
-OpenJDK Runtime Environment (build 16.0.1+9-Ubuntu-1)
-OpenJDK 64-Bit Server VM (build 16.0.1+9-Ubuntu-1, mixed mode, sharing)
+openjdk 18-ea 2022-03-15
+OpenJDK Runtime Environment (build 18-ea+15-Ubuntu-4)
+OpenJDK 64-Bit Server VM (build 18-ea+15-Ubuntu-4, mixed mode, sharing)
 
 The latest prime number: 104729
 
-real 20.62
-user 20.55
+real 22.66
+user 22.61
 sys 0.01
 ```
 
@@ -488,13 +488,13 @@ rustc 1.53.0
 
 The latest prime number: 104729
 
-real 148.78
-user 148.36
+real 148.91
+user 148.69
 sys 0
 ```
 
 
-### [Rust (optimized compilation)](./prime-number/rust/cmd.rs)
+### [Rust (optimized)](./prime-number/rust/cmd.rs)
 ```
 docker run mamchyts/benchmark:latest rustc --version 2>&1 && echo '' && \
 docker run --volume $(pwd):/app mamchyts/benchmark:latest rustc -C opt-level=3 /app/prime-number/rust/cmd.rs -o /app/prime-number/rust/cmd.rs_opt_bin && \
@@ -505,8 +505,8 @@ rustc 1.53.0
 
 The latest prime number: 104729
 
-real 16.42
-user 16.37
+real 18.7
+user 18.67
 sys 0
 ```
 
@@ -543,7 +543,7 @@ sys 0.12
 ```
 
 
-### [Dart (optimized compilation)](./prime-number/dart/cmd.dart)
+### [Dart (optimized)](./prime-number/dart/cmd.dart)
 ```
 docker run mamchyts/benchmark:latest dart --version 2>&1 && echo '' && \
 docker run --volume $(pwd):/app mamchyts/benchmark:latest dart --disable-analytics compile exe /app/prime-number/dart/cmd.dart -o /app/prime-number/dart/cmd.dart_opt_bin &> /dev/null && \
@@ -603,22 +603,6 @@ sys 0
 ```
 
 
-### [Lua (LuaJIT -j on)](./prime-number/lua/cmd.lua)
-```
-docker run mamchyts/benchmark:latest luajit -v 2>&1 && echo '' && \
-docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p luajit -j on /app/prime-number/lua/cmd.lua 10000 2>&1'
-```
-```
-LuaJIT 2.1.0-beta3 -- Copyright (C) 2005-2017 Mike Pall. http://luajit.org/
-
-The latest prime number:        104729
-
-real 10.6
-user 10.57
-sys 0
-```
-
-
 ### [Lua (LuaJIT -j off)](./prime-number/lua/cmd.lua)
 ```
 docker run mamchyts/benchmark:latest luajit -v 2>&1 && echo '' && \
@@ -631,6 +615,22 @@ The latest prime number:        104729
 
 real 64.46
 user 64.3
+sys 0
+```
+
+
+### [Lua (LuaJIT -j on)](./prime-number/lua/cmd.lua)
+```
+docker run mamchyts/benchmark:latest luajit -v 2>&1 && echo '' && \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p luajit -j on /app/prime-number/lua/cmd.lua 10000 2>&1'
+```
+```
+LuaJIT 2.1.0-beta3 -- Copyright (C) 2005-2017 Mike Pall. http://luajit.org/
+
+The latest prime number:        104729
+
+real 10.6
+user 10.57
 sys 0
 ```
 
@@ -673,7 +673,7 @@ sys 0.82
 ```
 
 
-### [Haskell (optimized compilation)](./prime-number/haskell/cmd.hs)
+### [Haskell (optimized)](./prime-number/haskell/cmd.hs)
 ```
 docker run mamchyts/benchmark:latest ghc --version 2>&1 && echo '' && \
 docker run --volume $(pwd):/app mamchyts/benchmark:latest ghc -O /app/prime-number/haskell/cmd.hs -o /app/prime-number/haskell/cmd.hs_opt_bin &> /dev/null && \
@@ -726,7 +726,7 @@ sys 0.32
 ```
 
 
-### [Crystal (compiled with debug)](./prime-number/crystal/cmd.cr)
+### [Crystal (compiled)](./prime-number/crystal/cmd.cr)
 ```
 docker run mamchyts/benchmark:latest crystal --version 2>&1 && echo '' && \
 docker run --volume $(pwd):/app mamchyts/benchmark:latest crystal build /app/prime-number/crystal/cmd.cr -o /app/prime-number/crystal/cmd.cr_bin && \
@@ -746,7 +746,7 @@ sys 0
 ```
 
 
-### [Crystal (optimized compilation)](./prime-number/crystal/cmd.cr)
+### [Crystal (optimized)](./prime-number/crystal/cmd.cr)
 ```
 docker run mamchyts/benchmark:latest crystal --version 2>&1 && echo '' && \
 docker run --volume $(pwd):/app mamchyts/benchmark:latest crystal build --release /app/prime-number/crystal/cmd.cr -o /app/prime-number/crystal/cmd.cr_opt_bin && \
@@ -877,7 +877,7 @@ sys 0
 ```
 
 
-### [Swift (optimized compilation)](./prime-number/swift/Sources/cmd/main.swift)
+### [Swift (optimized)](./prime-number/swift/Sources/cmd/main.swift)
 ```
 docker run mamchyts/benchmark:latest /root/swift-5.5.2-RELEASE-ubuntu20.04/usr/bin/swift --version 2>&1 && echo '' && \
 docker run --volume $(pwd):/app mamchyts/benchmark:latest /root/swift-5.5.2-RELEASE-ubuntu20.04/usr/bin/swift build -c release --package-path /app/prime-number/swift/ && \
@@ -918,7 +918,7 @@ sys 0
 ```
 
 
-### [Nim (optimized compilation)](./prime-number/nim/cmd.nim)
+### [Nim (optimized)](./prime-number/nim/cmd.nim)
 ```
 docker run mamchyts/benchmark:latest nim --version 2>&1 && echo '' && \
 docker run --volume $(pwd):/app mamchyts/benchmark:latest nim compile -d:release --verbosity:0 -o:/app/prime-number/nim/cmd.nim_opt_bin /app/prime-number/nim/cmd.nim &> /dev/null && \
@@ -939,7 +939,7 @@ sys 0
 ```
 
 
-### [D (compiled with debug)](./prime-number/d/cmd.d)
+### [D](./prime-number/d/cmd.d)
 ```
 docker run mamchyts/benchmark:latest dmd --version 2>&1 && echo '' && \
 docker run --volume $(pwd):/app mamchyts/benchmark:latest dmd -debug -of=/app/prime-number/d/cmd.d_bin /app/prime-number/d/cmd.d && \
@@ -957,7 +957,7 @@ sys 0
 ```
 
 
-### [D (optimized compilation)](./prime-number/d/cmd.d)
+### [D (optimized)](./prime-number/d/cmd.d)
 ```
 docker run mamchyts/benchmark:latest dmd --version 2>&1 && echo '' && \
 docker run --volume $(pwd):/app mamchyts/benchmark:latest dmd -O -release -inline -boundscheck=off -of=/app/prime-number/d/cmd.d_opt_bin /app/prime-number/d/cmd.d && \
@@ -1060,16 +1060,16 @@ php run/run.php
 ## Multiply run of prime number mamchyts/benchmark:latest
 
 ```
-php run/run.php 'C/C++' 'C/C++ (optimized compilation)' 'Assembler/NASM' 'Assembler/NASM (optimized compilation)'
+php run/run.php 'C/C++' 'C/C++ (optimized)' 'Assembler/NASM' 'Assembler/NASM (optimized)'
 ```
 ```
 ----------------------- C/C++ -----------------------
 ...
------------------------ C/C++ (optimized compilation) -----------------------
+----------------------- C/C++ (optimized) -----------------------
 ...
 ----------------------- Assembler/NASM -----------------------
 ...
------------------------ Assembler/NASM (optimized compilation) -----------------------
+----------------------- Assembler/NASM (optimized) -----------------------
 ...
 ```
 
