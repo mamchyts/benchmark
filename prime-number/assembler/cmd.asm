@@ -14,14 +14,17 @@ arg_len:            resd 1
 
     section .text
 _start:
-    ; at the first - detect cmd argument(s)
+    ; check cmd argument(s) count `argc`
+    cmp dword [esp], 1
+    jz short .default
+
     ; esp + 4 - address of the programm file name
     ; esp + 8 - address of the first cmd argument
     ; esp + 12 - address of the second cmd argument and etc.
     mov eax, [esp + 8]
     mov [arg], eax  ; save argument address into memory
 
-    ; at the second - detect argument length
+    ; try to detect cmd argument length
     mov ecx, [arg]
     xor eax, eax    ; set `0`
 .loop:
@@ -32,7 +35,7 @@ _start:
 .quit:
     mov [arg_len], eax  ; save argument length into memory
 
-    ; convert string to integer
+    ; convert string (cmd argument) to integer
     mov edx, [arg]
     mov ecx, [arg_len]
     xor eax, eax
@@ -47,9 +50,15 @@ _start:
     sub ecx, 1
     jnz short .next_symbol
     mov [primeNumberCount], ebx
+    jmp .pre_while_loop
+
+.default:
+    mov dword [primeNumberCount], 100
 
     ; main loop
+.pre_while_loop:
     xor edi, edi    ; `edi` used like `number`
+
 while_loop:
     add edi, 1
     xor ecx, ecx    ; `ecx` used like `i`
