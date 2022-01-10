@@ -16,7 +16,7 @@ arg_len:            resd 1
 _start:
     ; check cmd argument(s) count `argc`
     cmp dword [esp], 1
-    jz short .default
+    jz .default
 
     ; esp + 4 - address of the programm file name
     ; esp + 8 - address of the first cmd argument
@@ -29,7 +29,7 @@ _start:
     xor eax, eax    ; set `0`
 .loop:
     cmp byte [eax + ecx], 0
-    jz short .quit
+    jz .quit
     add eax, 1 ; `eax` will contain argument length
     jmp .loop
 .quit:
@@ -43,12 +43,12 @@ _start:
 .next_symbol:
     movzx eax, byte [edx]   ; get one symbol from string
     add edx, 1
-    sub eax, dword '0'   ; see ASCII codes for more info
+    sub eax, '0'    ; see ASCII codes for more info
     imul ebx, 10
     add eax, ebx
     mov ebx, eax
     sub ecx, 1
-    jnz short .next_symbol
+    jnz .next_symbol
     mov [primeNumberCount], ebx
     jmp .pre_while_loop
 
@@ -57,44 +57,42 @@ _start:
 
     ; main loop
 .pre_while_loop:
-    xor edi, edi    ; `edi` used like `number`
+    xor esi, esi    ; `esi` used like `number`
 
 while_loop:
-    add edi, 1
+    add esi, 1
     xor ecx, ecx    ; `ecx` used like `i`
     xor ebx, ebx    ; `ebx` used like `j`
 .nested_for_loop:
     add ecx, 1
     xor edx, edx
-    mov eax, edi
+    mov eax, esi
     div ecx ; check condition `if (number % i == 0)`
-    cmp edx, 0
-    jnz short .skip_loop_step
+    test edx, edx
+    jnz .skip
     add ebx, 1
-.skip_loop_step:
-    cmp ecx, edi    ; check loop condition `i <= number`
-    jnz short .nested_for_loop
-    cmp ebx, 2  ; check condition `if (j == 2)`
-    jnz short .skip
-    sub dword [primeNumberCount], 1
 .skip:
-    cmp [primeNumberCount], dword 0
-    jnz short while_loop
+    cmp ecx, esi    ; check loop condition `i <= number`
+    jnz .nested_for_loop
+    cmp ebx, 2  ; check condition `if (j == 2)`
+    jnz while_loop
+    sub dword [primeNumberCount], 1
+    jnz while_loop  ; `sub` instruction automatically update flags
 
     ; convert integer to string
     mov ebx, 10
-    mov eax, edi
+    mov eax, esi
     mov ecx, value_string_len
     sub ecx, 1
-    mov [value_string + ecx], byte 10
+    mov byte [value_string + ecx], 10
 .next_digit:
     xor edx, edx
     div ebx
     add edx, '0' ; convert to ASCII code
     sub ecx, 1
     mov [value_string + ecx], dl
-    cmp eax, 0  ; finish loop if main result is zero
-    jnz short .next_digit
+    test eax, eax  ; finish loop if main result is zero
+    jnz .next_digit
 
     ; print results
     mov eax, 4  ; 4 - code of `write` command
