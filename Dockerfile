@@ -3,7 +3,7 @@ FROM ubuntu:21.10
 RUN apt update && apt -y upgrade
 RUN apt -y install software-properties-common \
     && add-apt-repository -y ppa:ondrej/php \
-    && apt install -y php5.6-cli php7.4-cli php8.0-cli php8.1-cli
+    && apt install -y php5.6-cli php7.4-cli php8.1-cli
 RUN apt install -y nodejs npm \
     && npm install -g ts-node
 RUN apt install -y python2 python3 pypy pypy3

@@ -70,8 +70,8 @@ Zend Engine v2.6.0, Copyright (c) 1998-2016 Zend Technologies
 
 The latest prime number: 104729
 
-real 306.54
-user 306.09
+real 314.43
+user 313.99
 sys 0
 ```
 
@@ -89,46 +89,8 @@ Zend Engine v3.4.0, Copyright (c) Zend Technologies
 
 The latest prime number: 104729
 
-real 144.74
-user 144.53
-sys 0.01
-```
-
-
-### [PHP 8.0](./prime-number/php/cmd.php)
-```
-docker run mamchyts/benchmark:latest php8.0 -v 2>&1 && echo '' && \
-docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p php8.0 /app/prime-number/php/cmd.php 10000 2>&1'
-```
-```
-PHP 8.0.14 (cli) (built: Dec 20 2021 21:23:34) ( NTS )
-Copyright (c) The PHP Group
-Zend Engine v4.0.14, Copyright (c) Zend Technologies
-    with Zend OPcache v8.0.14, Copyright (c), by Zend Technologies
-
-The latest prime number: 104729
-
-real 129.25
-user 129.05
-sys 0.01
-```
-
-
-### [PHP 8.0 (JIT)](./prime-number/php/cmd.php)
-```
-docker run mamchyts/benchmark:latest php8.0 -v 2>&1 && echo '' && \
-docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p php8.0 -dopcache.enable_cli=1 -dopcache.jit_buffer_size=10M /app/prime-number/php/cmd.php 10000 2>&1'
-```
-```
-PHP 8.0.14 (cli) (built: Dec 20 2021 21:23:34) ( NTS )
-Copyright (c) The PHP Group
-Zend Engine v4.0.14, Copyright (c) Zend Technologies
-    with Zend OPcache v8.0.14, Copyright (c), by Zend Technologies
-
-The latest prime number: 104729
-
-real 98.6
-user 98.44
+real 152.46
+user 152.23
 sys 0.01
 ```
 
@@ -146,9 +108,9 @@ Zend Engine v4.1.1, Copyright (c) Zend Technologies
 
 The latest prime number: 104729
 
-real 126.5
-user 126.32
-sys 0.01
+real 126.61
+user 126.43
+sys 0
 ```
 
 
@@ -165,9 +127,9 @@ Zend Engine v4.1.1, Copyright (c) Zend Technologies
 
 The latest prime number: 104729
 
-real 98.87
-user 98.72
-sys 0.01
+real 98.64
+user 98.5
+sys 0
 ```
 
 
@@ -197,9 +159,9 @@ v12.22.5
 
 The latest prime number: 104729
 
-real 30.91
-user 30.8
-sys 0.02
+real 30.95
+user 30.82
+sys 0.01
 ```
 
 
@@ -213,9 +175,9 @@ v10.4.0
 
 The latest prime number: 104729
 
-real 33.37
-user 33.2
-sys 0.09
+real 33.47
+user 33.24
+sys 0.1
 ```
 
 
@@ -229,8 +191,8 @@ Python 2.7.18
 
 The latest prime number:  104729
 
-real 450.74
-user 450.17
+real 452.78
+user 452.15
 sys 0
 ```
 
@@ -246,9 +208,9 @@ Python 2.7.18 (7.3.5+dfsg-1, May 24 2021, 00:03:27)
 
 The latest prime number:  104729
 
-real 88.42
-user 88.22
-sys 0.02
+real 88.4
+user 88.16
+sys 0.03
 ```
 
 
@@ -262,8 +224,8 @@ Python 3.9.7
 
 The latest prime number:  104729
 
-real 622.62
-user 621.78
+real 598.42
+user 597.59
 sys 0
 ```
 
@@ -279,9 +241,9 @@ Python 3.7.10 (7.3.5+dfsg-2, Jun 04 2021, 05:13:55)
 
 The latest prime number:  104729
 
-real 88.48
-user 88.28
-sys 0.03
+real 88.46
+user 88.24
+sys 0.04
 ```
 
 
@@ -300,8 +262,8 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 The latest prime number: 104729
 
-real 18.46
-user 18.43
+real 19.11
+user 19.08
 sys 0
 ```
 
@@ -316,10 +278,10 @@ docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/
 ```
 NASM version 2.15.05
 
-The latest prime number: 000104729
+The latest prime number: 0000104729
 
-real 24.56
-user 24.52
+real 25.28
+user 25.24
 sys 0
 ```
 
@@ -341,8 +303,8 @@ Linking /app/prime-number/pascal/cmd.pas_opt_bin
 30 lines compiled, 0.1 sec
 The latest prime number: 104729
 
-real 56.88
-user 56.81
+real 57
+user 56.92
 sys 0
 ```
 
@@ -358,8 +320,8 @@ go version go1.17 linux/amd64
 
 The latest prime number: 104729
 
-real 61.7
-user 61.62
+real 61.71
+user 61.61
 sys 0
 ```
 
@@ -374,8 +336,8 @@ ruby 2.7.5p203 (2021-11-24 revision f69aeb8314) [x86_64-linux]
 
 The latest prime number: 104729
 
-real 521.2
-user 520.44
+real 521.56
+user 520.78
 sys 0.02
 ```
 
@@ -842,7 +804,7 @@ php run/run.php
 ...
 ----------------------- PHP 7.4 -----------------------
 ...
------------------------ PHP 8.0 -----------------------
+----------------------- PHP 8.1 -----------------------
 ...
 ```
 
