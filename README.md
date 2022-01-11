@@ -4,7 +4,7 @@ Test PC - **AWS t3.small**:
 ```
 $ free -h
               total        used        free      shared  buff/cache   available
-Mem:          1.9Gi       386Mi       330Mi       4.0Mi       1.2Gi       1.4Gi
+Mem:          1.9Gi       285Mi       115Mi       0.0Ki       1.5Gi       1.5Gi
 Swap:            0B          0B          0B
 ```
 ```
@@ -21,17 +21,17 @@ Socket(s):                       1
 NUMA node(s):                    1
 Vendor ID:                       GenuineIntel
 CPU family:                      6
-Model:                           79
-Model name:                      Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz
-Stepping:                        1
-CPU MHz:                         2300.120
-BogoMIPS:                        4600.04
+Model:                           63
+Model name:                      Intel(R) Xeon(R) CPU E5-2676 v3 @ 2.40GHz
+Stepping:                        2
+CPU MHz:                         2399.976
+BogoMIPS:                        4800.17
 Hypervisor vendor:               Xen
 Virtualization type:             full
 L1d cache:                       32 KiB
 L1i cache:                       32 KiB
 L2 cache:                        256 KiB
-L3 cache:                        45 MiB
+L3 cache:                        30 MiB
 NUMA node0 CPU(s):               0
 Vulnerability Itlb multihit:     KVM: Mitigation: VMX unsupported
 Vulnerability L1tf:              Mitigation; PTE Inversion
@@ -42,16 +42,13 @@ Vulnerability Spectre v1:        Mitigation; usercopy/swapgs barriers and __user
 Vulnerability Spectre v2:        Mitigation; Full generic retpoline, STIBP disabled, RSB filling
 Vulnerability Srbds:             Not affected
 Vulnerability Tsx async abort:   Not affected
-Flags:                           fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr
-                                 sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good nopl xtopology cpuid tsc_known_freq pni
-                                 pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx
-                                 f16c rdrand hypervisor lahf_lm abm cpuid_fault invpcid_single pti fsgsbase bmi1 avx2 smep bmi2 erms invpcid xsaveo
+Flags:                           fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht
+                                 syscall nx rdtscp lm constant_tsc rep_good nopl xtopology cpuid tsc_known_freq pni pclmulqdq ssse3
+                                 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervi
+                                 sor lahf_lm abm cpuid_fault invpcid_single pti fsgsbase bmi1 avx2 smep bmi2 erms invpcid xsaveopt
 ```
 
-![https://quickchart.io/sandbox/#%7B%0A%20%20%22type%22%3A%20%22horizontalBar%22%2C%0A%20%20%22data%22%3A%20%7B%0A%20%20%20%20%22labels%22%3A%20%5B%0A%22Lua%20(LuaJIT%20-j%20on)%22%2C%0A%22C%2FC%2B%2B%20(optimized%20compilation)%22%2C%0A%22Rust%20(optimized%20compilation)%22%2C%0A%22Assembler%2FNASM%20(optimized%20compilation)%22%2C%0A%22Crystal%20(optimized%20compilation)%22%2C%0A%22Assembler%2FNASM%22%2C%0A%22Swift%20(optimized%20compilation)%22%2C%0A%22D%20(compiled%20with%20debug)%22%2C%0A%22D%20(optimized%20compilation)%22%2C%0A%22Java%22%2C%0A%22C%2FC%2B%2B%22%2C%0A%22Scala%22%2C%0A%22Kotlin%22%2C%0A%22Node.js%2FJavascript%22%2C%0A%22Ada%22%2C%0A%22Node.js%2FTypeScript%22%2C%0A%22C%23%20(mono)%22%2C%0A%22C%23%20(dotnet)%22%2C%0A%22Dart%20(optimized%20compilation)%22%2C%0A%22Dart%22%2C%0A%22Haskell%20(optimized%20compilation)%22%2C%0A%22Pascal%20(optimized%20compilation)%22%2C%0A%22Go%22%2C%0A%22Nim%20(optimized%20compilation)%22%2C%0A%22Lua%20(LuaJIT%20-j%20off)%22%2C%0A%22Pascal%22%2C%0A%22PHP%20(KPHP)%22%2C%0A%22Crystal%20(compiled%20with%20debug)%22%2C%0A%22Crystal%22%2C%0A%22Nim%22%2C%0A%22Python%202%20(PyPy)%22%2C%0A%22Python%203%20(PyPy)%22%2C%0A%22PHP%208.0%20(JIT)%22%2C%0A%22Elixir%22%2C%0A%22PHP%208.0%22%2C%0A%22PHP%207.4%22%2C%0A%22Lua%22%2C%0A%22Haskell%22%2C%0A%22Rust%22%2C%0A%22PHP%205.6%22%2C%0A%22Haxe%22%2C%0A%22Perl%22%2C%0A%22Python%202%22%2C%0A%22Ruby%203%22%2C%0A%22Ruby%202%22%2C%0A%22Python%203%22%2C%0A%0A%20%20%20%20%5D%2C%0A%20%20%20%20%22datasets%22%3A%20%5B%0A%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%22label%22%3A%20%22Execution%20time%20in%20seconds%20(lower%20is%20better)%22%2C%0A%20%20%20%20%20%20%20%20%22backgroundColor%22%3A%20%22rgba(54%2C%20162%2C%20235%2C%200.5)%22%2C%0A%20%20%20%20%20%20%20%20%22borderColor%22%3A%20%22rgb(54%2C%20162%2C%20235)%22%2C%0A%20%20%20%20%20%20%20%20%22borderWidth%22%3A%201%2C%0A%20%20%20%20%20%20%20%20%22data%22%3A%20%5B%0A9.75%2C%0A14.23%2C%0A14.23%2C%0A15.87%2C%0A16.03%2C%0A16.46%2C%0A16.51%2C%0A17.14%2C%0A17.78%2C%0A17.86%2C%0A18.43%2C%0A18.46%2C%0A19.65%2C%0A21.49%2C%0A22.78%2C%0A23.09%2C%0A23.15%2C%0A24.45%2C%0A26.77%2C%0A28.17%2C%0A48.92%2C%0A50.1%2C%0A50.69%2C%0A51.28%2C%0A53.2%2C%0A54.61%2C%0A56.54%2C%0A56.82%2C%0A59.77%2C%0A62.9%2C%0A66.32%2C%0A66.7%2C%0A83.74%2C%0A99.14%2C%0A109.41%2C%0A117.75%2C%0A154.18%2C%0A235.24%2C%0A245.09%2C%0A246.88%2C%0A296.26%2C%0A316.29%2C%0A365.83%2C%0A374.9%2C%0A413.38%2C%0A471.23%2C%0A%20%20%20%20%20%20%20%20%5D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%5D%0A%20%20%7D%2C%0A%20%20%22options%22%3A%20%7B%0A%20%20%20%20%22plugins%22%3A%20%7B%0A%20%20%20%20%20%20%22datalabels%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%22anchor%22%3A%20%22end%22%2C%0A%20%20%20%20%20%20%20%20%22align%22%3A%20%22end%22%2C%0A%20%20%20%20%20%20%20%20%22color%22%3A%20%22%23000%22%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22responsive%22%3A%20true%2C%0A%20%20%20%20%22legend%22%3A%20%7B%0A%20%20%20%20%20%20%22position%22%3A%20%22top%22%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22title%22%3A%20%7B%0A%20%20%20%20%20%20%22display%22%3A%20false%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D](./chart.png)
-
-
-![https://quickchart.io/sandbox/#%7B%0A%20%20%22type%22%3A%20%22horizontalBar%22%2C%0A%20%20%22data%22%3A%20%7B%0A%20%20%20%20%22labels%22%3A%20%5B%0A%22Swift%22%2C%0A%22R%22%2C%0A%22Lisp%22%2C%0A%22Bash%22%2C%0A%0A%20%20%20%20%5D%2C%0A%20%20%20%20%22datasets%22%3A%20%5B%0A%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%22label%22%3A%20%22Execution%20time%20in%20seconds%20(lower%20is%20better)%22%2C%0A%20%20%20%20%20%20%20%20%22backgroundColor%22%3A%20%22rgba(54%2C%20162%2C%20235%2C%200.5)%22%2C%0A%20%20%20%20%20%20%20%20%22borderColor%22%3A%20%22rgb(54%2C%20162%2C%20235)%22%2C%0A%20%20%20%20%20%20%20%20%22borderWidth%22%3A%201%2C%0A%20%20%20%20%20%20%20%20%22data%22%3A%20%5B%0A950.09%2C%0A1037.07%2C%0A8143.46%2C%0A14748.86%2C%0A%20%20%20%20%20%20%20%20%5D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%5D%0A%20%20%7D%2C%0A%20%20%22options%22%3A%20%7B%0A%20%20%20%20%22plugins%22%3A%20%7B%0A%20%20%20%20%20%20%22datalabels%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%22anchor%22%3A%20%22end%22%2C%0A%20%20%20%20%20%20%20%20%22align%22%3A%20%22end%22%2C%0A%20%20%20%20%20%20%20%20%22color%22%3A%20%22%23000%22%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22responsive%22%3A%20true%2C%0A%20%20%20%20%22legend%22%3A%20%7B%0A%20%20%20%20%20%20%22position%22%3A%20%22top%22%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22title%22%3A%20%7B%0A%20%20%20%20%20%20%22display%22%3A%20false%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D](./chart-slowest.png)
+![https://quickchart.io/sandbox/#%7B%22chart%22%3A%22%7B%5Cn%20%20type%3A%20'horizontalBar'%2C%5Cn%20%20data%3A%20%7B%5Cn%20%20%20%20labels%3A%20%5B%5Cn%20%20%20%20%20%20'Rust'%2C%5Cn%20%20%20%20%20%20'C%2FC%2B%2B'%2C%5Cn%20%20%20%20%20%20'D'%2C%5Cn%20%20%20%20%20%20'Crystal'%2C%5Cn%20%20%20%20%20%20'Dart'%2C%5Cn%20%20%20%20%20%20'Ada'%2C%5Cn%20%20%20%20%20%20'Java'%2C%5Cn%20%20%20%20%20%20'Scala'%2C%5Cn%20%20%20%20%20%20'C%23%20(mono)'%2C%5Cn%20%20%20%20%20%20'Assembler%2FNASM'%2C%5Cn%20%20%20%20%20%20'Kotlin'%2C%5Cn%20%20%20%20%20%20'Swift'%2C%5Cn%20%20%20%20%20%20'Lua%20(LuaJIT%20-j%20on)'%2C%5Cn%20%20%20%20%20%20'C%23%20(dotnet)'%2C%5Cn%20%20%20%20%20%20'Node.js%2FJavascript'%2C%5Cn%20%20%20%20%20%20'Node.js%2FTypeScript'%2C%5Cn%20%20%20%20%20%20'Haskell'%2C%5Cn%20%20%20%20%20%20'Nim'%2C%5Cn%20%20%20%20%20%20'Pascal'%2C%5Cn%20%20%20%20%20%20'Go'%2C%5Cn%20%20%20%20%20%20'PHP%20(KPHP)'%2C%5Cn%20%20%20%20%20%20'Lua%20(LuaJIT%20-j%20off)'%2C%5Cn%20%20%20%20%20%20'Python%202%20(PyPy)'%2C%5Cn%20%20%20%20%20%20'Python%203%20(PyPy)'%2C%5Cn%20%20%20%20%20%20'PHP%208.1%20(JIT)'%2C%5Cn%20%20%20%20%20%20'Elixir'%2C%5Cn%20%20%20%20%20%20'PHP%208.1'%2C%5Cn%20%20%20%20%20%20'Lua'%2C%5Cn%20%20%20%20%20%20'PHP%207.4'%2C%5Cn%20%20%20%20%20%20'PHP%205.6'%2C%5Cn%20%20%20%20%20%20'Haxe'%2C%5Cn%20%20%20%20%20%20'Perl'%2C%5Cn%20%20%20%20%20%20'Python%202'%2C%5Cn%20%20%20%20%20%20'Ruby%203'%2C%5Cn%20%20%20%20%20%20'Ruby%202'%2C%5Cn%20%20%20%20%20%20'Python%203'%2C%5Cn%20%20%20%20%20%20'R'%2C%5Cn%20%20%20%20%20%20'Lisp'%2C%5Cn%20%20%20%20%20%20'Bash'%2C%5Cn%20%20%20%20%5D%2C%5Cn%20%20%20%20datasets%3A%20%5B%5Cn%20%20%20%20%20%20%7B%5Cn%20%20%20%20%20%20%20%20label%3A%20'Execution%20time%20in%20seconds%20(lower%20is%20better)'%2C%5Cn%20%20%20%20%20%20%20%20backgroundColor%3A%20'rgba(54%2C%20162%2C%20235%2C%200.5)'%2C%5Cn%20%20%20%20%20%20%20%20borderColor%3A%20'rgb(54%2C%20162%2C%20235)'%2C%5Cn%20%20%20%20%20%20%20%20borderWidth%3A%201%2C%5Cn%20%20%20%20%20%20%20%20data%3A%20%5B%5Cn%20%20%20%20%20%20%20%20%20%2018.47%2C%5Cn%20%20%20%20%20%20%20%20%20%2019.11%2C%5Cn%20%20%20%20%20%20%20%20%20%2019.79%2C%5Cn%20%20%20%20%20%20%20%20%20%2020.54%2C%5Cn%20%20%20%20%20%20%20%20%20%2022.43%2C%5Cn%20%20%20%20%20%20%20%20%20%2022.61%2C%5Cn%20%20%20%20%20%20%20%20%20%2022.67%2C%5Cn%20%20%20%20%20%20%20%20%20%2023.69%2C%5Cn%20%20%20%20%20%20%20%20%20%2024.58%2C%5Cn%20%20%20%20%20%20%20%20%20%2024.63%2C%5Cn%20%20%20%20%20%20%20%20%20%2025.42%2C%5Cn%20%20%20%20%20%20%20%20%20%2026.69%2C%5Cn%20%20%20%20%20%20%20%20%20%2028.75%2C%5Cn%20%20%20%20%20%20%20%20%20%2030.61%2C%5Cn%20%20%20%20%20%20%20%20%20%2030.95%2C%5Cn%20%20%20%20%20%20%20%20%20%2033.47%2C%5Cn%20%20%20%20%20%20%20%20%20%2042.39%2C%5Cn%20%20%20%20%20%20%20%20%20%2045.3%2C%5Cn%20%20%20%20%20%20%20%20%20%2056.91%2C%5Cn%20%20%20%20%20%20%20%20%20%2061.81%2C%5Cn%20%20%20%20%20%20%20%20%20%2062.64%2C%5Cn%20%20%20%20%20%20%20%20%20%2071.33%2C%5Cn%20%20%20%20%20%20%20%20%20%2088.4%2C%5Cn%20%20%20%20%20%20%20%20%20%2088.46%2C%5Cn%20%20%20%20%20%20%20%20%20%2098.64%2C%5Cn%20%20%20%20%20%20%20%20%20%20122.27%2C%5Cn%20%20%20%20%20%20%20%20%20%20126.61%2C%5Cn%20%20%20%20%20%20%20%20%20%20134.48%2C%5Cn%20%20%20%20%20%20%20%20%20%20152.46%2C%5Cn%20%20%20%20%20%20%20%20%20%20314.43%2C%5Cn%20%20%20%20%20%20%20%20%20%20342.33%2C%5Cn%20%20%20%20%20%20%20%20%20%20414.17%2C%5Cn%20%20%20%20%20%20%20%20%20%20452.78%2C%5Cn%20%20%20%20%20%20%20%20%20%20492.97%2C%5Cn%20%20%20%20%20%20%20%20%20%20521.52%2C%5Cn%20%20%20%20%20%20%20%20%20%20598.42%2C%5Cn%20%20%20%20%20%20%20%20%20%201250.44%2C%5Cn%20%20%20%20%20%20%20%20%20%209622.32%2C%5Cn%20%20%20%20%20%20%20%20%20%2014748.86%2C%5Cn%20%20%20%20%20%20%20%20%5D%5Cn%20%20%20%20%20%20%7D%5Cn%20%20%20%20%5D%5Cn%20%20%7D%2C%5Cn%20%20options%3A%20%7B%5Cn%20%20%20%20scales%3A%20%7B%5Cn%20%20%20%20%20%20xAxes%3A%20%5B%5Cn%20%20%20%20%20%20%20%20%7B%5Cn%20%20%20%20%20%20%20%20%20%20type%3A%20'logarithmic'%2C%5Cn%20%20%20%20%20%20%20%20%20%20ticks%3A%20%7B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20min%3A%2018%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20max%3A%2030000%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20autoSkip%3A%20true%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20autoSkipPadding%3A%20100%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20maxRotation%3A%200%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20callback%3A%20function(value)%20%7B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20return%20value%3B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%7D%5Cn%20%20%20%20%20%20%20%20%20%20%7D%5Cn%20%20%20%20%20%20%20%20%7D%2C%5Cn%20%20%20%20%20%20%5D%2C%5Cn%20%20%20%20%7D%2C%5Cn%20%20%20%20plugins%3A%20%7B%5Cn%20%20%20%20%20%20datalabels%3A%20%7B%5Cn%20%20%20%20%20%20%20%20anchor%3A%20'end'%2C%5Cn%20%20%20%20%20%20%20%20align%3A%20'end'%2C%5Cn%20%20%20%20%20%20%20%20color%3A%20'%23000'%5Cn%20%20%20%20%20%20%7D%5Cn%20%20%20%20%7D%2C%5Cn%20%20%20%20responsive%3A%20true%2C%5Cn%20%20%20%20legend%3A%20%7B%5Cn%20%20%20%20%20%20position%3A%20'top'%5Cn%20%20%20%20%7D%2C%5Cn%20%20%20%20title%3A%20%7B%5Cn%20%20%20%20%20%20display%3A%20false%5Cn%20%20%20%20%7D%5Cn%20%20%7D%5Cn%7D%22%2C%22width%22%3A800%2C%22height%22%3A700%2C%22version%22%3A%222%22%2C%22backgroundColor%22%3A%22%23fff%22%7D](./chart.png)
 
 
 ## Single run of prime number benchmark
@@ -280,8 +277,8 @@ NASM version 2.15.05
 
 The latest prime number: 0000104729
 
-real 25.28
-user 25.24
+real 24.63
+user 24.58
 sys 0
 ```
 
@@ -303,8 +300,8 @@ Linking /app/prime-number/pascal/cmd.pas_bin
 30 lines compiled, 0.1 sec
 The latest prime number: 104729
 
-real 57
-user 56.92
+real 56.91
+user 56.81
 sys 0
 ```
 
@@ -320,8 +317,8 @@ go version go1.17 linux/amd64
 
 The latest prime number: 104729
 
-real 61.71
-user 61.61
+real 61.81
+user 61.71
 sys 0
 ```
 
@@ -336,8 +333,8 @@ ruby 2.7.5p203 (2021-11-24 revision f69aeb8314) [x86_64-linux]
 
 The latest prime number: 104729
 
-real 521.56
-user 520.78
+real 521.52
+user 520.63
 sys 0.02
 ```
 
@@ -352,8 +349,8 @@ ruby 3.1.0p0 (2021-12-25 revision fb4df44d16) [x86_64-linux]
 
 The latest prime number: 104729
 
-real 490.87
-user 490
+real 492.97
+user 492.16
 sys 0.02
 ```
 
@@ -371,7 +368,7 @@ OpenJDK 64-Bit Server VM (build 18-ea+15-Ubuntu-4, mixed mode, sharing)
 
 The latest prime number: 104729
 
-real 22.66
+real 22.67
 user 22.61
 sys 0.01
 ```
@@ -388,8 +385,8 @@ rustc 1.53.0
 
 The latest prime number: 104729
 
-real 18.7
-user 18.67
+real 18.47
+user 18.44
 sys 0
 ```
 
@@ -397,16 +394,16 @@ sys 0
 ### [R](./prime-number/r/cmd.r)
 ```
 docker run mamchyts/benchmark:latest Rscript --version 2>&1 && echo '' && \
-docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p Rscript --vanilla /app/prime-number/r/cmd.r 10000 2>&1'
+docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p Rscript --vanilla /app/prime-number/r/cmd.r 100 2>&1'
 ```
 ```
 R scripting front-end version 4.0.4 (2021-02-15)
 
 [1] "The latest prime number:  104729"
 
-real 1163.92
-user 1160.64
-sys 0.05
+real 1250.44
+user 1247.97
+sys 0.04
 ```
 
 
@@ -417,12 +414,13 @@ docker run --volume $(pwd):/app mamchyts/benchmark:latest dart --disable-analyti
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/dart/cmd.dart_bin 10000 2>&1'
 ```
 ```
-Dart SDK version: 2.14.4 (stable) (Unknown timestamp) on "linux_x64"
+Dart SDK version: 2.15.1 (stable) (Unknown timestamp) on "linux_x64"
 
+Info: Compiling with sound null safety
 The latest prime number: 104729
 
-real 31.8
-user 30.71
+real 22.43
+user 18.09
 sys 0
 ```
 
@@ -448,8 +446,8 @@ Internet, point your browser at http://www.perl.org/, the Perl Home Page.
 
 The latest prime number: 104729
 
-real 385.42
-user 384.43
+real 414.17
+user 413.52
 sys 0
 ```
 
@@ -460,12 +458,12 @@ docker run mamchyts/benchmark:latest lua -v 2>&1 && echo '' && \
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p lua /app/prime-number/lua/cmd.lua 10000 2>&1'
 ```
 ```
-Lua 5.3.3  Copyright (C) 1994-2016 Lua.org, PUC-Rio
+Lua 5.4.2  Copyright (C) 1994-2020 Lua.org, PUC-Rio
 
 The latest prime number:        104729
 
-real 184.06
-user 183.56
+real 134.48
+user 134.26
 sys 0
 ```
 
@@ -480,8 +478,8 @@ LuaJIT 2.1.0-beta3 -- Copyright (C) 2005-2017 Mike Pall. http://luajit.org/
 
 The latest prime number:        104729
 
-real 64.46
-user 64.3
+real 71.33
+user 71.21
 sys 0
 ```
 
@@ -496,8 +494,8 @@ LuaJIT 2.1.0-beta3 -- Copyright (C) 2005-2017 Mike Pall. http://luajit.org/
 
 The latest prime number:        104729
 
-real 10.6
-user 10.57
+real 28.75
+user 28.7
 sys 0
 ```
 
@@ -517,8 +515,8 @@ There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR P
 
 The latest prime number:  104729
 
-real 20.55
-user 20.48
+real 22.61
+user 22.57
 sys 0
 ```
 
@@ -534,8 +532,8 @@ The Glorious Glasgow Haskell Compilation System, version 8.8.4
 
 The latest prime number: 104729
 
-real 57.24
-user 57.08
+real 42.39
+user 41.83
 sys 0
 ```
 
@@ -547,13 +545,13 @@ docker run --volume $(pwd):/app mamchyts/benchmark:latest /root/kotlinc/bin/kotl
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p java -jar /app/prime-number/kotlin/cmd.jar 10000 2>&1'
 ```
 ```
-info: kotlinc-jvm 1.6.10 (JRE 16.0.1+9-Ubuntu-1)
+info: kotlinc-jvm 1.6.10 (JRE 18-ea+15-Ubuntu-4)
 
 The latest prime number: 104729
 
-real 24.9
-user 24.81
-sys 0.01
+real 25.42
+user 25.34
+sys 0.02
 ```
 
 
@@ -571,8 +569,8 @@ Default target: x86_64-unknown-linux-gnu
 
 The latest prime number: 104729
 
-real 18.5
-user 18.43
+real 20.54
+user 20.51
 sys 0
 ```
 
@@ -588,25 +586,21 @@ Mono C# compiler version 6.12.0.122
 
 The latest prime number: 104729
 
-real 22.53
-user 22.47
-sys 0
+real 24.58
+user 24.52
+sys 0.01
 ```
 
 
 ### [C# (dotnet)](./prime-number/c%23/cmd.cs)
 ```
-docker run mamchyts/benchmark:latest dotnet --version && echo '' && \
 docker run --volume $(pwd):/app mamchyts/benchmark:latest dotnet build --runtime linux-x64 /app/prime-number/c#/ &> /dev/null && \
-docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p dotnet run -p /app/prime-number/c#/ 10000 2>&1'
+docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p dotnet run --project /app/prime-number/c#/ 10000 2>&1'
 ```
 ```
-5.0.403
-
-
-Welcome to .NET 5.0!
+Welcome to .NET 6.0!
 ---------------------
-SDK Version: 5.0.403
+SDK Version: 6.0.101
 
 Telemetry
 ---------
@@ -627,9 +621,9 @@ Use 'dotnet --help' to see available commands or visit: https://aka.ms/dotnet-cl
 --------------------------------------------------------------------------------------
 The latest prime number: 104729
 
-real 28.07
-user 27.21
-sys 0.25
+real 30.61
+user 29.36
+sys 0.23
 ```
 
 
@@ -644,9 +638,9 @@ Scala code runner version 2.11.12 -- Copyright 2002-2017, LAMP/EPFL
 
 The latest prime number: 104729
 
-real 21.56
-user 21.4
-sys 0.08
+real 23.69
+user 23.53
+sys 0.1
 ```
 
 
@@ -662,9 +656,9 @@ Elixir 1.10.3 (compiled with Erlang/OTP 22)
 
 The latest prime number: 104729
 
-real 120.53
-user 119.3
-sys 0.87
+real 122.27
+user 121.17
+sys 0.86
 ```
 
 
@@ -682,9 +676,9 @@ Target: x86_64-unknown-linux-gnu
 [0/0] Build complete!
 The latest prime number: 104729
 
-real 24.63
-user 24.55
-sys 0sys 0
+real 26.69
+user 26.65
+sys 0
 ```
 
 
@@ -696,15 +690,15 @@ docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/
 ```
 ```
 Nim Compiler Version 1.4.2 [Linux: amd64]
-Compiled at 2020-12-02
+Compiled at 2021-05-13
 Copyright (c) 2006-2020 by Andreas Rumpf
 
 active boot switches: -d:release
 
 The latest prime number: 104729
 
-real 60.59
-user 60.4
+real 45.3
+user 42.75
 sys 0
 ```
 
@@ -716,13 +710,13 @@ docker run --volume $(pwd):/app mamchyts/benchmark:latest dmd -O -release -inlin
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/d/cmd.d_bin 10000 2>&1'
 ```
 ```
-DMD64 D Compiler v2.098.0
+DMD64 D Compiler v2.098.1
 Copyright (C) 1999-2021 by The D Language Foundation, All Rights Reserved written by Walter Bright
 
 The latest prime number: 104729
 
-real 19.73
-user 19.68
+real 19.79
+user 19.75
 sys 0
 ```
 
@@ -754,13 +748,13 @@ docker run mamchyts/benchmark:latest clisp --version 2>&1 && echo '' && \
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p clisp /app/prime-number/lisp/cmd.lisp 10000 2>&1'
 ```
 ```
-GNU CLISP 2.49.92 (2018-02-18) (built on lgw01-amd64-022.buildd [127.0.1.1])
-Software: GNU C 9.2.1 20190905
-gcc -g -O2 -fdebug-prefix-map=/build/clisp-jJhQLN/clisp-2.49.20180218+really2.49.92=. -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -no-integrated-cpp -W -Wswitch -Wcomment -Wpointer-arith -Wreturn-type -Wmissing-declarations -Wimplicit -Wno-sign-compare -Wno-format-nonliteral -Wno-shift-negative-value -O -fwrapv -fno-strict-aliasing -DNO_ASM -DENABLE_UNICODE -DDYNAMIC_FFI -DDYNAMIC_MODULES -Wl,-Bsymbolic-functions -Wl,-z,relro  libgnu.a  -lreadline -lncurses -ldl -lffcall  -lsigsegv -lunistring
+GNU CLISP 2.49.92 (2018-02-18) (built on lcy01-amd64-011.buildd [127.0.1.1])
+Software: GNU C 10.3.0
+gcc -g -O2 -ffile-prefix-map=/build/clisp-wfMIz3/clisp-2.49.20180218+really2.49.92=. -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -no-integrated-cpp -W -Wswitch -Wcomment -Wpointer-arith -Wreturn-type -Wmissing-declarations -Wimplicit -Wno-sign-compare -Wno-format-nonliteral -Wno-shift-negative-value -O -fwrapv -fno-strict-aliasing -DNO_ASM -DENABLE_UNICODE -DDYNAMIC_FFI -DDYNAMIC_MODULES -Wl,-Bsymbolic-functions -Wl,-z,relro  libgnu.a  -lreadline -lncurses -ldl -lffcall  -lsigsegv -lunistring
 SAFETY=0 HEAPCODES ONE_FREE_BIT_HEAPCODES WIDE_HARD GENERATIONAL_GC SPVW_BLOCKS SPVW_MIXED TRIVIALMAP_MEMORY
-libsigsegv 2.12
-libreadline 8.0
-libffcall 2.1
+libsigsegv 2.13
+libreadline 8.1
+libffcall 2.2
 Features:
 (READLINE REGEXP WILDCARD SYSCALLS I18N LOOP COMPILER CLOS MOP CLISP ANSI-CL
  COMMON-LISP LISP=CL INTERPRETER LOGICAL-PATHNAMES SOCKETS GENERIC-STREAMS
@@ -768,13 +762,13 @@ Features:
 C Modules: (clisp i18n syscalls regexp readline)
 Installation directory: /usr/lib/clisp-2.49.92/
 User language: ENGLISH
-Machine: X86_64 (X86_64) c771609f16c8 [172.17.0.2]
+Machine: X86_64 (X86_64) d6d3288087fa [172.17.0.2]
 
 The latest prime number: 104729
 
-real 8143.46
-user 8139.79
-sys 3.09
+real 9622.32
+user 9599.52
+sys 5.59
 ```
 
 
@@ -788,8 +782,8 @@ docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p haxe 
 
 The latest prime number: 104729
 
-real 630.72
-user 628.20
+real 342.33
+user 341.68
 sys 0.03
 ```
 
@@ -832,7 +826,7 @@ php run/run.php 'C/C++' 'Assembler/NASM' 'Rust' 'Lua (LuaJIT -j on)' 'Java'
 
 ```
 docker build -t benchmark .
-docker tag benchmark mamchyts/benchmark:1.1.2
+docker tag benchmark mamchyts/benchmark:1.1.3
 docker tag benchmark mamchyts/benchmark:latest
 docker push --all-tags mamchyts/benchmark
 ```

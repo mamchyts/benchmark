@@ -24,7 +24,7 @@ namespace c_
                 }
             }
 
-            Console.WriteLine("The latest prime number: " + number);
+            Console.WriteLine("The latest prime number: " + number + "\n");
         }
     }
 }

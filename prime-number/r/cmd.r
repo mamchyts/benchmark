@@ -22,3 +22,4 @@ while (primeNumberCount > 0) {
 }
 
 paste('The latest prime number: ', number);
+cat("\n")
