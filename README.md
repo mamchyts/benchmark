@@ -727,7 +727,7 @@ docker run mamchyts/benchmark:latest bash --version 2>&1 && echo '' && \
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p bash /app/prime-number/bash/cmd.sh 10000 2>&1'
 ```
 ```
-GNU bash, version 5.1.4(1)-release (x86_64-pc-linux-gnu)
+GNU bash, version 5.1.8(1)-release (x86_64-pc-linux-gnu)
 Copyright (C) 2020 Free Software Foundation, Inc.
 License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 
@@ -736,9 +736,9 @@ There is NO WARRANTY, to the extent permitted by law.
 
 The latest prime number: 104729
 
-real 14748.86
-user 14242.45
-sys 902.84
+real 11031.96
+user 10564.49
+sys 586.68
 ```
 
 
