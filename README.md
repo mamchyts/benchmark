@@ -130,22 +130,6 @@ sys 0
 ```
 
 
-### [PHP (KPHP)](./prime-number/php/cmd.php)
-```
-docker run mamchyts/benchmark:latest kphp --version 2>&1 && echo '' && \
-docker run --volume $(pwd):/app mamchyts/benchmark:latest kphp --mode=cli /app/prime-number/php/cmd.php -o /app/prime-number/php/cmd.php_bin &> /dev/null && \
-docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/php/cmd.php_bin 10000 2>&1'
-```
-```
-kphp2cpp compiled at Nov  8 2021 10:14:43 UTC by gcc 9.3.0 64-bit after commit ccfc8a682ff95acad8d3cb41db24e273f4101945 build 2501
-
-The latest prime number: 104729
-real 62.64
-user 62.27
-sys 0.00
-```
-
-
 ### [Node.js/Javascript](./prime-number/javascript/cmd.js)
 ```
 docker run mamchyts/benchmark:latest nodejs --version 2>&1 && echo '' && \
@@ -325,11 +309,11 @@ sys 0
 
 ### [Ruby 2](./prime-number/ruby/cmd.rb)
 ```
-docker run mamchyts/benchmark:latest /root/.rbenv/versions/2.7.5/bin/ruby --version 2>&1 && echo '' && \
-docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /root/.rbenv/versions/2.7.5/bin/ruby /app/prime-number/ruby/cmd.rb 10000 2>&1'
+docker run mamchyts/benchmark:latest /root/.rbenv/versions/2.7.6/bin/ruby --version 2>&1 && echo '' && \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /root/.rbenv/versions/2.7.6/bin/ruby /app/prime-number/ruby/cmd.rb 10000 2>&1'
 ```
 ```
-ruby 2.7.5p203 (2021-11-24 revision f69aeb8314) [x86_64-linux]
+ruby 2.7.6p203 (2021-11-24 revision f69aeb8314) [x86_64-linux]
 
 The latest prime number: 104729
 
@@ -341,11 +325,11 @@ sys 0.02
 
 ### [Ruby 3](./prime-number/ruby/cmd.rb)
 ```
-docker run mamchyts/benchmark:latest /root/.rbenv/versions/3.1.0/bin/ruby --version 2>&1 && echo '' && \
-docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /root/.rbenv/versions/3.1.0/bin/ruby /app/prime-number/ruby/cmd.rb 10000 2>&1'
+docker run mamchyts/benchmark:latest /root/.rbenv/versions/3.1.2/bin/ruby --version 2>&1 && echo '' && \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /root/.rbenv/versions/3.1.2/bin/ruby /app/prime-number/ruby/cmd.rb 10000 2>&1'
 ```
 ```
-ruby 3.1.0p0 (2021-12-25 revision fb4df44d16) [x86_64-linux]
+ruby 3.1.2p0 (2021-12-25 revision fb4df44d16) [x86_64-linux]
 
 The latest prime number: 104729
 
@@ -540,8 +524,8 @@ sys 0
 
 ### [Kotlin](./prime-number/kotlin/cmd.kt)
 ```
-docker run mamchyts/benchmark:latest /root/kotlinc/bin/kotlinc -version 2>&1 && echo '' && \
-docker run --volume $(pwd):/app mamchyts/benchmark:latest /root/kotlinc/bin/kotlinc /app/prime-number/kotlin/cmd.kt -include-runtime -d /app/prime-number/kotlin/cmd.jar && \
+docker run mamchyts/benchmark:latest kotlinc -version 2>&1 && echo '' && \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest kotlinc /app/prime-number/kotlin/cmd.kt -include-runtime -d /app/prime-number/kotlin/cmd.jar && \
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p java -jar /app/prime-number/kotlin/cmd.jar 10000 2>&1'
 ```
 ```
@@ -594,8 +578,8 @@ sys 0.01
 
 ### [C# (dotnet)](./prime-number/c%23/cmd.cs)
 ```
-docker run --volume $(pwd):/app mamchyts/benchmark:latest dotnet build --runtime linux-x64 /app/prime-number/c#/ &> /dev/null && \
-docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p dotnet run --project /app/prime-number/c#/ 10000 2>&1'
+docker run --volume $(pwd):/app mamchyts/benchmark:latest dotnet build --runtime --self-contained linux-x64 /app/prime-number/c#/ &> /dev/null && \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p dotnet run --project /app/prime-number/c#/ 100 2>&1'
 ```
 ```
 Welcome to .NET 6.0!
@@ -664,8 +648,8 @@ sys 0.86
 
 ### [Swift](./prime-number/swift/Sources/cmd/main.swift)
 ```
-docker run mamchyts/benchmark:latest /root/swift-5.5.2-RELEASE-ubuntu20.04/usr/bin/swift --version 2>&1 && echo '' && \
-docker run --volume $(pwd):/app mamchyts/benchmark:latest /root/swift-5.5.2-RELEASE-ubuntu20.04/usr/bin/swift build -c release --package-path /app/prime-number/swift/ && \
+docker run mamchyts/benchmark:latest swift --version 2>&1 && echo '' && \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest swift build -c release --package-path /app/prime-number/swift/ && \
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/swift/.build/release/cmd 10000 2>&1'
 ```
 ```
@@ -826,7 +810,7 @@ php run/run.php 'C/C++' 'Assembler/NASM' 'Rust' 'Lua (LuaJIT -j on)' 'Java'
 
 ```
 docker build -t benchmark .
-docker tag benchmark mamchyts/benchmark:1.1.3
+docker tag benchmark mamchyts/benchmark:1.2.1
 docker tag benchmark mamchyts/benchmark:latest
 docker push --all-tags mamchyts/benchmark
 ```

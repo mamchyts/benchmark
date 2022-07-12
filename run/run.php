@@ -91,7 +91,7 @@ function executeCommand(array $command): string
             $outTimes[$key][] = (float) $matches['time'];
         }
 
-        sleep(5);
+        sleep(3);
     }
 
     $out = trim($outCmd) . PHP_EOL . PHP_EOL;
