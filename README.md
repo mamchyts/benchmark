@@ -579,7 +579,7 @@ sys 0.01
 ### [C# (dotnet)](./prime-number/c%23/cmd.cs)
 ```
 docker run --volume $(pwd):/app mamchyts/benchmark:latest dotnet build --runtime --self-contained linux-x64 /app/prime-number/c#/ &> /dev/null && \
-docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p dotnet run --project /app/prime-number/c#/ 100 2>&1'
+docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p dotnet run --project /app/prime-number/c#/ 10000 2>&1'
 ```
 ```
 Welcome to .NET 6.0!
