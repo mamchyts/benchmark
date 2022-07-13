@@ -772,6 +772,21 @@ sys 0.03
 ```
 
 
+### [Visual Basic (mono)](./prime-number/visual-basic/cmd.vb)
+```
+docker run --volume $(pwd):/app mamchyts/benchmark:latest vbnc /app/prime-number/visual-basic/cmd.vb -out:/app/prime-number/visual-basic/cmd.vb_bin && echo ''&& \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p mono /app/prime-number/visual-basic/cmd.vb_bin 10000 2>&1'
+```
+```
+Visual Basic.Net Compiler version 0.0.0.5943 (Mono 4.7 - tarball)
+Copyright (C) 2004-2010 Rolf Bjarne Kvinge. All rights reserved.
+
+Assembly 'cmd, Version=0.0, Culture=neutral, PublicKeyToken=null' saved successfully to '/app/prime-number/visual-basic/cmd.vb_bin'.
+Compilation successful
+Compilation took 00:00:01.0436450
+```
+
+
 ## Run all prime number mamchyts/benchmark:latests
 
 ```
@@ -810,7 +825,7 @@ php run/run.php 'C/C++' 'Assembler/NASM' 'Rust' 'Lua (LuaJIT -j on)' 'Java'
 
 ```
 docker build -t benchmark .
-docker tag benchmark mamchyts/benchmark:1.2.1
+docker tag benchmark mamchyts/benchmark:1.2.2
 docker tag benchmark mamchyts/benchmark:latest
 docker push --all-tags mamchyts/benchmark
 ```

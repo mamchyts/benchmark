@@ -63,3 +63,4 @@ RUN wget https://netcologne.dl.sourceforge.net/project/d-apt/files/d-apt.list -O
     && apt install -y dmd-compiler dub
 RUN apt install -y clisp
 RUN apt install -y haxe
+RUN apt install -y mono-vbnc
