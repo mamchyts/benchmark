@@ -774,7 +774,7 @@ sys 0.03
 
 ### [Visual Basic (mono)](./prime-number/visual-basic/cmd.vb)
 ```
-docker run --volume $(pwd):/app mamchyts/benchmark:latest vbnc /app/prime-number/visual-basic/cmd.vb -out:/app/prime-number/visual-basic/cmd.vb_bin && echo ''&& \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest vbnc /app/prime-number/visual-basic/cmd.vb -out:/app/prime-number/visual-basic/cmd.vb_bin && echo '' && \
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p mono /app/prime-number/visual-basic/cmd.vb_bin 10000 2>&1'
 ```
 ```
@@ -784,6 +784,20 @@ Copyright (C) 2004-2010 Rolf Bjarne Kvinge. All rights reserved.
 Assembly 'cmd, Version=0.0, Culture=neutral, PublicKeyToken=null' saved successfully to '/app/prime-number/visual-basic/cmd.vb_bin'.
 Compilation successful
 Compilation took 00:00:01.0436450
+```
+
+
+### [Objective C](./prime-number/objective-c/cmd.m)
+```
+docker run mamchyts/benchmark:latest g++ --version 2>&1 && echo '' && \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'g++ /app/prime-number/objective-c/cmd.m -o /app/prime-number/objective-c/cmd.m_bin $(gnustep-config --objc-flags) -lobjc -lgnustep-base' && \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/objective-c/cmd.m_bin 10000 2>&1'
+```
+```
+g++ (Ubuntu 11.2.0-19ubuntu1) 11.2.0
+Copyright (C) 2021 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 ```
 
 
@@ -805,7 +819,7 @@ php run/run.php
 ## Multiply run of prime number mamchyts/benchmark:latest
 
 ```
-php run/run.php 'C/C++' 'Assembler/NASM' 'Rust' 'Lua (LuaJIT -j on)' 'Java'
+php run/run.php 'Objective C' 'Assembler/NASM' 'Rust' 'Lua (LuaJIT -j on)' 'Java'
 ```
 ```
 ----------------------- C/C++ -----------------------
@@ -825,7 +839,7 @@ php run/run.php 'C/C++' 'Assembler/NASM' 'Rust' 'Lua (LuaJIT -j on)' 'Java'
 
 ```
 docker build -t benchmark .
-docker tag benchmark mamchyts/benchmark:1.2.2
+docker tag benchmark mamchyts/benchmark:1.2.3
 docker tag benchmark mamchyts/benchmark:latest
 docker push --all-tags mamchyts/benchmark
 ```

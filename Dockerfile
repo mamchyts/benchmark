@@ -64,3 +64,4 @@ RUN wget https://netcologne.dl.sourceforge.net/project/d-apt/files/d-apt.list -O
 RUN apt install -y clisp
 RUN apt install -y haxe
 RUN apt install -y mono-vbnc
+RUN apt install -y build-essential gobjc gobjc++ gnustep gnustep-devel libgnustep-base-dev
