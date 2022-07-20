@@ -1,51 +1,56 @@
 # Benchmark
 
-Test PC - **AWS t3.small**:
+Test PC - **DigitalOcean 1CPU/2GB (Regular with SSD)**:
 ```
-$ free -h
-              total        used        free      shared  buff/cache   available
-Mem:          1.9Gi       285Mi       115Mi       0.0Ki       1.5Gi       1.5Gi
-Swap:            0B          0B          0B
+root@ubuntu-s-1vcpu-2gb-fra1-01:~# free -h
+               total        used        free      shared  buff/cache   available
+Mem:           1.9Gi       243Mi       866Mi       0.0Ki       867Mi       1.5Gi
+Swap:             0B          0B          0B
 ```
+
 ```
-$ lscpu
-Architecture:                    x86_64
-CPU op-mode(s):                  32-bit, 64-bit
-Byte Order:                      Little Endian
-Address sizes:                   46 bits physical, 48 bits virtual
-CPU(s):                          1
-On-line CPU(s) list:             0
-Thread(s) per core:              1
-Core(s) per socket:              1
-Socket(s):                       1
-NUMA node(s):                    1
-Vendor ID:                       GenuineIntel
-CPU family:                      6
-Model:                           63
-Model name:                      Intel(R) Xeon(R) CPU E5-2676 v3 @ 2.40GHz
-Stepping:                        2
-CPU MHz:                         2399.976
-BogoMIPS:                        4800.17
-Hypervisor vendor:               Xen
-Virtualization type:             full
-L1d cache:                       32 KiB
-L1i cache:                       32 KiB
-L2 cache:                        256 KiB
-L3 cache:                        30 MiB
-NUMA node0 CPU(s):               0
-Vulnerability Itlb multihit:     KVM: Mitigation: VMX unsupported
-Vulnerability L1tf:              Mitigation; PTE Inversion
-Vulnerability Mds:               Vulnerable: Clear CPU buffers attempted, no microcode; SMT Host state unknown
-Vulnerability Meltdown:          Mitigation; PTI
-Vulnerability Spec store bypass: Vulnerable
-Vulnerability Spectre v1:        Mitigation; usercopy/swapgs barriers and __user pointer sanitization
-Vulnerability Spectre v2:        Mitigation; Full generic retpoline, STIBP disabled, RSB filling
-Vulnerability Srbds:             Not affected
-Vulnerability Tsx async abort:   Not affected
-Flags:                           fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht
-                                 syscall nx rdtscp lm constant_tsc rep_good nopl xtopology cpuid tsc_known_freq pni pclmulqdq ssse3
-                                 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervi
-                                 sor lahf_lm abm cpuid_fault invpcid_single pti fsgsbase bmi1 avx2 smep bmi2 erms invpcid xsaveopt
+root@ubuntu-s-1vcpu-2gb-fra1-01:~# lscpu
+Architecture:            x86_64
+  CPU op-mode(s):        32-bit, 64-bit
+  Address sizes:         40 bits physical, 48 bits virtual
+  Byte Order:            Little Endian
+CPU(s):                  1
+  On-line CPU(s) list:   0
+Vendor ID:               GenuineIntel
+  Model name:            DO-Regular
+    CPU family:          6
+    Model:               63
+    Thread(s) per core:  1
+    Core(s) per socket:  1
+    Socket(s):           1
+    Stepping:            2
+    BogoMIPS:            3599.99
+    Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss syscall nx rdtscp lm constant_tsc
+                         rep_good nopl xtopology cpuid tsc_known_freq pni pclmulqdq vmx ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer
+                          aes xsave avx f16c rdrand hypervisor lahf_lm abm cpuid_fault invpcid_single pti ssbd ibrs ibpb tpr_shadow vnmi flexpriority ept vpid e
+                         pt_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid xsaveopt arat md_clear
+Virtualization features:
+  Virtualization:        VT-x
+  Hypervisor vendor:     KVM
+  Virtualization type:   full
+Caches (sum of all):
+  L1d:                   32 KiB (1 instance)
+  L1i:                   32 KiB (1 instance)
+  L2:                    4 MiB (1 instance)
+NUMA:
+  NUMA node(s):          1
+  NUMA node0 CPU(s):     0
+Vulnerabilities:
+  Itlb multihit:         KVM: Mitigation: VMX disabled
+  L1tf:                  Mitigation; PTE Inversion; VMX conditional cache flushes, SMT disabled
+  Mds:                   Mitigation; Clear CPU buffers; SMT Host state unknown
+  Meltdown:              Mitigation; PTI
+  Mmio stale data:       Vulnerable: Clear CPU buffers attempted, no microcode; SMT Host state unknown
+  Spec store bypass:     Mitigation; Speculative Store Bypass disabled via prctl and seccomp
+  Spectre v1:            Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+  Spectre v2:            Mitigation; Retpolines, IBPB conditional, IBRS_FW, STIBP disabled, RSB filling
+  Srbds:                 Not affected
+  Tsx async abort:       Not affected
 ```
 
 ![https://quickchart.io/sandbox/#%7B%22chart%22%3A%22%7B%5Cn%20%20type%3A%20'horizontalBar'%2C%5Cn%20%20data%3A%20%7B%5Cn%20%20%20%20labels%3A%20%5B%5Cn%20%20%20%20%20%20'Rust'%2C%5Cn%20%20%20%20%20%20'C%2FC%2B%2B'%2C%5Cn%20%20%20%20%20%20'D'%2C%5Cn%20%20%20%20%20%20'Crystal'%2C%5Cn%20%20%20%20%20%20'Dart'%2C%5Cn%20%20%20%20%20%20'Ada'%2C%5Cn%20%20%20%20%20%20'Java'%2C%5Cn%20%20%20%20%20%20'Scala'%2C%5Cn%20%20%20%20%20%20'C%23%20(mono)'%2C%5Cn%20%20%20%20%20%20'Assembler%2FNASM'%2C%5Cn%20%20%20%20%20%20'Kotlin'%2C%5Cn%20%20%20%20%20%20'Swift'%2C%5Cn%20%20%20%20%20%20'Lua%20(LuaJIT%20-j%20on)'%2C%5Cn%20%20%20%20%20%20'C%23%20(dotnet)'%2C%5Cn%20%20%20%20%20%20'Node.js%2FJavascript'%2C%5Cn%20%20%20%20%20%20'Node.js%2FTypeScript'%2C%5Cn%20%20%20%20%20%20'Haskell'%2C%5Cn%20%20%20%20%20%20'Nim'%2C%5Cn%20%20%20%20%20%20'Pascal'%2C%5Cn%20%20%20%20%20%20'Go'%2C%5Cn%20%20%20%20%20%20'PHP%20(KPHP)'%2C%5Cn%20%20%20%20%20%20'Lua%20(LuaJIT%20-j%20off)'%2C%5Cn%20%20%20%20%20%20'Python%202%20(PyPy)'%2C%5Cn%20%20%20%20%20%20'Python%203%20(PyPy)'%2C%5Cn%20%20%20%20%20%20'PHP%208.1%20(JIT)'%2C%5Cn%20%20%20%20%20%20'Elixir'%2C%5Cn%20%20%20%20%20%20'PHP%208.1'%2C%5Cn%20%20%20%20%20%20'Lua'%2C%5Cn%20%20%20%20%20%20'PHP%207.4'%2C%5Cn%20%20%20%20%20%20'PHP%205.6'%2C%5Cn%20%20%20%20%20%20'Haxe'%2C%5Cn%20%20%20%20%20%20'Perl'%2C%5Cn%20%20%20%20%20%20'Python%202'%2C%5Cn%20%20%20%20%20%20'Ruby%203'%2C%5Cn%20%20%20%20%20%20'Ruby%202'%2C%5Cn%20%20%20%20%20%20'Python%203'%2C%5Cn%20%20%20%20%20%20'R'%2C%5Cn%20%20%20%20%20%20'Lisp'%2C%5Cn%20%20%20%20%20%20'Bash'%2C%5Cn%20%20%20%20%5D%2C%5Cn%20%20%20%20datasets%3A%20%5B%5Cn%20%20%20%20%20%20%7B%5Cn%20%20%20%20%20%20%20%20label%3A%20'Execution%20time%20in%20seconds%20(lower%20is%20better)'%2C%5Cn%20%20%20%20%20%20%20%20backgroundColor%3A%20'rgba(54%2C%20162%2C%20235%2C%200.5)'%2C%5Cn%20%20%20%20%20%20%20%20borderColor%3A%20'rgb(54%2C%20162%2C%20235)'%2C%5Cn%20%20%20%20%20%20%20%20borderWidth%3A%201%2C%5Cn%20%20%20%20%20%20%20%20data%3A%20%5B%5Cn%20%20%20%20%20%20%20%20%20%2018.47%2C%5Cn%20%20%20%20%20%20%20%20%20%2019.11%2C%5Cn%20%20%20%20%20%20%20%20%20%2019.79%2C%5Cn%20%20%20%20%20%20%20%20%20%2020.54%2C%5Cn%20%20%20%20%20%20%20%20%20%2022.43%2C%5Cn%20%20%20%20%20%20%20%20%20%2022.61%2C%5Cn%20%20%20%20%20%20%20%20%20%2022.67%2C%5Cn%20%20%20%20%20%20%20%20%20%2023.69%2C%5Cn%20%20%20%20%20%20%20%20%20%2024.58%2C%5Cn%20%20%20%20%20%20%20%20%20%2024.63%2C%5Cn%20%20%20%20%20%20%20%20%20%2025.42%2C%5Cn%20%20%20%20%20%20%20%20%20%2026.69%2C%5Cn%20%20%20%20%20%20%20%20%20%2028.75%2C%5Cn%20%20%20%20%20%20%20%20%20%2030.61%2C%5Cn%20%20%20%20%20%20%20%20%20%2030.95%2C%5Cn%20%20%20%20%20%20%20%20%20%2033.47%2C%5Cn%20%20%20%20%20%20%20%20%20%2042.39%2C%5Cn%20%20%20%20%20%20%20%20%20%2045.3%2C%5Cn%20%20%20%20%20%20%20%20%20%2056.91%2C%5Cn%20%20%20%20%20%20%20%20%20%2061.81%2C%5Cn%20%20%20%20%20%20%20%20%20%2062.64%2C%5Cn%20%20%20%20%20%20%20%20%20%2071.33%2C%5Cn%20%20%20%20%20%20%20%20%20%2088.4%2C%5Cn%20%20%20%20%20%20%20%20%20%2088.46%2C%5Cn%20%20%20%20%20%20%20%20%20%2098.64%2C%5Cn%20%20%20%20%20%20%20%20%20%20122.27%2C%5Cn%20%20%20%20%20%20%20%20%20%20126.61%2C%5Cn%20%20%20%20%20%20%20%20%20%20134.48%2C%5Cn%20%20%20%20%20%20%20%20%20%20152.46%2C%5Cn%20%20%20%20%20%20%20%20%20%20314.43%2C%5Cn%20%20%20%20%20%20%20%20%20%20342.33%2C%5Cn%20%20%20%20%20%20%20%20%20%20414.17%2C%5Cn%20%20%20%20%20%20%20%20%20%20452.78%2C%5Cn%20%20%20%20%20%20%20%20%20%20492.97%2C%5Cn%20%20%20%20%20%20%20%20%20%20521.52%2C%5Cn%20%20%20%20%20%20%20%20%20%20598.42%2C%5Cn%20%20%20%20%20%20%20%20%20%201250.44%2C%5Cn%20%20%20%20%20%20%20%20%20%209622.32%2C%5Cn%20%20%20%20%20%20%20%20%20%2014748.86%2C%5Cn%20%20%20%20%20%20%20%20%5D%5Cn%20%20%20%20%20%20%7D%5Cn%20%20%20%20%5D%5Cn%20%20%7D%2C%5Cn%20%20options%3A%20%7B%5Cn%20%20%20%20scales%3A%20%7B%5Cn%20%20%20%20%20%20xAxes%3A%20%5B%5Cn%20%20%20%20%20%20%20%20%7B%5Cn%20%20%20%20%20%20%20%20%20%20type%3A%20'logarithmic'%2C%5Cn%20%20%20%20%20%20%20%20%20%20ticks%3A%20%7B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20min%3A%2018%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20max%3A%2030000%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20autoSkip%3A%20true%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20autoSkipPadding%3A%20100%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20maxRotation%3A%200%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20callback%3A%20function(value)%20%7B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20return%20value%3B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%7D%5Cn%20%20%20%20%20%20%20%20%20%20%7D%5Cn%20%20%20%20%20%20%20%20%7D%2C%5Cn%20%20%20%20%20%20%5D%2C%5Cn%20%20%20%20%7D%2C%5Cn%20%20%20%20plugins%3A%20%7B%5Cn%20%20%20%20%20%20datalabels%3A%20%7B%5Cn%20%20%20%20%20%20%20%20anchor%3A%20'end'%2C%5Cn%20%20%20%20%20%20%20%20align%3A%20'end'%2C%5Cn%20%20%20%20%20%20%20%20color%3A%20'%23000'%5Cn%20%20%20%20%20%20%7D%5Cn%20%20%20%20%7D%2C%5Cn%20%20%20%20responsive%3A%20true%2C%5Cn%20%20%20%20legend%3A%20%7B%5Cn%20%20%20%20%20%20position%3A%20'top'%5Cn%20%20%20%20%7D%2C%5Cn%20%20%20%20title%3A%20%7B%5Cn%20%20%20%20%20%20display%3A%20false%5Cn%20%20%20%20%7D%5Cn%20%20%7D%5Cn%7D%22%2C%22width%22%3A800%2C%22height%22%3A700%2C%22version%22%3A%222%22%2C%22backgroundColor%22%3A%22%23fff%22%7D](./chart.png)
@@ -378,7 +383,7 @@ sys 0
 ### [R](./prime-number/r/cmd.r)
 ```
 docker run mamchyts/benchmark:latest Rscript --version 2>&1 && echo '' && \
-docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p Rscript --vanilla /app/prime-number/r/cmd.r 100 2>&1'
+docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p Rscript --vanilla /app/prime-number/r/cmd.r 10000 2>&1'
 ```
 ```
 R scripting front-end version 4.0.4 (2021-02-15)
@@ -578,7 +583,7 @@ sys 0.01
 
 ### [C# (dotnet)](./prime-number/c%23/cmd.cs)
 ```
-docker run --volume $(pwd):/app mamchyts/benchmark:latest dotnet build --runtime --self-contained linux-x64 /app/prime-number/c#/ &> /dev/null && \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest dotnet build --self-contained -a x64 /app/prime-number/c#/ &> /dev/null && \
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p dotnet run --project /app/prime-number/c#/ 10000 2>&1'
 ```
 ```
