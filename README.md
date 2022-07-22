@@ -418,7 +418,7 @@ sys 0.7
 ### [Dart](./prime-number/dart/cmd.dart)
 ```
 docker run mamchyts/benchmark:latest dart --version 2>&1 && echo '' && \
-docker run --volume $(pwd):/app mamchyts/benchmark:latest dart --disable-analytics compile exe /app/prime-number/dart/cmd.dart -o /app/prime-number/dart/cmd.dart_bin 2>&1> /dev/null && \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest dart --disable-analytics compile exe /app/prime-number/dart/cmd.dart -o /app/prime-number/dart/cmd.dart_bin > /dev/null && \
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/dart/cmd.dart_bin 10000 2>&1'
 ```
 ```
@@ -532,7 +532,7 @@ sys 0
 ### [Haskell](./prime-number/haskell/cmd.hs)
 ```
 docker run mamchyts/benchmark:latest ghc --version 2>&1 && echo '' && \
-docker run --volume $(pwd):/app mamchyts/benchmark:latest ghc -O /app/prime-number/haskell/cmd.hs -o /app/prime-number/haskell/cmd.hs_bin 2>&1> /dev/null && \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest ghc -O /app/prime-number/haskell/cmd.hs -o /app/prime-number/haskell/cmd.hs_bin > /dev/null && \
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/haskell/cmd.hs_bin 10000 2>&1'
 ```
 ```
@@ -602,7 +602,7 @@ sys 0.01
 
 ### [C# (dotnet)](./prime-number/c%23/cmd.cs)
 ```
-docker run --volume $(pwd):/app mamchyts/benchmark:latest dotnet build --self-contained -a x64 /app/prime-number/c#/ 2>&1> /dev/null && \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest dotnet build --self-contained -a x64 /app/prime-number/c#/ > /dev/null && \
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p dotnet run --project /app/prime-number/c#/ 10000 2>&1'
 ```
 ```
@@ -706,7 +706,7 @@ sys 0.01
 ### [Nim](./prime-number/nim/cmd.nim)
 ```
 docker run mamchyts/benchmark:latest nim --version 2>&1 && echo '' && \
-docker run --volume $(pwd):/app mamchyts/benchmark:latest nim compile -d:release --verbosity:0 -o:/app/prime-number/nim/cmd.nim_bin /app/prime-number/nim/cmd.nim 2>&1> /dev/null && \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest nim compile -d:release --verbosity:0 -o:/app/prime-number/nim/cmd.nim_bin /app/prime-number/nim/cmd.nim > /dev/null && \
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/nim/cmd.nim_bin 10000 2>&1'
 ```
 ```
