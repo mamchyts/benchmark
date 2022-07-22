@@ -91,9 +91,9 @@ Zend Engine v2.6.0, Copyright (c) 1998-2016 Zend Technologies
 
 The latest prime number: 104729
 
-real 333.73
-user 332.12
-sys 0.13
+real 317.75
+user 317.17
+sys 0.07
 ```
 
 
@@ -110,9 +110,9 @@ Zend Engine v3.4.0, Copyright (c) Zend Technologies
 
 The latest prime number: 104729
 
-real 135.26
-user 134.88
-sys 0.04
+real 121.17
+user 120.97
+sys 0.02
 ```
 
 
@@ -129,9 +129,9 @@ Zend Engine v4.1.8, Copyright (c) Zend Technologies
 
 The latest prime number: 104729
 
-real 135.92
-user 135.51
-sys 0.05
+real 116.32
+user 116.06
+sys 0.02
 ```
 
 
@@ -148,8 +148,8 @@ Zend Engine v4.1.8, Copyright (c) Zend Technologies
 
 The latest prime number: 104729
 
-real 87.84
-user 87.65
+real 83.93
+user 83.72
 sys 0.03
 ```
 
@@ -164,9 +164,9 @@ v12.22.9
 
 The latest prime number: 104729
 
-real 28.5
-user 28.34
-sys 0.04
+real 21.66
+user 21.58
+sys 0.02
 ```
 
 
@@ -180,9 +180,9 @@ v10.8.2
 
 The latest prime number: 104729
 
-real 26.36
-user 26.14
-sys 0.15
+real 24.31
+user 24.12
+sys 0.14
 ```
 
 
@@ -196,8 +196,8 @@ Python 2.7.18
 
 The latest prime number:  104729
 
-real 536.1
-user 534.91
+real 460.3
+user 459.32
 sys 0.14
 ```
 
@@ -213,9 +213,9 @@ Python 2.7.18 (7.3.9+dfsg-1, Apr 01 2022, 21:40:34)
 
 The latest prime number:  104729
 
-real 73.46
-user 73.26
-sys 0.04
+real 63.89
+user 63.73
+sys 0.03
 ```
 
 
@@ -229,9 +229,9 @@ Python 3.10.4
 
 The latest prime number:  104729
 
-real 635.75
-user 634.3
-sys 0.21
+real 578.07
+user 576.89
+sys 0.14
 ```
 
 
@@ -246,9 +246,9 @@ Python 3.8.13 (7.3.9+dfsg-1, Apr 01 2022, 21:41:47)
 
 The latest prime number:  104729
 
-real 81.38
-user 81.13
-sys 0.05
+real 67.98
+user 67.78
+sys 0.04
 ```
 
 
@@ -267,8 +267,8 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 The latest prime number: 104729
 
-real 15.98
-user 15.93
+real 14.29
+user 14.25
 sys 0
 ```
 
@@ -285,8 +285,8 @@ NASM version 2.15.05
 
 The latest prime number: 0000104729
 
-real 19.19
-user 19.13
+real 16.26
+user 16.22
 sys 0
 ```
 
@@ -308,9 +308,9 @@ Linking /app/prime-number/pascal/cmd.pas_bin
 30 lines compiled, 0.1 sec
 The latest prime number: 104729
 
-real 56.75
-user 56.61
-sys 0.02
+real 51.04
+user 50.95
+sys 0.01
 ```
 
 
@@ -325,9 +325,9 @@ go version go1.18.1 linux/amd64
 
 The latest prime number: 104729
 
-real 55.12
-user 54.85
-sys 0.14
+real 49.31
+user 49.13
+sys 0.1
 ```
 
 
@@ -341,9 +341,9 @@ ruby 2.7.6p219 (2022-04-12 revision c9c2245c0a) [x86_64-linux]
 
 The latest prime number: 104729
 
-real 536.22
-user 535.05
-sys 0.15
+real 491.53
+user 490.41
+sys 0.17
 ```
 
 
@@ -357,9 +357,9 @@ ruby 3.1.2p20 (2022-04-12 revision 4491bb740a) [x86_64-linux]
 
 The latest prime number: 104729
 
-real 586.69
-user 584.99
-sys 0.24
+real 475.6
+user 471.75
+sys 0.18
 ```
 
 
@@ -376,9 +376,9 @@ OpenJDK 64-Bit Server VM (build 18-ea+36-Ubuntu-1, mixed mode, sharing)
 
 The latest prime number: 104729
 
-real 27.65
-user 27.54
-sys 0.04
+real 20.41
+user 20.33
+sys 0.02
 ```
 
 
@@ -393,9 +393,9 @@ rustc 1.59.0
 
 The latest prime number: 104729
 
-real 17.84
-user 17.78
-sys 0.01
+real 14.58
+user 14.53
+sys 0
 ```
 
 
@@ -418,7 +418,7 @@ sys 0.7
 ### [Dart](./prime-number/dart/cmd.dart)
 ```
 docker run mamchyts/benchmark:latest dart --version 2>&1 && echo '' && \
-docker run --volume $(pwd):/app mamchyts/benchmark:latest dart --disable-analytics compile exe /app/prime-number/dart/cmd.dart -o /app/prime-number/dart/cmd.dart_bin &> /dev/null && \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest dart --disable-analytics compile exe /app/prime-number/dart/cmd.dart -o /app/prime-number/dart/cmd.dart_bin 2>&1> /dev/null && \
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/dart/cmd.dart_bin 10000 2>&1'
 ```
 ```
@@ -427,9 +427,9 @@ Dart SDK version: 2.17.5 (stable) (Unknown timestamp) on "linux_x64"
 Info: Compiling with sound null safety
 The latest prime number: 104729
 
-real 21.27
-user 17.12
-sys 0.01
+real 33.18
+user 26.69
+sys 0.02
 ```
 
 
@@ -454,9 +454,9 @@ Internet, point your browser at http://www.perl.org/, the Perl Home Page.
 
 The latest prime number: 104729
 
-real 402.1
-user 401.29
-sys 0.08
+real 404.83
+user 403.86
+sys 0.1
 ```
 
 
@@ -470,9 +470,9 @@ Lua 5.4.4  Copyright (C) 1994-2022 Lua.org, PUC-Rio
 
 The latest prime number:        104729
 
-real 115.52
-user 115.24
-sys 0.04
+real 118.11
+user 117.85
+sys 0.02
 ```
 
 
@@ -486,9 +486,9 @@ LuaJIT 2.1.0-beta3 -- Copyright (C) 2005-2017 Mike Pall. http://luajit.org/
 
 The latest prime number:        104729
 
-real 59.37
-user 59.09
-sys 0.01
+real 59.16
+user 59.03
+sys 0
 ```
 
 
@@ -502,9 +502,9 @@ LuaJIT 2.1.0-beta3 -- Copyright (C) 2005-2017 Mike Pall. http://luajit.org/
 
 The latest prime number:        104729
 
-real 10.55
-user 10.51
-sys 0.01
+real 10.68
+user 10.63
+sys 0
 ```
 
 
@@ -523,16 +523,16 @@ There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR P
 
 The latest prime number:  104729
 
-real 23.58
-user 23.52
-sys 0.01
+real 23.8
+user 23.74
+sys 0
 ```
 
 
 ### [Haskell](./prime-number/haskell/cmd.hs)
 ```
 docker run mamchyts/benchmark:latest ghc --version 2>&1 && echo '' && \
-docker run --volume $(pwd):/app mamchyts/benchmark:latest ghc -O /app/prime-number/haskell/cmd.hs -o /app/prime-number/haskell/cmd.hs_bin &> /dev/null && \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest ghc -O /app/prime-number/haskell/cmd.hs -o /app/prime-number/haskell/cmd.hs_bin 2>&1> /dev/null && \
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/haskell/cmd.hs_bin 10000 2>&1'
 ```
 ```
@@ -540,8 +540,8 @@ The Glorious Glasgow Haskell Compilation System, version 8.8.4
 
 The latest prime number: 104729
 
-real 34.84
-user 34.2
+real 51.37
+user 50.46
 sys 0.01
 ```
 
@@ -557,9 +557,9 @@ info: kotlinc-jvm 1.7.10 (JRE 18-ea+36-Ubuntu-1)
 
 The latest prime number: 104729
 
-real 19.36
-user 19.28
-sys 0.02
+real 18.45
+user 18.35
+sys 0.03
 ```
 
 
@@ -577,9 +577,9 @@ Default target: x86_64-unknown-linux-gnu
 
 The latest prime number: 104729
 
-real 17.14
-user 17.06
-sys 0.01
+real 16.65
+user 16.61
+sys 0
 ```
 
 
@@ -594,15 +594,15 @@ Mono C# compiler version 6.12.0.182
 
 The latest prime number: 104729
 
-real 21.59
-user 21.52
-sys 0.02
+real 20.18
+user 20.12
+sys 0.01
 ```
 
 
 ### [C# (dotnet)](./prime-number/c%23/cmd.cs)
 ```
-docker run --volume $(pwd):/app mamchyts/benchmark:latest dotnet build --self-contained -a x64 /app/prime-number/c#/ &> /dev/null && \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest dotnet build --self-contained -a x64 /app/prime-number/c#/ 2>&1> /dev/null && \
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p dotnet run --project /app/prime-number/c#/ 10000 2>&1'
 ```
 ```
@@ -658,9 +658,9 @@ Scala code runner version 2.11.12 -- Copyright 2002-2017, LAMP/EPFL
 
 The latest prime number: 104729
 
-real 20.15
-user 19.99
-sys 0.11
+real 19.49
+user 19.34
+sys 0.09
 ```
 
 
@@ -676,9 +676,9 @@ Elixir 1.12.2 (compiled with Erlang/OTP 24)
 
 The latest prime number: 104729
 
-real 89.24
-user 88.77
-sys 0.29
+real 89.4
+user 88.9
+sys 0.3
 ```
 
 
@@ -694,11 +694,11 @@ Target: x86_64-unknown-linux-gnu
 
 [1/1] Planning build
 Building for production...
-Build complete! (0.97s)
+Build complete! (1.02s)
 The latest prime number: 104729
 
-real 18.45
-user 18.4
+real 18.15
+user 18.09
 sys 0.01
 ```
 
@@ -706,7 +706,7 @@ sys 0.01
 ### [Nim](./prime-number/nim/cmd.nim)
 ```
 docker run mamchyts/benchmark:latest nim --version 2>&1 && echo '' && \
-docker run --volume $(pwd):/app mamchyts/benchmark:latest nim compile -d:release --verbosity:0 -o:/app/prime-number/nim/cmd.nim_bin /app/prime-number/nim/cmd.nim &> /dev/null && \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest nim compile -d:release --verbosity:0 -o:/app/prime-number/nim/cmd.nim_bin /app/prime-number/nim/cmd.nim 2>&1> /dev/null && \
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/nim/cmd.nim_bin 10000 2>&1'
 ```
 ```
@@ -719,8 +719,8 @@ active boot switches: -d:release
 
 The latest prime number: 104729
 
-real 38.95
-user 35.96
+real 58.78
+user 54.49
 sys 0.01
 ```
 
@@ -737,8 +737,8 @@ Copyright (C) 1999-2022 by The D Language Foundation, All Rights Reserved writte
 
 The latest prime number: 104729
 
-real 17.89
-user 17.84
+real 18.35
+user 18.3
 sys 0
 ```
 
@@ -804,9 +804,9 @@ docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p haxe 
 
 The latest prime number: 104729
 
-real 336.1
-user 335.25
-sys 0.14
+real 367.26
+user 366.1
+sys 0.19
 ```
 
 
@@ -821,12 +821,12 @@ Copyright (C) 2004-2010 Rolf Bjarne Kvinge. All rights reserved.
 
 Assembly 'cmd, Version=0.0, Culture=neutral, PublicKeyToken=null' saved successfully to '/app/prime-number/visual-basic/cmd.vb_bin'.
 Compilation successful
-Compilation took 00:00:00.8156510
+Compilation took 00:00:00.8330760
 
 The latest prime number: 104729
 
-real 25.1
-user 25.04
+real 25.95
+user 25.87
 sys 0.01
 ```
 
@@ -844,10 +844,10 @@ This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 
-2022-07-21 10:20:40.302 cmd.m_bin[7:7] The latest prime number: 104729
+2022-07-21 15:03:42.873 cmd.m_bin[6:6] The latest prime number: 104729
 
-real 14.82
-user 14.75
+real 14.92
+user 14.84
 sys 0.02
 ```
 
