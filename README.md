@@ -840,6 +840,15 @@ sys 0.03
 ```
 
 
+### [Groovy](./prime-number/groovy/cmd.groovy)
+```
+docker run mamchyts/benchmark:latest bash -c 'JAVA_HOME=/usr groovy --version' && echo '' && \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p JAVA_HOME=/usr groovy /app/prime-number/groovy/cmd.groovy 10000 2>&1'
+```
+```
+```
+
+
 
 ## Run all prime number
 
@@ -881,7 +890,7 @@ php run/run.php 'C/C++' 'Assembler/NASM' 'Rust' 'Lua (LuaJIT -j on)' 'Java'
 
 ```
 docker build -t benchmark .
-docker tag benchmark mamchyts/benchmark:1.2.3
+docker tag benchmark mamchyts/benchmark:1.2.4
 docker tag benchmark mamchyts/benchmark:latest
 docker push --all-tags mamchyts/benchmark
 ```
