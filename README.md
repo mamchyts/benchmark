@@ -849,6 +849,16 @@ docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p JAVA_
 ```
 
 
+### [Fortran](./prime-number/fortran/cmd.f90)
+```
+docker run mamchyts/benchmark:latest gfortran --version && echo '' && \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest gfortran /app/prime-number/fortran/cmd.f90 -o /app/prime-number/fortran/cmd.f90_bin && \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/fortran/cmd.f90_bin 10000 2>&1'
+```
+```
+```
+
+
 
 ## Run all prime number
 
@@ -890,7 +900,7 @@ php run/run.php 'C/C++' 'Assembler/NASM' 'Rust' 'Lua (LuaJIT -j on)' 'Java'
 
 ```
 docker build -t benchmark .
-docker tag benchmark mamchyts/benchmark:1.2.4
+docker tag benchmark mamchyts/benchmark:1.2.5
 docker tag benchmark mamchyts/benchmark:latest
 docker push --all-tags mamchyts/benchmark
 ```

@@ -66,3 +66,4 @@ RUN apt install -y haxe
 RUN apt install -y mono-vbnc
 RUN apt install -y build-essential gobjc gobjc++ gnustep gnustep-devel libgnustep-base-dev
 RUN apt install -y groovy
+RUN apt install -y gfortran
