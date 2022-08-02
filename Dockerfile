@@ -39,11 +39,10 @@ RUN apt install gnupg ca-certificates \
     && apt update \
     && apt install -y mono-devel
 RUN apt install -y scala
-RUN wget https://packages.microsoft.com/config/ubuntu/21.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb \
+RUN apt install -y wget apt-transport-https software-properties-common \
+    && wget -q "https://packages.microsoft.com/config/ubuntu/$(lsb_release -rs)/packages-microsoft-prod.deb" \
     && dpkg -i packages-microsoft-prod.deb \
     && rm packages-microsoft-prod.deb \
-    && apt update \
-    && apt install -y apt-transport-https \
     && apt update \
     && apt install -y dotnet-sdk-6.0
 RUN apt install -y elixir
@@ -67,3 +66,4 @@ RUN apt install -y mono-vbnc
 RUN apt install -y build-essential gobjc gobjc++ gnustep gnustep-devel libgnustep-base-dev
 RUN apt install -y groovy
 RUN apt install -y gfortran
+RUN apt install -y powershell
