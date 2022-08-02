@@ -71,3 +71,8 @@ RUN wget https://julialang-s3.julialang.org/bin/linux/x64/1.7/julia-1.7.3-linux-
     && tar -xvzf julia-1.7.3-linux-x86_64.tar.gz -C /root \
     && rm -f julia-1.7.3-linux-x86_64.tar.gz \
     && ln -s /root/julia-1.7.3/bin/julia /usr/local/bin/julia
+RUN apt install -y xvfb libxrender1 libxtst6 libxi6 \
+    && wget https://github.com/processing/processing4/releases/download/processing-1283-4.0b8/processing-4.0b8-linux-x64.tgz \
+    && tar -xvzf processing-4.0b8-linux-x64.tgz -C /root \
+    && rm -f processing-4.0b8-linux-x64.tgz \
+    && ln -s /root/processing-4.0b8/processing-java /usr/local/bin/processing-java

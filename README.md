@@ -877,6 +877,15 @@ docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p julia
 ```
 
 
+### [Processing](./prime-number/processing/processing.pde)
+```
+docker run benchmark echo "Processing 4.0 beta 8 (April 23, 2022)" && echo '' && \
+docker run --volume $(pwd):/app benchmark bash -c 'time -p xvfb-run processing-java --sketch=/app/prime-number/processing/ --run 10000 2>&1'
+```
+```
+```
+
+
 
 ## Run all prime number
 
@@ -918,7 +927,7 @@ php run/run.php 'C/C++' 'Assembler/NASM' 'Rust' 'Lua (LuaJIT -j on)' 'Java'
 
 ```
 docker build -t benchmark .
-docker tag benchmark mamchyts/benchmark:1.2.7
+docker tag benchmark mamchyts/benchmark:1.2.8
 docker tag benchmark mamchyts/benchmark:latest
 docker push --all-tags mamchyts/benchmark
 ```
