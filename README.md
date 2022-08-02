@@ -859,6 +859,15 @@ docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/
 ```
 
 
+### [PowerShell](./prime-number/power-shell/cmd.ps1)
+```
+docker run mamchyts/benchmark:latest pwsh --version && echo '' && \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p pwsh /app/prime-number/power-shell/cmd.ps1 10000 2>&1'
+```
+```
+```
+
+
 
 ## Run all prime number
 
@@ -900,7 +909,7 @@ php run/run.php 'C/C++' 'Assembler/NASM' 'Rust' 'Lua (LuaJIT -j on)' 'Java'
 
 ```
 docker build -t benchmark .
-docker tag benchmark mamchyts/benchmark:1.2.5
+docker tag benchmark mamchyts/benchmark:1.2.6
 docker tag benchmark mamchyts/benchmark:latest
 docker push --all-tags mamchyts/benchmark
 ```
