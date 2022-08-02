@@ -67,3 +67,7 @@ RUN apt install -y build-essential gobjc gobjc++ gnustep gnustep-devel libgnuste
 RUN apt install -y groovy
 RUN apt install -y gfortran
 RUN apt install -y powershell
+RUN wget https://julialang-s3.julialang.org/bin/linux/x64/1.7/julia-1.7.3-linux-x86_64.tar.gz \
+    && tar -xvzf julia-1.7.3-linux-x86_64.tar.gz -C /root \
+    && rm -f julia-1.7.3-linux-x86_64.tar.gz \
+    && ln -s /root/julia-1.7.3/bin/julia /usr/local/bin/julia
