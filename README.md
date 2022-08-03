@@ -34,15 +34,12 @@ Vendor ID:               GenuineIntel
     Core(s) per socket:  1
     Socket(s):           1
     Stepping:            7
-    BogoMIPS:            4988.28
-    Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr
-                          sse sse2 syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology cpuid tsc_kn
-                         own_freq pni pclmulqdq vmx ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_dea
-                         dline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch cpuid_fault i
-                         nvpcid_single ssbd ibrs ibpb ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid ept_ad
-                         fsgsbase bmi1 avx2 smep bmi2 erms invpcid avx512f avx512dq rdseed adx smap clflushopt cl
-                         wb avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 arat pku ospke avx512_vnni arch_ca
-                         pabilities
+    BogoMIPS:            4000.00
+    Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 syscall nx pdpe1gb rdtscp lm constant
+                         _tsc rep_good nopl xtopology cpuid tsc_known_freq pni pclmulqdq vmx ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_
+                         timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch cpuid_fault invpcid_single ssbd ibrs ibpb ibrs_enhanced tpr_shadow
+                          vnmi flexpriority ept vpid ept_ad fsgsbase bmi1 avx2 smep bmi2 erms invpcid avx512f avx512dq rdseed adx smap clflushopt clwb avx512cd
+                         avx512bw avx512vl xsaveopt xsavec xgetbv1 arat pku ospke avx512_vnni arch_capabilities
 Virtualization features:
   Virtualization:        VT-x
   Hypervisor vendor:     KVM
@@ -846,6 +843,13 @@ docker run mamchyts/benchmark:latest bash -c 'JAVA_HOME=/usr groovy --version' &
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p JAVA_HOME=/usr groovy /app/prime-number/groovy/cmd.groovy 10000 2>&1'
 ```
 ```
+Groovy Version: 2.4.21 JVM: 18-ea Vendor: Private Build OS: Linux
+
+The latest prime number: 104729
+
+real 221.71
+user 219.54
+sys 1.92
 ```
 
 
@@ -856,6 +860,17 @@ docker run --volume $(pwd):/app mamchyts/benchmark:latest gfortran /app/prime-nu
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/fortran/cmd.f90_bin 10000 2>&1'
 ```
 ```
+GNU Fortran (Ubuntu 11.2.0-19ubuntu1) 11.2.0
+Copyright (C) 2021 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+
+ The latest prime number:       104729
+
+real 20.14
+user 20.11
+sys 0
 ```
 
 
@@ -865,6 +880,13 @@ docker run mamchyts/benchmark:latest pwsh --version && echo '' && \
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p pwsh /app/prime-number/power-shell/cmd.ps1 10000 2>&1'
 ```
 ```
+PowerShell 7.2.5
+
+The latest prime number: 104729
+
+real 11051.71
+user 10795.68
+sys 199.98
 ```
 
 
@@ -874,15 +896,30 @@ docker run mamchyts/benchmark:latest julia --version && echo '' && \
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p julia /app/prime-number/julia/cmd.jl 10000 2>&1'
 ```
 ```
+julia version 1.7.3
+
+The latest prime number: 104729
+
+real 774.3
+user 719.96
+sys 53.14
 ```
 
 
 ### [Processing](./prime-number/processing/processing.pde)
 ```
-docker run benchmark echo "Processing 4.0 beta 8 (April 23, 2022)" && echo '' && \
-docker run --volume $(pwd):/app benchmark bash -c 'time -p xvfb-run processing-java --sketch=/app/prime-number/processing/ --run 10000 2>&1'
+echo "Processing 4.0 beta 8 (April 23, 2022)" && echo '' && \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p xvfb-run processing-java --sketch=/app/prime-number/processing/ --run 10000 2>&1'
 ```
 ```
+Processing 4.0 beta 8 (April 23, 2022)
+
+The latest prime number:  104729
+Finished.
+
+real 21
+user 19.79
+sys 0.45
 ```
 
 
