@@ -5,6 +5,8 @@
 # compiled bin files
 /prime-number/c#/bin
 /prime-number/c#/obj
+/prime-number/f#/bin
+/prime-number/f#/obj
 /prime-number/objective-c/cmd.d
 *_bin
 *.o
