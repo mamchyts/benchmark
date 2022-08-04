@@ -922,6 +922,15 @@ sys 0.43
 ```
 
 
+### [F#](./prime-number/f%23/cmd.fs)
+```
+docker run --volume $(pwd):/app mamchyts/benchmark:latest dotnet build --self-contained -a x64 /app/prime-number/f#/ > /dev/null && \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p dotnet run --project /app/prime-number/f#/ 10000 2>&1'
+```
+```
+```
+
+
 
 ## Run all prime number
 
