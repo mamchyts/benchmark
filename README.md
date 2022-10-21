@@ -931,8 +931,19 @@ docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p dotne
 ```
 
 
+### [Hack](./prime-number/hack/cmd.hack)
+```
+docker run mamchyts/benchmark:latest hhvm --version 2>&1 && echo '' && \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time hhvm /app/prime-number/hack/cmd.hack 10000 2>&1'
+```
+```
+HipHop VM 4.170.0 (rel) (non-lowptr)
+Compiler: 1665114285_364010525
+Repo schema: 1367e9c9d9ccc4bcdcfd1f0d3d4969a9edfaec01
+```
 
-## Run all prime number
+
+## Run all prime number mamchyts/benchmark:latests
 
 ```
 php run/run.php
@@ -972,7 +983,7 @@ php run/run.php 'C/C++' 'Assembler/NASM' 'Rust' 'Lua (LuaJIT -j on)' 'Java'
 
 ```
 docker build -t benchmark .
-docker tag benchmark mamchyts/benchmark:1.3.0
+docker tag benchmark mamchyts/benchmark:1.3.1
 docker tag benchmark mamchyts/benchmark:latest
 docker push --all-tags mamchyts/benchmark
 ```

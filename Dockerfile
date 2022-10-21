@@ -28,9 +28,9 @@ RUN apt install -y git bison libgdbm-dev libssl-dev libyaml-dev curl \
     && /root/.rbenv/bin/rbenv install 2.7.6 \
     && /root/.rbenv/bin/rbenv install 3.1.2
 RUN apt install -y ghc
-RUN wget https://github.com/JetBrains/kotlin/releases/download/v1.7.10/kotlin-compiler-1.7.10.zip \
-    && unzip kotlin-compiler-1.7.10.zip -d /root \
-    && rm -f kotlin-compiler-1.7.10.zip \
+RUN wget https://github.com/JetBrains/kotlin/releases/download/v1.7.20/kotlin-compiler-1.7.20.zip \
+    && unzip kotlin-compiler-1.7.20.zip -d /root \
+    && rm -f kotlin-compiler-1.7.20.zip \
     && ln -s /root/kotlinc/bin/kotlinc /usr/local/bin/kotlinc
 RUN curl -fsSL https://crystal-lang.org/install.sh | bash
 RUN apt install gnupg ca-certificates \
@@ -46,15 +46,15 @@ RUN apt install -y wget apt-transport-https software-properties-common \
     && apt update \
     && apt install -y dotnet-sdk-6.0
 RUN apt install -y elixir
-RUN apt install -y binutils git gnupg2 libc6-dev libcurl4 libedit2 libgcc-9-dev libpython2.7 libsqlite3-0 libstdc++-9-dev libxml2 libz3-dev pkg-config tzdata zlib1g-dev \
-    && wget https://swift.org/builds/swift-5.6.2-release/ubuntu2004/swift-5.6.2-RELEASE/swift-5.6.2-RELEASE-ubuntu20.04.tar.gz \
-    && tar -xvzf swift-5.6.2-RELEASE-ubuntu20.04.tar.gz -C /root \
-    && rm -f swift-5.6.2-RELEASE-ubuntu20.04.tar.gz \
-    && ln -s /root/swift-5.6.2-RELEASE-ubuntu20.04/usr/bin/swift /usr/local/bin/swift
-RUN wget https://nim-lang.org/download/nim-1.6.6-linux_x64.tar.xz \
-    && tar -xf nim-1.6.6-linux_x64.tar.xz -C /root \
-    && rm -f nim-1.6.6-linux_x64.tar.xz \
-    && ln -s /root/nim-1.6.6/bin/nim /usr/local/bin/nim
+RUN apt install -y binutils git gnupg2 libc6-dev libcurl4-openssl-dev libedit2 libgcc-9-dev libpython3.10 libsqlite3-0 libstdc++-9-dev libxml2-dev libz3-dev pkg-config tzdata unzip zlib1g-dev \
+    && wget https://download.swift.org/swift-5.7-release/ubuntu2204/swift-5.7-RELEASE/swift-5.7-RELEASE-ubuntu22.04.tar.gz \
+    && tar -xvzf swift-5.7-RELEASE-ubuntu22.04.tar.gz -C /root \
+    && rm -f swift-5.7-RELEASE-ubuntu22.04.tar.gz \
+    && ln -s /root/swift-5.7-RELEASE-ubuntu22.04/usr/bin/swift /usr/local/bin/swift
+RUN wget https://nim-lang.org/download/nim-1.6.8-linux_x64.tar.xz \
+    && tar -xf nim-1.6.8-linux_x64.tar.xz -C /root \
+    && rm -f nim-1.6.8-linux_x64.tar.xz \
+    && ln -s /root/nim-1.6.8/bin/nim /usr/local/bin/nim
 RUN wget https://netcologne.dl.sourceforge.net/project/d-apt/files/d-apt.list -O /etc/apt/sources.list.d/d-apt.list \
     && apt update --allow-insecure-repositories \
     && apt -y --allow-unauthenticated install --reinstall d-apt-keyring \
@@ -76,3 +76,9 @@ RUN apt install -y xvfb libxrender1 libxtst6 libxi6 \
     && tar -xvzf processing-4.0b8-linux-x64.tgz -C /root \
     && rm -f processing-4.0b8-linux-x64.tgz \
     && ln -s /root/processing-4.0b8/processing-java /usr/local/bin/processing-java
+RUN apt-get update \
+    && apt-get install --yes software-properties-common apt-transport-https \
+    && apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xB4112585D386EB94 \
+    && add-apt-repository 'deb https://dl.hhvm.com/universal release main' \
+    && apt-get update \
+    && apt-get install --yes hhvm
