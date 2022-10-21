@@ -943,7 +943,7 @@ Repo schema: 1367e9c9d9ccc4bcdcfd1f0d3d4969a9edfaec01
 ```
 
 
-## Run all prime number mamchyts/benchmark:latests
+## Run all prime number
 
 ```
 php run/run.php
