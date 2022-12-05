@@ -1,6 +1,6 @@
 # VS code
 /.vscode
-/benchmark.code-workspace
+/*.code-workspace
 
 # compiled bin files
 /prime-number/c#/bin

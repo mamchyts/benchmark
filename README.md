@@ -4,7 +4,9 @@ All tests perform the same task of finding a prime number.
 
 A primitive enumeration was taken as a basis, which does not even stop if it already knows that the number is not prime.
 
-PS. The code that is given in the tests can be optimized for a very long time, starting from choosing another algorithm for finding a prime number, ending with optimizations for a specific language. But the meaning of this code is not that it works as fast as possible, but that it can be reproduced as quickly as possible on other PLs.
+PS. The code that is given in the tests can be optimized for a very long time, starting from choosing another algorithm
+for finding a prime number, ending with optimizations for a specific language. But the meaning of this code is not that
+it works as fast as possible, but that it can be reproduced as quickly as possible on other PLs.
 
 More info about testing [RU]: https://habr.com/ru/post/563078/
 
@@ -330,11 +332,11 @@ sys 0.05
 
 ### [Ruby 2](./prime-number/ruby/cmd.rb)
 ```
-docker run mamchyts/benchmark:latest /root/.rbenv/versions/2.7.6/bin/ruby --version 2>&1 && echo '' && \
-docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /root/.rbenv/versions/2.7.6/bin/ruby /app/prime-number/ruby/cmd.rb 10000 2>&1'
+docker run mamchyts/benchmark:latest /root/.rbenv/versions/2.7.7/bin/ruby --version 2>&1 && echo '' && \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /root/.rbenv/versions/2.7.7/bin/ruby /app/prime-number/ruby/cmd.rb 10000 2>&1'
 ```
 ```
-ruby 2.7.6p219 (2022-04-12 revision c9c2245c0a) [x86_64-linux]
+ruby 2.7.7p219 (2022-04-12 revision c9c2245c0a) [x86_64-linux]
 
 The latest prime number: 104729
 
@@ -346,11 +348,11 @@ sys 0.16
 
 ### [Ruby 3](./prime-number/ruby/cmd.rb)
 ```
-docker run mamchyts/benchmark:latest /root/.rbenv/versions/3.1.2/bin/ruby --version 2>&1 && echo '' && \
-docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /root/.rbenv/versions/3.1.2/bin/ruby /app/prime-number/ruby/cmd.rb 10000 2>&1'
+docker run mamchyts/benchmark:latest /root/.rbenv/versions/3.1.3/bin/ruby --version 2>&1 && echo '' && \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /root/.rbenv/versions/3.1.3/bin/ruby /app/prime-number/ruby/cmd.rb 10000 2>&1'
 ```
 ```
-ruby 3.1.2p20 (2022-04-12 revision 4491bb740a) [x86_64-linux]
+ruby 3.1.3p20 (2022-04-12 revision 4491bb740a) [x86_64-linux]
 
 The latest prime number: 104729
 
@@ -907,11 +909,11 @@ sys 52.05
 
 ### [Processing](./prime-number/processing/processing.pde)
 ```
-echo "Processing 4.0 beta 8 (April 23, 2022)" && echo '' && \
-docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p xvfb-run processing-java --sketch=/app/prime-number/processing/ --run 10000 2>&1'
+echo "Processing 4.1.1" && echo '' && \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p xvfb-run /root/processing-4.1.1/processing-java --sketch=/app/prime-number/processing/ --variant=linux-amd64 --force --run 10000 2>&1'
 ```
 ```
-Processing 4.0 beta 8 (April 23, 2022)
+Processing 4.1.1
 
 The latest prime number:  104729
 Finished.
@@ -934,7 +936,7 @@ docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p dotne
 ### [Hack](./prime-number/hack/cmd.hack)
 ```
 docker run mamchyts/benchmark:latest hhvm --version 2>&1 && echo '' && \
-docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time hhvm /app/prime-number/hack/cmd.hack 10000 2>&1'
+docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p hhvm /app/prime-number/hack/cmd.hack 10000 2>&1'
 ```
 ```
 HipHop VM 4.170.0 (rel) (non-lowptr)
@@ -983,7 +985,7 @@ php run/run.php 'C/C++' 'Assembler/NASM' 'Rust' 'Lua (LuaJIT -j on)' 'Java'
 
 ```
 docker build -t benchmark .
-docker tag benchmark mamchyts/benchmark:1.3.1
+docker tag benchmark mamchyts/benchmark:1.3.5
 docker tag benchmark mamchyts/benchmark:latest
 docker push --all-tags mamchyts/benchmark
 ```
