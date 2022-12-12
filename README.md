@@ -74,7 +74,7 @@ Vulnerabilities:
 
 ## Test results
 
-![https://quickchart.io/sandbox/#%7B%22chart%22%3A%22%7B%5Cn%20%20type%3A%20'horizontalBar'%2C%5Cn%20%20data%3A%20%7B%5Cn%20%20%20%20labels%3A%20%5B%5Cn%20%20%20%20%20%20%20%20'Lua%20(LuaJIT%20-j%20on)'%2C%5Cn%20%20%20%20%20%20%20%20'C%2FC%2B%2B'%2C%5Cn%20%20%20%20%20%20%20%20'Objective%20C'%2C%5Cn%20%20%20%20%20%20%20%20'Rust'%2C%5Cn%20%20%20%20%20%20%20%20'Crystal'%2C%5Cn%20%20%20%20%20%20%20%20'Swift'%2C%5Cn%20%20%20%20%20%20%20%20'D'%2C%5Cn%20%20%20%20%20%20%20%20'Assembler%2FNASM'%2C%5Cn%20%20%20%20%20%20%20%20'Scala'%2C%5Cn%20%20%20%20%20%20%20%20'Kotlin'%2C%5Cn%20%20%20%20%20%20%20%20'Java'%2C%5Cn%20%20%20%20%20%20%20%20'Node.js%2FJavascript'%2C%5Cn%20%20%20%20%20%20%20%20'Fortran'%2C%5Cn%20%20%20%20%20%20%20%20'Processing'%2C%5Cn%20%20%20%20%20%20%20%20'Node.js%2FTypeScript'%2C%5Cn%20%20%20%20%20%20%20%20'F%23'%2C%5Cn%20%20%20%20%20%20%20%20'Ada'%2C%5Cn%20%20%20%20%20%20%20%20'C%23%20(mono)'%2C%5Cn%20%20%20%20%20%20%20%20'Dart'%2C%5Cn%20%20%20%20%20%20%20%20'Visual%20Basic%20(mono)'%2C%5Cn%20%20%20%20%20%20%20%20'C%23%20(dotnet)'%2C%5Cn%20%20%20%20%20%20%20%20'Haskell'%2C%5Cn%20%20%20%20%20%20%20%20'Nim'%2C%5Cn%20%20%20%20%20%20%20%20'Go'%2C%5Cn%20%20%20%20%20%20%20%20'Pascal'%2C%5Cn%20%20%20%20%20%20%20%20'Python%203%20(PyPy)'%2C%5Cn%20%20%20%20%20%20%20%20'Lua%20(LuaJIT%20-j%20off)'%2C%5Cn%20%20%20%20%20%20%20%20'Python%202%20(PyPy)'%2C%5Cn%20%20%20%20%20%20%20%20'Elixir'%2C%5Cn%20%20%20%20%20%20%20%20'PHP%208.1%20(JIT)'%2C%5Cn%20%20%20%20%20%20%20%20'Hack'%2C%5Cn%20%20%20%20%20%20%20%20'Lua'%2C%5Cn%20%20%20%20%20%20%20%20'PHP%208.1'%2C%5Cn%20%20%20%20%20%20%20%20'PHP%207.4'%2C%5Cn%20%20%20%20%20%20%20%20'Groovy'%2C%5Cn%20%20%20%20%20%20%20%20'PHP%205.6'%2C%5Cn%20%20%20%20%20%20%20%20'Haxe'%2C%5Cn%20%20%20%20%20%20%20%20'Perl'%2C%5Cn%20%20%20%20%20%20%20%20'Ruby%203'%2C%5Cn%20%20%20%20%20%20%20%20'Ruby%202'%2C%5Cn%20%20%20%20%20%20%20%20'Python%202'%2C%5Cn%20%20%20%20%20%20%20%20'Python%203'%2C%5Cn%20%20%20%20%20%20%20%20'Julia'%2C%5Cn%20%20%20%20%20%20%20%20'R'%2C%5Cn%20%20%20%20%20%20%20%20'Lisp'%2C%5Cn%20%20%20%20%20%20%20%20'PowerShell'%2C%5Cn%20%20%20%20%20%20%20%20'Bash'%5Cn%20%20%20%20%5D%2C%5Cn%20%20%20%20datasets%3A%20%5B%5Cn%20%20%20%20%20%20%7B%5Cn%20%20%20%20%20%20%20%20label%3A%20'Execution%20time%20in%20seconds%20(lower%20is%20better%2C%20logarithmic%20chart)'%2C%5Cn%20%20%20%20%20%20%20%20backgroundColor%3A%20'rgba(54%2C%20162%2C%20235%2C%200.5)'%2C%5Cn%20%20%20%20%20%20%20%20borderColor%3A%20'rgb(54%2C%20162%2C%20235)'%2C%5Cn%20%20%20%20%20%20%20%20borderWidth%3A%201%2C%5Cn%20%20%20%20%20%20%20%20data%3A%20%5B%5Cn%20%20%20%20%20%20%20%20%20%20%20%2014.54%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2018.07%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2018.72%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2018.86%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2019.91%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2020.7%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2022.15%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2023.23%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2023.96%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2024.63%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2026.92%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2028.03%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2028.86%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2029.85%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2030.9%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2031.71%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2032.4%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2033.19%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2035.98%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2036.15%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2043.06%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2064.28%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2064.47%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2065.27%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2068.38%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2085%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2085.53%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2091.81%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20104.05%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20123.25%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20140.67%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20152.21%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20156.51%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20176.98%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20288.46%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20387.31%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20495.25%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20519.12%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20606.7%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20623.5%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20625.02%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20725.32%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20949.29%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%201858.61%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2012694.26%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2013492.88%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2022897.01%5Cn%20%20%20%20%20%20%20%20%5D%5Cn%20%20%20%20%20%20%7D%5Cn%20%20%20%20%5D%5Cn%20%20%7D%2C%5Cn%20%20options%3A%20%7B%5Cn%20%20%20%20scales%3A%20%7B%5Cn%20%20%20%20%20%20xAxes%3A%20%5B%5Cn%20%20%20%20%20%20%20%20%7B%5Cn%20%20%20%20%20%20%20%20%20%20type%3A%20'logarithmic'%2C%5Cn%20%20%20%20%20%20%20%20%20%20ticks%3A%20%7B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20min%3A%2010%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20max%3A%2030000%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20autoSkip%3A%20true%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20autoSkipPadding%3A%20100%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20maxRotation%3A%200%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20callback%3A%20function(value)%20%7B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20return%20value%3B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%7D%5Cn%20%20%20%20%20%20%20%20%20%20%7D%5Cn%20%20%20%20%20%20%20%20%7D%2C%5Cn%20%20%20%20%20%20%5D%2C%5Cn%20%20%20%20%7D%2C%5Cn%20%20%20%20plugins%3A%20%7B%5Cn%20%20%20%20%20%20datalabels%3A%20%7B%5Cn%20%20%20%20%20%20%20%20anchor%3A%20'end'%2C%5Cn%20%20%20%20%20%20%20%20align%3A%20'end'%2C%5Cn%20%20%20%20%20%20%20%20color%3A%20'%23000'%5Cn%20%20%20%20%20%20%7D%5Cn%20%20%20%20%7D%2C%5Cn%20%20%20%20responsive%3A%20true%2C%5Cn%20%20%20%20legend%3A%20%7B%5Cn%20%20%20%20%20%20position%3A%20'top'%5Cn%20%20%20%20%7D%2C%5Cn%20%20%20%20title%3A%20%7B%5Cn%20%20%20%20%20%20display%3A%20false%5Cn%20%20%20%20%7D%5Cn%20%20%7D%5Cn%7D%22%2C%22width%22%3A1200%2C%22height%22%3A1200%2C%22version%22%3A%222%22%2C%22backgroundColor%22%3A%22%23fff%22%7D](./chart-1670411247.webp)
+![https://quickchart.io/sandbox/#%7B%22chart%22%3A%22%7B%5Cn%20%20type%3A%20'horizontalBar'%2C%5Cn%20%20data%3A%20%7B%5Cn%20%20%20%20labels%3A%20%5B%5Cn%20%20%20%20%20%20%20%20'Lua%20(LuaJIT%20-j%20on)'%2C%5Cn%20%20%20%20%20%20%20%20'C%2FC%2B%2B'%2C%5Cn%20%20%20%20%20%20%20%20'Objective%20C'%2C%5Cn%20%20%20%20%20%20%20%20'Rust'%2C%5Cn%20%20%20%20%20%20%20%20'Assembler%2FNASM'%2C%5Cn%20%20%20%20%20%20%20%20'Crystal'%2C%5Cn%20%20%20%20%20%20%20%20'Swift'%2C%5Cn%20%20%20%20%20%20%20%20'D'%2C%5Cn%20%20%20%20%20%20%20%20'Java'%2C%5Cn%20%20%20%20%20%20%20%20'Kotlin'%2C%5Cn%20%20%20%20%20%20%20%20'Fortran'%2C%5Cn%20%20%20%20%20%20%20%20'Scala'%2C%5Cn%20%20%20%20%20%20%20%20'Node.js%2FJavascript'%2C%5Cn%20%20%20%20%20%20%20%20'Ada'%2C%5Cn%20%20%20%20%20%20%20%20'Visual%20Basic%20(mono)'%2C%5Cn%20%20%20%20%20%20%20%20'C%23%20(mono)'%2C%5Cn%20%20%20%20%20%20%20%20'F%23'%2C%5Cn%20%20%20%20%20%20%20%20'Dart'%2C%5Cn%20%20%20%20%20%20%20%20'Node.js%2FTypeScript'%2C%5Cn%20%20%20%20%20%20%20%20'Processing'%2C%5Cn%20%20%20%20%20%20%20%20'C%23%20(dotnet)'%2C%5Cn%20%20%20%20%20%20%20%20'Haskell'%2C%5Cn%20%20%20%20%20%20%20%20'Go'%2C%5Cn%20%20%20%20%20%20%20%20'Pascal'%2C%5Cn%20%20%20%20%20%20%20%20'Nim'%2C%5Cn%20%20%20%20%20%20%20%20'Elixir'%2C%5Cn%20%20%20%20%20%20%20%20'Python%203%20(PyPy)'%2C%5Cn%20%20%20%20%20%20%20%20'Python%202%20(PyPy)'%2C%5Cn%20%20%20%20%20%20%20%20'Hack'%2C%5Cn%20%20%20%20%20%20%20%20'Lua%20(LuaJIT%20-j%20off)'%2C%5Cn%20%20%20%20%20%20%20%20'PHP%208.1%20(JIT)'%2C%5Cn%20%20%20%20%20%20%20%20'Lua'%2C%5Cn%20%20%20%20%20%20%20%20'Groovy'%2C%5Cn%20%20%20%20%20%20%20%20'PHP%208.1'%2C%5Cn%20%20%20%20%20%20%20%20'PHP%207.4'%2C%5Cn%20%20%20%20%20%20%20%20'PHP%205.6'%2C%5Cn%20%20%20%20%20%20%20%20'Python%202'%2C%5Cn%20%20%20%20%20%20%20%20'Perl'%2C%5Cn%20%20%20%20%20%20%20%20'Haxe'%2C%5Cn%20%20%20%20%20%20%20%20'Ruby%202'%2C%5Cn%20%20%20%20%20%20%20%20'Ruby%203'%2C%5Cn%20%20%20%20%20%20%20%20'Python%203'%2C%5Cn%20%20%20%20%20%20%20%20'R'%2C%5Cn%20%20%20%20%20%20%20%20'Julia'%2C%5Cn%20%20%20%20%20%20%20%20'Lisp'%2C%5Cn%20%20%20%20%20%20%20%20'Bash'%2C%5Cn%20%20%20%20%20%20%20%20'PowerShell'%5Cn%20%20%20%20%5D%2C%5Cn%20%20%20%20datasets%3A%20%5B%5Cn%20%20%20%20%20%20%7B%5Cn%20%20%20%20%20%20%20%20label%3A%20'Execution%20time%20in%20seconds%20(lower%20is%20better%2C%20logarithmic%20chart)'%2C%5Cn%20%20%20%20%20%20%20%20backgroundColor%3A%20'rgba(54%2C%20162%2C%20235%2C%200.5)'%2C%5Cn%20%20%20%20%20%20%20%20borderColor%3A%20'rgb(54%2C%20162%2C%20235)'%2C%5Cn%20%20%20%20%20%20%20%20borderWidth%3A%201%2C%5Cn%20%20%20%20%20%20%20%20data%3A%20%5B%5Cn%20%20%20%20%20%20%20%20%20%20%20%2010.44%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2015.2%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2015.2%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2015.27%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2016.49%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2016.93%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2017.24%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2017.99%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2019.3%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2019.07%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2021.18%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2022.27%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2023.35%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2024.03%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2024.34%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2024.67%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2027.91%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2028.53%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2028.68%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2029.74%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2033.19%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2051.86%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2052.84%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2053.83%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2054.24%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2099.32%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20107.86%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20109.32%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20143.03%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20223.56%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20242.76%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20263.1%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20321.43%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20379.12%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20450.09%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20866.38%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%201066.54%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%201164.22%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%201344.27%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%201355.92%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%201384.22%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%201438.88%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%201959.95%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%201978.21%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2021056.5%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2031548.36%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%2046084.83%5Cn%20%20%20%20%20%20%20%20%5D%5Cn%20%20%20%20%20%20%7D%5Cn%20%20%20%20%5D%5Cn%20%20%7D%2C%5Cn%20%20options%3A%20%7B%5Cn%20%20%20%20scales%3A%20%7B%5Cn%20%20%20%20%20%20xAxes%3A%20%5B%5Cn%20%20%20%20%20%20%20%20%7B%5Cn%20%20%20%20%20%20%20%20%20%20type%3A%20'logarithmic'%2C%5Cn%20%20%20%20%20%20%20%20%20%20ticks%3A%20%7B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20min%3A%205%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20max%3A%20100000%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20autoSkip%3A%20true%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20autoSkipPadding%3A%20100%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20maxRotation%3A%200%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20callback%3A%20function(value)%20%7B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20return%20value%3B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%7D%5Cn%20%20%20%20%20%20%20%20%20%20%7D%5Cn%20%20%20%20%20%20%20%20%7D%2C%5Cn%20%20%20%20%20%20%5D%2C%5Cn%20%20%20%20%7D%2C%5Cn%20%20%20%20plugins%3A%20%7B%5Cn%20%20%20%20%20%20datalabels%3A%20%7B%5Cn%20%20%20%20%20%20%20%20anchor%3A%20'end'%2C%5Cn%20%20%20%20%20%20%20%20align%3A%20'end'%2C%5Cn%20%20%20%20%20%20%20%20color%3A%20'%23000'%5Cn%20%20%20%20%20%20%7D%5Cn%20%20%20%20%7D%2C%5Cn%20%20%20%20responsive%3A%20true%2C%5Cn%20%20%20%20legend%3A%20%7B%5Cn%20%20%20%20%20%20position%3A%20'top'%5Cn%20%20%20%20%7D%2C%5Cn%20%20%20%20title%3A%20%7B%5Cn%20%20%20%20%20%20display%3A%20false%5Cn%20%20%20%20%7D%5Cn%20%20%7D%5Cn%7D%22%2C%22width%22%3A1200%2C%22height%22%3A1200%2C%22version%22%3A%222%22%2C%22backgroundColor%22%3A%22%23fff%22%7D](./chart-1670829941.webp)
 
 
 
@@ -94,9 +94,9 @@ Zend Engine v2.6.0, Copyright (c) 1998-2016 Zend Technologies
 
 The latest prime number: 104729
 
-real 387.31
-user 386.5
-sys 0.16
+real 866.38
+user 865.05
+sys 0.15
 ```
 
 
@@ -113,9 +113,9 @@ Zend Engine v3.4.0, Copyright (c) Zend Technologies
 
 The latest prime number: 104729
 
-real 176.98
-user 176.49
-sys 0.1
+real 450.09
+user 449.27
+sys 0.07
 ```
 
 
@@ -132,9 +132,9 @@ Zend Engine v4.1.13, Copyright (c) Zend Technologies
 
 The latest prime number: 104729
 
-real 156.51
-user 155.94
-sys 0.09
+real 379.12
+user 378.46
+sys 0.06
 ```
 
 
@@ -151,9 +151,9 @@ Zend Engine v4.1.13, Copyright (c) Zend Technologies
 
 The latest prime number: 104729
 
-real 123.25
-user 122.91
-sys 0.09
+real 242.76
+user 242.37
+sys 0.03
 ```
 
 
@@ -167,9 +167,9 @@ v12.22.9
 
 The latest prime number: 104729
 
-real 28.03
-user 27.91
-sys 0.04
+real 23.35
+user 23.27
+sys 0.02
 ```
 
 
@@ -183,9 +183,9 @@ v10.9.1
 
 The latest prime number: 104729
 
-real 30.9
-user 30.48
-sys 0.25
+real 28.68
+user 28.43
+sys 0.18
 ```
 
 
@@ -199,9 +199,9 @@ Python 2.7.18
 
 The latest prime number:  104729
 
-real 625.02
-user 623.32
-sys 0.31
+real 1066.54
+user 1064.81
+sys 0.19
 ```
 
 
@@ -216,9 +216,9 @@ Python 2.7.18 (7.3.9+dfsg-1, Apr 01 2022, 21:40:34)
 
 The latest prime number:  104729
 
-real 91.81
-user 91.46
-sys 0.08
+real 109.32
+user 108.98
+sys 0.07
 ```
 
 
@@ -232,9 +232,9 @@ Python 3.10.6
 
 The latest prime number:  104729
 
-real 725.32
-user 723.44
-sys 0.4
+real 1438.88
+user 1436.41
+sys 0.14
 ```
 
 
@@ -249,9 +249,9 @@ Python 3.8.13 (7.3.9+dfsg-1, Apr 01 2022, 21:41:47)
 
 The latest prime number:  104729
 
-real 85
-user 84.74
-sys 0.1
+real 107.86
+user 107.62
+sys 0.03
 ```
 
 
@@ -270,9 +270,9 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 The latest prime number: 104729
 
-real 18.07
-user 18.01
-sys 0.01
+real 15.2
+user 15.16
+sys 0
 ```
 
 
@@ -288,9 +288,9 @@ NASM version 2.15.05
 
 The latest prime number: 0000104729
 
-real 23.23
-user 23.17
-sys 0.01
+real 16.49
+user 16.36
+sys 0
 ```
 
 
@@ -311,9 +311,9 @@ Linking /app/prime-number/pascal/cmd.pas_bin
 30 lines compiled, 0.2 sec
 The latest prime number: 104729
 
-real 68.38
-user 68.17
-sys 0.04
+real 53.83
+user 53.74
+sys 0.01
 ```
 
 
@@ -328,9 +328,9 @@ go version go1.18.1 linux/amd64
 
 The latest prime number: 104729
 
-real 65.27
-user 64.88
-sys 0.24
+real 52.84
+user 52.64
+sys 0.09
 ```
 
 
@@ -344,8 +344,8 @@ ruby 2.7.7p221 (2022-11-24 revision 168ec2b1e5) [x86_64-linux]
 
 The latest prime number: 104729
 
-real 623.5
-user 621.77
+real 1355.92
+user 1353.41
 sys 0.35
 ```
 
@@ -360,9 +360,9 @@ ruby 3.1.3p185 (2022-11-24 revision 1a6b16756e) [x86_64-linux]
 
 The latest prime number: 104729
 
-real 606.7
-user 605.08
-sys 0.34
+real 1384.22
+user 1381.83
+sys 0.28
 ```
 
 
@@ -379,9 +379,9 @@ OpenJDK 64-Bit Server VM (build 18.0.2-ea+9-Ubuntu-222.04, mixed mode, sharing)
 
 The latest prime number: 104729
 
-real 26.92
-user 26.8
-sys 0.05
+real 19.3
+user 19.24
+sys 0.02
 ```
 
 
@@ -396,8 +396,8 @@ rustc 1.61.0
 
 The latest prime number: 104729
 
-real 18.86
-user 18.8
+real 15.27
+user 15.24
 sys 0
 ```
 
@@ -412,9 +412,9 @@ R scripting front-end version 4.1.2 (2021-11-01)
 
 [1] "The latest prime number:  104729"
 
-real 1858.61
-user 1852.6
-sys 1.18
+real 1959.95
+user 1948.34
+sys 0.56
 ```
 
 
@@ -429,9 +429,9 @@ Dart SDK version: 2.18.5 (stable) (Unknown timestamp) on "linux_x64"
 
 The latest prime number: 104729
 
-real 35.98
-user 34.87
-sys 0.03
+real 28.53
+user 27.47
+sys 0
 ```
 
 
@@ -456,9 +456,9 @@ Internet, point your browser at http://www.perl.org/, the Perl Home Page.
 
 The latest prime number: 104729
 
-real 519.12
-user 517.36
-sys 0.31
+real 1164.22
+user 1162.41
+sys 0.16
 ```
 
 
@@ -472,9 +472,9 @@ Lua 5.4.4  Copyright (C) 1994-2022 Lua.org, PUC-Rio
 
 The latest prime number:        104729
 
-real 152.21
-user 151.75
-sys 0.07
+real 263.1
+user 262.64
+sys 0.03
 ```
 
 
@@ -488,9 +488,9 @@ LuaJIT 2.1.0-beta3 -- Copyright (C) 2005-2017 Mike Pall. http://luajit.org/
 
 The latest prime number:        104729
 
-real 85.53
-user 85.3
-sys 0.05
+real 223.56
+user 223.27
+sys 0.01
 ```
 
 
@@ -504,8 +504,8 @@ LuaJIT 2.1.0-beta3 -- Copyright (C) 2005-2017 Mike Pall. http://luajit.org/
 
 The latest prime number:        104729
 
-real 14.54
-user 14.49
+real 10.44
+user 10.4
 sys 0
 ```
 
@@ -525,9 +525,9 @@ There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR P
 
 The latest prime number:  104729
 
-real 32.4
-user 32.29
-sys 0.02
+real 24.03
+user 23.99
+sys 0
 ```
 
 
@@ -542,9 +542,9 @@ The Glorious Glasgow Haskell Compilation System, version 8.8.4
 
 The latest prime number: 104729
 
-real 64.28
-user 64.09
-sys 0.04
+real 51.86
+user 51.79
+sys 0
 ```
 
 
@@ -559,9 +559,9 @@ info: kotlinc-jvm 1.7.21 (JRE 18.0.2-ea+9-Ubuntu-222.04)
 
 The latest prime number: 104729
 
-real 24.63
-user 24.46
-sys 0.05
+real 19.07
+user 18.99
+sys 0.02
 ```
 
 
@@ -579,8 +579,8 @@ Default target: x86_64-unknown-linux-gnu
 
 The latest prime number: 104729
 
-real 19.91
-user 19.83
+real 16.93
+user 16.88
 sys 0.01
 ```
 
@@ -596,9 +596,9 @@ Mono C# compiler version 6.12.0.182
 
 The latest prime number: 104729
 
-real 33.19
-user 33.09
-sys 0.02
+real 24.67
+user 24.58
+sys 0
 ```
 
 
@@ -625,9 +625,9 @@ Use 'dotnet --help' to see available commands or visit: https://aka.ms/dotnet-cl
 --------------------------------------------------------------------------------------
 The latest prime number: 104729
 
-real 43.06
-user 39.65
-sys 1.29
+real 33.19
+user 30.28
+sys 0.98
 ```
 
 
@@ -642,9 +642,9 @@ Scala code runner version 2.11.12 -- Copyright 2002-2017, LAMP/EPFL
 
 The latest prime number: 104729
 
-real 23.96
-user 23.75
-sys 0.14
+real 22.27
+user 22.14
+sys 0.08
 ```
 
 
@@ -660,9 +660,9 @@ Elixir 1.12.2 (compiled with Erlang/OTP 24)
 
 The latest prime number: 104729
 
-real 104.05
-user 103.33
-sys 0.47
+real 99.32
+user 98.74
+sys 0.32
 ```
 
 
@@ -678,12 +678,12 @@ Target: x86_64-unknown-linux-gnu
 
 [0/1] Planning build
 Building for production...
-Build complete! (1.49s)
+Build complete! (1.48s)
 The latest prime number: 104729
 
-real 20.7
-user 20.64
-sys 0.01
+real 17.24
+user 17.18
+sys 0
 ```
 
 
@@ -703,9 +703,9 @@ active boot switches: -d:release
 
 The latest prime number: 104729
 
-real 64.47
-user 64.25
-sys 0.05
+real 54.24
+user 54.15
+sys 0.01
 ```
 
 
@@ -721,9 +721,9 @@ Copyright (C) 1999-2022 by The D Language Foundation, All Rights Reserved writte
 
 The latest prime number: 104729
 
-real 22.15
-user 22.07
-sys 0.01
+real 17.99
+user 17.96
+sys 0
 ```
 
 
@@ -742,9 +742,9 @@ There is NO WARRANTY, to the extent permitted by law.
 
 The latest prime number: 104729
 
-real 22897.01
-user 21507.18
-sys 1302.07
+real 31548.36
+user 30377.9
+sys 1092.67
 ```
 
 
@@ -768,13 +768,13 @@ Features:
 C Modules: (clisp i18n syscalls regexp readline)
 Installation directory: /usr/lib/clisp-2.49.93+/
 User language: ENGLISH
-Machine: X86_64 (X86_64) 2fad7595bf02 [172.17.0.2]
+Machine: X86_64 (X86_64) 4ca020801594 [172.17.0.2]
 
 The latest prime number: 104729
 
-real 12694.26
-user 12642.17
-sys 14.75
+real 21056.5
+user 20996.27
+sys 8.89
 ```
 
 
@@ -788,9 +788,9 @@ docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p haxe 
 
 The latest prime number: 104729
 
-real 495.25
-user 493.64
-sys 0.32
+real 1344.27
+user 1341.14
+sys 0.33
 ```
 
 
@@ -805,13 +805,13 @@ Copyright (C) 2004-2010 Rolf Bjarne Kvinge. All rights reserved.
 
 Assembly 'cmd, Version=0.0, Culture=neutral, PublicKeyToken=null' saved successfully to '/app/prime-number/visual-basic/cmd.vb_bin'.
 Compilation successful
-Compilation took 00:00:01.0186350
+Compilation took 00:00:00.9233060
 
 The latest prime number: 104729
 
-real 36.15
-user 35.94
-sys 0.04
+real 24.34
+user 24.28
+sys 0.01
 ```
 
 
@@ -828,10 +828,10 @@ This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 
-2022-12-06 20:10:53.223 cmd.m_bin[7:7] The latest prime number: 104729
+2022-12-09 14:28:54.018 cmd.m_bin[6:6] The latest prime number: 104729
 
-real 18.72
-user 18.62
+real 15.2
+user 15.11
 sys 0.02
 ```
 
@@ -846,9 +846,9 @@ Groovy Version: 2.4.21 JVM: 18.0.2-ea Vendor: Private Build OS: Linux
 
 The latest prime number: 104729
 
-real 288.46
-user 283.65
-sys 4.07
+real 321.43
+user 318.93
+sys 1.93
 ```
 
 
@@ -867,9 +867,9 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
  The latest prime number:       104729
 
-real 28.86
-user 28.76
-sys 0.02
+real 21.18
+user 21.12
+sys 0.01
 ```
 
 
@@ -883,9 +883,9 @@ PowerShell 7.3.0
 
 The latest prime number: 104729
 
-real 13492.88
-user 13072.5
-sys 324.72
+real 46084.83
+user 45615.54
+sys 285.84
 ```
 
 
@@ -899,9 +899,9 @@ julia version 1.8.3
 
 The latest prime number: 104729
 
-real 949.29
-user 884.96
-sys 61.96
+real 1978.21
+user 1899.81
+sys 71.13
 ```
 
 
@@ -916,9 +916,9 @@ Processing 4.1.1
 The latest prime number:  104729
 Finished.
 
-real 29.85
-user 28.43
-sys 0.49
+real 29.74
+user 28.25
+sys 0.42
 ```
 
 
@@ -945,9 +945,9 @@ Use 'dotnet --help' to see available commands or visit: https://aka.ms/dotnet-cl
 --------------------------------------------------------------------------------------
 The latest prime number: 104729
 
-real 31.71
-user 30.69
-sys 0.5
+real 27.91
+user 26.92
+sys 0.43
 ```
 
 
@@ -965,9 +965,9 @@ Repo schema: 5427e5655b19ac7afb665ea2d6dd5f87e42bd66f
 set_mempolicy: Operation not permitted
 The latest prime number: 104729
 
-real 140.67
-user 140.08
-sys 0.22
+real 143.03
+user 142.31
+sys 0.17
 ```
 
 
