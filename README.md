@@ -971,6 +971,15 @@ sys 0.17
 ```
 
 
+### [Raku](./prime-number/raku/cmd.raku)
+```
+docker run mamchyts/benchmark:latest raku --version 2>&1 && echo '' && \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p hhvm /app/prime-number/raku/cmd.raku 10000 2>&1'
+```
+```
+```
+
+
 ## Run all prime number
 
 ```

@@ -78,3 +78,4 @@ RUN apt-get update \
     && add-apt-repository 'deb https://dl.hhvm.com/universal release main' \
     && apt-get update \
     && apt-get install --yes hhvm
+RUN apt install -y rakudo
