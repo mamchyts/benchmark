@@ -119,13 +119,13 @@ sys 0.07
 ```
 
 
-### [PHP 8.1](./prime-number/php/cmd.php)
+### [PHP 8.2](./prime-number/php/cmd.php)
 ```
 docker run mamchyts/benchmark:latest php8.1 -v 2>&1 && echo '' && \
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p php8.1 /app/prime-number/php/cmd.php 10000 2>&1'
 ```
 ```
-PHP 8.1.13 (cli) (built: Nov 26 2022 14:07:55) (NTS)
+PHP 8.2.13 (cli) (built: Nov 26 2022 14:07:55) (NTS)
 Copyright (c) The PHP Group
 Zend Engine v4.1.13, Copyright (c) Zend Technologies
     with Zend OPcache v8.1.13, Copyright (c), by Zend Technologies
@@ -138,13 +138,13 @@ sys 0.06
 ```
 
 
-### [PHP 8.1 (JIT)](./prime-number/php/cmd.php)
+### [PHP 8.2 (JIT)](./prime-number/php/cmd.php)
 ```
 docker run mamchyts/benchmark:latest php8.1 -v 2>&1 && echo '' && \
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p php8.1 -dopcache.enable_cli=1 -dopcache.jit=1205 -dopcache.jit_buffer_size=8M /app/prime-number/php/cmd.php 10000 2>&1'
 ```
 ```
-PHP 8.1.13 (cli) (built: Nov 26 2022 14:07:55) (NTS)
+PHP 8.2.13 (cli) (built: Nov 26 2022 14:07:55) (NTS)
 Copyright (c) The PHP Group
 Zend Engine v4.1.13, Copyright (c) Zend Technologies
     with Zend OPcache v8.1.13, Copyright (c), by Zend Technologies
@@ -336,11 +336,11 @@ sys 0.09
 
 ### [Ruby 2](./prime-number/ruby/cmd.rb)
 ```
-docker run mamchyts/benchmark:latest /root/.rbenv/versions/2.7.7/bin/ruby --version 2>&1 && echo '' && \
-docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /root/.rbenv/versions/2.7.7/bin/ruby /app/prime-number/ruby/cmd.rb 10000 2>&1'
+docker run mamchyts/benchmark:latest /root/.rbenv/versions/2.7.8/bin/ruby --version 2>&1 && echo '' && \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /root/.rbenv/versions/2.7.8/bin/ruby /app/prime-number/ruby/cmd.rb 10000 2>&1'
 ```
 ```
-ruby 2.7.7p221 (2022-11-24 revision 168ec2b1e5) [x86_64-linux]
+ruby 2.7.8p221 (2022-11-24 revision 168ec2b1e5) [x86_64-linux]
 
 The latest prime number: 104729
 
@@ -352,11 +352,11 @@ sys 0.35
 
 ### [Ruby 3](./prime-number/ruby/cmd.rb)
 ```
-docker run mamchyts/benchmark:latest /root/.rbenv/versions/3.1.3/bin/ruby --version 2>&1 && echo '' && \
-docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /root/.rbenv/versions/3.1.3/bin/ruby /app/prime-number/ruby/cmd.rb 10000 2>&1'
+docker run mamchyts/benchmark:latest /root/.rbenv/versions/3.2.2/bin/ruby --version 2>&1 && echo '' && \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /root/.rbenv/versions/3.2.2/bin/ruby /app/prime-number/ruby/cmd.rb 10000 2>&1'
 ```
 ```
-ruby 3.1.3p185 (2022-11-24 revision 1a6b16756e) [x86_64-linux]
+ruby 3.2.2p185 (2022-11-24 revision 1a6b16756e) [x86_64-linux]
 
 The latest prime number: 104729
 
@@ -759,7 +759,7 @@ Software: GNU C 11.2.0
 gcc -g -O2 -ffile-prefix-map=/build/clisp-TmZb5q/clisp-2.49.20210628.gitde01f0f=. -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -no-integrated-cpp -W -Wswitch -Wcomment -Wpointer-arith -Wreturn-type -Wmissing-declarations -Wimplicit -Wno-sign-compare -Wno-format-nonliteral -Wno-shift-negative-value -O -fwrapv -fno-strict-aliasing -DNO_ASM -DENABLE_UNICODE -DDYNAMIC_FFI -DDYNAMIC_MODULES -Wl,-Bsymbolic-functions -Wl,-z,relro  libgnu.a  -lreadline -lncurses -lffcall  -lsigsegv -lunistring
 SAFETY=0 HEAPCODES ONE_FREE_BIT_HEAPCODES WIDE_HARD SPVW_BLOCKS SPVW_MIXED TRIVIALMAP_MEMORY
 libsigsegv 2.13
-libreadline 8.1
+libreadline 8.2
 libffcall 2.4
 Features:
 (READLINE REGEXP WILDCARD SYSCALLS I18N LOOP COMPILER CLOS MOP CLISP ANSI-CL
@@ -990,7 +990,7 @@ php run/run.php
 ...
 ----------------------- PHP 7.4 -----------------------
 ...
------------------------ PHP 8.1 -----------------------
+----------------------- PHP 8.2 -----------------------
 ...
 ```
 
@@ -1020,7 +1020,7 @@ php run/run.php 'C/C++' 'Assembler/NASM' 'Rust' 'Lua (LuaJIT -j on)' 'Java'
 
 ```
 docker build -t benchmark .
-docker tag benchmark mamchyts/benchmark:1.3.5
+docker tag benchmark mamchyts/benchmark:1.4.0
 docker tag benchmark mamchyts/benchmark:latest
 docker push --all-tags mamchyts/benchmark
 ```
