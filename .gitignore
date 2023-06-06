@@ -1,7 +1,3 @@
-# VS code
-/.vscode
-/*.code-workspace
-
 # compiled bin files
 /prime-number/php/kphp_out
 /prime-number/c#/bin

@@ -1014,3 +1014,18 @@ docker tag benchmark mamchyts/benchmark:1.4.1
 docker tag benchmark mamchyts/benchmark:latest
 docker push --all-tags mamchyts/benchmark
 ```
+
+
+
+## Inspect docker image
+
+At the first - install `dive` (https://github.com/wagoodman/dive):
+```
+wget https://github.com/wagoodman/dive/releases/download/v0.10.0/dive_0.10.0_linux_amd64.deb
+sudo apt install ./dive_0.10.0_linux_amd64.deb
+```
+
+At the second - analyze:
+```
+dive benchmark
+```
