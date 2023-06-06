@@ -79,3 +79,7 @@ RUN apt-get update \
     && apt-get update \
     && apt-get install --yes hhvm
 RUN apt install -y rakudo
+RUN wget -qO /etc/apt/trusted.gpg.d/vkpartner.asc https://artifactory-external.vkpartner.ru/artifactory/api/gpg/key/public \
+    && echo "deb [arch=amd64] https://artifactory-external.vkpartner.ru/artifactory/kphp jammy main" | tee /etc/apt/sources.list.d/vkpartner.list \
+    && apt update \
+    && apt install -y kphp vk-tl-tools

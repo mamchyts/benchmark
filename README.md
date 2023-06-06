@@ -125,16 +125,6 @@ docker run mamchyts/benchmark:latest php8.1 -v 2>&1 && echo '' && \
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p php8.1 /app/prime-number/php/cmd.php 10000 2>&1'
 ```
 ```
-PHP 8.2.13 (cli) (built: Nov 26 2022 14:07:55) (NTS)
-Copyright (c) The PHP Group
-Zend Engine v4.1.13, Copyright (c) Zend Technologies
-    with Zend OPcache v8.1.13, Copyright (c), by Zend Technologies
-
-The latest prime number: 104729
-
-real 379.12
-user 378.46
-sys 0.06
 ```
 
 
@@ -144,16 +134,16 @@ docker run mamchyts/benchmark:latest php8.1 -v 2>&1 && echo '' && \
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p php8.1 -dopcache.enable_cli=1 -dopcache.jit=1205 -dopcache.jit_buffer_size=8M /app/prime-number/php/cmd.php 10000 2>&1'
 ```
 ```
-PHP 8.2.13 (cli) (built: Nov 26 2022 14:07:55) (NTS)
-Copyright (c) The PHP Group
-Zend Engine v4.1.13, Copyright (c) Zend Technologies
-    with Zend OPcache v8.1.13, Copyright (c), by Zend Technologies
+```
 
-The latest prime number: 104729
 
-real 242.76
-user 242.37
-sys 0.03
+### [PHP (KPHP)](./prime-number/php/cmd.php)
+```
+docker run mamchyts/benchmark:latest kphp --version 2>&1 && echo '' && \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest kphp --mode=cli /app/prime-number/php/cmd.php --output-file /app/prime-number/php/cmd.php_bin &> /dev/null && \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/php/cmd.php_bin 10000 2>&1'
+```
+```
 ```
 
 
@@ -1020,7 +1010,7 @@ php run/run.php 'C/C++' 'Assembler/NASM' 'Rust' 'Lua (LuaJIT -j on)' 'Java'
 
 ```
 docker build -t benchmark .
-docker tag benchmark mamchyts/benchmark:1.4.0
+docker tag benchmark mamchyts/benchmark:1.4.1
 docker tag benchmark mamchyts/benchmark:latest
 docker push --all-tags mamchyts/benchmark
 ```
