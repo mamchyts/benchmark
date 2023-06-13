@@ -121,8 +121,8 @@ sys 0.07
 
 ### [PHP 8.2](./prime-number/php/cmd.php)
 ```
-docker run mamchyts/benchmark:latest php8.1 -v 2>&1 && echo '' && \
-docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p php8.1 /app/prime-number/php/cmd.php 10000 2>&1'
+docker run mamchyts/benchmark:latest php8.2 -v 2>&1 && echo '' && \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p php8.2 /app/prime-number/php/cmd.php 10000 2>&1'
 ```
 ```
 ```
@@ -130,8 +130,8 @@ docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p php8.
 
 ### [PHP 8.2 (JIT)](./prime-number/php/cmd.php)
 ```
-docker run mamchyts/benchmark:latest php8.1 -v 2>&1 && echo '' && \
-docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p php8.1 -dopcache.enable_cli=1 -dopcache.jit=1205 -dopcache.jit_buffer_size=8M /app/prime-number/php/cmd.php 10000 2>&1'
+docker run mamchyts/benchmark:latest php8.2 -v 2>&1 && echo '' && \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p php8.2 -dopcache.enable_cli=1 -dopcache.jit=1205 -dopcache.jit_buffer_size=8M /app/prime-number/php/cmd.php 10000 2>&1'
 ```
 ```
 ```
@@ -139,9 +139,9 @@ docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p php8.
 
 ### [PHP (KPHP)](./prime-number/php/cmd.php)
 ```
-docker run mamchyts/benchmark:latest kphp --version 2>&1 && echo '' && \
-docker run --volume $(pwd):/app mamchyts/benchmark:latest kphp --mode=cli /app/prime-number/php/cmd.php --output-file /app/prime-number/php/cmd.php_bin &> /dev/null && \
-docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/php/cmd.php_bin 10000 2>&1'
+docker run benchmark kphp --version 2>&1 && echo '' && \
+docker run --volume $(pwd):/app benchmark kphp --mode=server /app/prime-number/php/cmd.php --output-file /app/prime-number/php/cmd.php_bin &> /dev/null && \
+docker run --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-number/php/cmd.php_bin --user www-data --once 10000 2>&1'
 ```
 ```
 ```
@@ -1021,8 +1021,9 @@ docker push --all-tags mamchyts/benchmark
 
 At the first - install `dive` (https://github.com/wagoodman/dive):
 ```
-wget https://github.com/wagoodman/dive/releases/download/v0.10.0/dive_0.10.0_linux_amd64.deb
-sudo apt install ./dive_0.10.0_linux_amd64.deb
+wget https://github.com/wagoodman/dive/releases/download/v0.10.0/dive_0.10.0_linux_amd64.deb \
+&& sudo dpkg -i ./dive_0.10.0_linux_amd64.deb \
+&& rm dive_0.10.0_linux_amd64.deb
 ```
 
 At the second - analyze:
