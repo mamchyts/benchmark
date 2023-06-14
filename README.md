@@ -139,9 +139,9 @@ docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p php8.
 
 ### [PHP (KPHP)](./prime-number/php/cmd.php)
 ```
-docker run benchmark kphp --version 2>&1 && echo '' && \
-docker run --volume $(pwd):/app benchmark kphp --mode=server /app/prime-number/php/cmd.php --output-file /app/prime-number/php/cmd.php_bin &> /dev/null && \
-docker run --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-number/php/cmd.php_bin --user www-data --once 10000 2>&1'
+docker run mamchyts/benchmark:latest kphp --version 2>&1 && echo '' && \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest kphp --mode=server /app/prime-number/php/cmd.php --output-file /app/prime-number/php/cmd.php_bin &> /dev/null && \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/php/cmd.php_bin --user www-data --once 10000 2>&1'
 ```
 ```
 ```
