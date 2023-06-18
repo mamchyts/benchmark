@@ -149,8 +149,8 @@ docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/
 
 ### [Node.js/Javascript](./prime-number/javascript/cmd.js)
 ```
-docker run mamchyts/benchmark:latest nodejs --version 2>&1 && echo '' && \
-docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p nodejs /app/prime-number/javascript/cmd.js 10000 2>&1'
+docker run mamchyts/benchmark:latest node --version 2>&1 && echo '' && \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p node /app/prime-number/javascript/cmd.js 10000 2>&1'
 ```
 ```
 v12.22.9
@@ -1010,7 +1010,7 @@ php run/run.php 'C/C++' 'Assembler/NASM' 'Rust' 'Lua (LuaJIT -j on)' 'Java'
 
 ```
 docker build -t benchmark .
-docker tag benchmark mamchyts/benchmark:1.4.1
+docker tag benchmark mamchyts/benchmark:1.4.2
 docker tag benchmark mamchyts/benchmark:latest
 docker push --all-tags mamchyts/benchmark
 ```

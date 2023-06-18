@@ -6,7 +6,7 @@ RUN apt --yes install software-properties-common \
     && add-apt-repository --yes ppa:ondrej/php \
     && apt install --yes php5.6-cli php7.4-cli php8.2-cli
 RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && apt install --yes nodejs \
-    && npm install -g typescript
+    && npm install -g ts-node
 RUN apt install --yes python2 python3 pypy pypy3
 RUN apt install --yes g++
 RUN apt install --yes nasm
