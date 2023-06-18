@@ -78,8 +78,13 @@ function executeCommand(array $command): string
         'sys' => [],
     ];
 
+    $tryCount = 3;
+    if (in_array($command['test']['title'], ['PowerShell', 'Lisp', 'Bash'])) {
+        $tryCount = 1;
+    }
+
     // run test multiply time (out will show AVERAGE values)
-    for ($i = 0; $i < 3; $i++) {
+    for ($i = 0; $i < $tryCount; $i++) {
         [$outCmd, $outTime] = run(trim($command['cmd']));
 
         foreach (array_keys($outTimes) as $key) {

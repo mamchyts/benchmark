@@ -14,9 +14,9 @@ More info about testing [RU]: https://habr.com/ru/post/563078/
 
 ## Test PC info - **DigitalOcean 1CPU/2GB (Premium Intel with NVMe SSD)**
 ```
-root@ubuntu-s-1vcpu-2gb-intel-sfo3-01:~/benchmark# free -h
+root@ubuntu-s-1vcpu-2gb-intel-sfo3-01:~# free -h
                total        used        free      shared  buff/cache   available
-Mem:           1.9Gi       307Mi       106Mi       1.0Mi       1.5Gi       1.5Gi
+Mem:           1.9Gi       200Mi       1.3Gi       3.0Mi       412Mi       1.6Gi
 Swap:             0B          0B          0B
 ```
 
