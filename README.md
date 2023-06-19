@@ -897,11 +897,11 @@ sys 71.13
 
 ### [Processing](./prime-number/processing/processing.pde)
 ```
-echo "Processing 4.1.1" && echo '' && \
-docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p xvfb-run /root/processing-4.1.1/processing-java --sketch=/app/prime-number/processing/ --variant=linux-amd64 --force --run 10000 2>&1'
+echo "Processing 4.2" && echo '' && \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p xvfb-run /root/processing-4.2/processing-java --sketch=/app/prime-number/processing/ --variant=linux-amd64 --force --run 10000 2>&1'
 ```
 ```
-Processing 4.1.1
+Processing 4.2
 
 The latest prime number:  104729
 Finished.
@@ -964,7 +964,7 @@ sys 0.17
 ### [Raku](./prime-number/raku/cmd.raku)
 ```
 docker run mamchyts/benchmark:latest raku --version 2>&1 && echo '' && \
-docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p hhvm /app/prime-number/raku/cmd.raku 10000 2>&1'
+docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p raku /app/prime-number/raku/cmd.raku 10000 2>&1'
 ```
 ```
 ```
