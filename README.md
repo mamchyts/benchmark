@@ -159,8 +159,8 @@ sys 0.07
 ### [PHP (KPHP)](./prime-number/php/cmd.php)
 ```
 docker run mamchyts/benchmark:latest kphp --version 2>&1 && echo '' && \
-docker run --volume $(pwd):/app mamchyts/benchmark:latest kphp --mode=server /app/prime-number/php/cmd.php --output-file /app/prime-number/php/cmd.php_bin &> /dev/null && \
-docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/php/cmd.php_bin --user www-data --once 10000 2>&1'
+docker run --volume $(pwd):/app mamchyts/benchmark:latest kphp --mode=cli /app/prime-number/php/cmd.php --output-file /app/prime-number/php/cmd.php_bin &> /dev/null && \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/php/cmd.php_bin --Xkphp-options -u root 10000 2>&1'
 ```
 ```
 kphp2cpp compiled at May 26 2023 16:29:52 UTC by gcc 11.3.0 64-bit after commit e02602ea4180ac3da5dc0edfbb055fbc11be26f4 build 2797
