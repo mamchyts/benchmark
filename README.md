@@ -989,6 +989,17 @@ sys 3.25
 ```
 
 
+### [Vala](./prime-number/vala/cmd.vala)
+```
+docker run mamchyts/benchmark:latest valac --version 2>&1 && echo '' && \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest valac /app/prime-number/vala/cmd.vala -o /app/prime-number/vala/cmd.vala_bin && \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/vala/cmd.vala_bin 10000 2>&1'
+```
+```
+Vala 0.56.0
+```
+
+
 ## Run all prime number
 
 ```
@@ -1029,7 +1040,7 @@ php run/run.php 'C/C++' 'Assembler/NASM' 'Rust' 'Lua (LuaJIT -j on)' 'Java'
 
 ```
 docker build -t benchmark .
-docker tag benchmark mamchyts/benchmark:1.4.3
+docker tag benchmark mamchyts/benchmark:1.4.4
 docker tag benchmark mamchyts/benchmark:latest
 docker push --all-tags mamchyts/benchmark
 ```

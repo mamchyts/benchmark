@@ -87,3 +87,4 @@ RUN wget -qO /etc/apt/trusted.gpg.d/vkpartner.asc https://artifactory-external.v
     && echo "deb [arch=amd64] https://artifactory-external.vkpartner.ru/artifactory/kphp jammy main" | tee /etc/apt/sources.list.d/vkpartner.list \
     && apt update \
     && apt install --yes kphp vk-tl-tools
+RUN apt install --yes valac
