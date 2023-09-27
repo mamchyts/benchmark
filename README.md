@@ -350,22 +350,6 @@ sys 0.21
 ```
 
 
-### [Ruby 2](./prime-number/ruby/cmd.rb)
-```
-docker run mamchyts/benchmark:latest /root/.rbenv/versions/2.7.8/bin/ruby --version 2>&1 && echo '' && \
-docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /root/.rbenv/versions/2.7.8/bin/ruby /app/prime-number/ruby/cmd.rb 10000 2>&1'
-```
-```
-ruby 2.7.8p225 (2023-03-30 revision 1f4d455848) [x86_64-linux]
-
-The latest prime number: 104729
-
-real 647.83
-user 645.92
-sys 0.19
-```
-
-
 ### [Ruby 3](./prime-number/ruby/cmd.rb)
 ```
 docker run mamchyts/benchmark:latest /root/.rbenv/versions/3.2.2/bin/ruby --version 2>&1 && echo '' && \
@@ -571,7 +555,7 @@ docker run --volume $(pwd):/app mamchyts/benchmark:latest kotlinc /app/prime-num
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p java -jar /app/prime-number/kotlin/cmd.jar 10000 2>&1'
 ```
 ```
-info: kotlinc-jvm 1.8.21 (JRE 18.0.2-ea+9-Ubuntu-222.04)
+info: kotlinc-jvm 1.9.10 (JRE 18.0.2-ea+9-Ubuntu-222.04)
 
 The latest prime number: 104729
 
@@ -710,7 +694,7 @@ docker run --volume $(pwd):/app mamchyts/benchmark:latest nim compile -d:release
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/nim/cmd.nim_bin 10000 2>&1'
 ```
 ```
-Nim Compiler Version 1.6.12 [Linux: amd64]
+Nim Compiler Version 2.0.0 [Linux: amd64]
 Compiled at 2023-03-10
 Copyright (c) 2006-2023 by Andreas Rumpf
 
@@ -895,7 +879,7 @@ docker run mamchyts/benchmark:latest pwsh --version && echo '' && \
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p pwsh /app/prime-number/power-shell/cmd.ps1 10000 2>&1'
 ```
 ```
-PowerShell 7.3.4
+PowerShell 7.3.7
 
 The latest prime number: 104729
 
@@ -911,7 +895,7 @@ docker run mamchyts/benchmark:latest julia --version && echo '' && \
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p julia /app/prime-number/julia/cmd.jl 10000 2>&1'
 ```
 ```
-julia version 1.9.0
+julia version 1.9.3
 
 The latest prime number: 104729
 
@@ -1045,7 +1029,7 @@ php run/run.php 'C/C++' 'Assembler/NASM' 'Rust' 'Lua (LuaJIT -j on)' 'Java'
 
 ```
 docker build -t benchmark .
-docker tag benchmark mamchyts/benchmark:1.4.2
+docker tag benchmark mamchyts/benchmark:1.4.3
 docker tag benchmark mamchyts/benchmark:latest
 docker push --all-tags mamchyts/benchmark
 ```
