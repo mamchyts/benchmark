@@ -14,14 +14,14 @@ More info about testing [RU]: https://habr.com/ru/post/563078/
 
 ## Test PC info - **DigitalOcean 1CPU/2GB (Premium Intel with NVMe SSD)**
 ```
-root@ubuntu-s-1vcpu-2gb-intel-sfo3-01:~# free -h
+root@ubuntu-s-1vcpu-2gb-70gb-intel-fra1-01:/# free -h
                total        used        free      shared  buff/cache   available
-Mem:           1.9Gi       200Mi       1.3Gi       3.0Mi       412Mi       1.6Gi
+Mem:           1.9Gi       198Mi       1.3Gi       4.0Mi       399Mi       1.6Gi
 Swap:             0B          0B          0B
 ```
 
 ```
-root@ubuntu-s-1vcpu-2gb-intel-sfo3-01:~# lscpu
+root@ubuntu-s-1vcpu-2gb-70gb-intel-fra1-01:/# lscpu
 Architecture:            x86_64
   CPU op-mode(s):        32-bit, 64-bit
   Address sizes:         40 bits physical, 48 bits virtual
@@ -36,14 +36,12 @@ Vendor ID:               GenuineIntel
     Core(s) per socket:  1
     Socket(s):           1
     Stepping:            7
-    BogoMIPS:            4988.28
-    Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr
-                          sse sse2 syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology cpuid tsc_kn
-                         own_freq pni pclmulqdq vmx ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_dea
-                         dline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch cpuid_fault i
-                         nvpcid_single ssbd ibrs ibpb ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid ept_ad
-                         fsgsbase bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt clwb xsaveopt xsave
-                         c xgetbv1 arat pku ospke arch_capabilities
+    BogoMIPS:            4988.27
+    Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 syscall nx pdpe1gb
+                          rdtscp lm constant_tsc rep_good nopl xtopology cpuid tsc_known_freq pni pclmulqdq vmx ssse3 fma cx16 pcid sse4_1 ss
+                         e4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch cpuid_fau
+                         lt invpcid_single ssbd ibrs ibpb ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase bmi1 avx2 smep
+                         bmi2 erms invpcid rdseed adx smap clflushopt clwb xsaveopt xsavec xgetbv1 arat pku ospke arch_capabilities
 Virtualization features:
   Virtualization:        VT-x
   Hypervisor vendor:     KVM
@@ -56,12 +54,14 @@ NUMA:
   NUMA node(s):          1
   NUMA node0 CPU(s):     0
 Vulnerabilities:
+  Gather data sampling:  Unknown: Dependent on hypervisor status
   Itlb multihit:         KVM: Mitigation: VMX disabled
   L1tf:                  Not affected
   Mds:                   Not affected
   Meltdown:              Not affected
   Mmio stale data:       Vulnerable: Clear CPU buffers attempted, no microcode; SMT Host state unknown
   Retbleed:              Mitigation; Enhanced IBRS
+  Spec rstack overflow:  Not affected
   Spec store bypass:     Mitigation; Speculative Store Bypass disabled via prctl and seccomp
   Spectre v1:            Mitigation; usercopy/swapgs barriers and __user pointer sanitization
   Spectre v2:            Mitigation; Enhanced IBRS, IBPB conditional, RSB filling, PBRSB-eIBRS SW sequence
