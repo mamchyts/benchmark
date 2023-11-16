@@ -554,7 +554,7 @@ docker run --volume $(pwd):/app mamchyts/benchmark:latest kotlinc /app/prime-num
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p java -jar /app/prime-number/kotlin/cmd.jar 10000 2>&1'
 ```
 ```
-info: kotlinc-jvm 1.9.10 (JRE 18.0.2-ea+9-Ubuntu-222.04)
+info: kotlinc-jvm 1.9.20 (JRE 18.0.2-ea+9-Ubuntu-222.04)
 
 The latest prime number: 104729
 
@@ -672,7 +672,7 @@ docker run --volume $(pwd):/app mamchyts/benchmark:latest swift build -c release
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/swift/.build/release/cmd 10000 2>&1'
 ```
 ```
-Swift version 5.8.1 (swift-5.8.1-RELEASE)
+Swift version 5.9.1 (swift-5.9.1-RELEASE)
 Target: x86_64-unknown-linux-gnu
 
 [0/1] Planning build
@@ -878,7 +878,7 @@ docker run mamchyts/benchmark:latest pwsh --version && echo '' && \
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p pwsh /app/prime-number/power-shell/cmd.ps1 10000 2>&1'
 ```
 ```
-PowerShell 7.3.7
+PowerShell 7.3.9
 
 The latest prime number: 104729
 
@@ -894,7 +894,7 @@ docker run mamchyts/benchmark:latest julia --version && echo '' && \
 docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p julia /app/prime-number/julia/cmd.jl 10000 2>&1'
 ```
 ```
-julia version 1.9.3
+julia version 1.9.4
 
 The latest prime number: 104729
 
@@ -1045,7 +1045,7 @@ php run/run.php 'C/C++' 'Assembler/NASM' 'Rust' 'Lua (LuaJIT -j on)' 'Java'
 
 ```
 docker build -t benchmark .
-docker tag benchmark mamchyts/benchmark:1.4.4
+docker tag benchmark mamchyts/benchmark:1.4.5
 docker tag benchmark mamchyts/benchmark:latest
 docker push --all-tags mamchyts/benchmark
 ```
