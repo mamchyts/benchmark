@@ -349,10 +349,10 @@ sys 0.1
 ```
 
 
-### [Ruby 3](./prime-number/ruby/cmd.rb)
+### [Ruby](./prime-number/ruby/cmd.rb)
 ```
-docker run mamchyts/benchmark:latest /root/.rbenv/versions/3.2.2/bin/ruby --version 2>&1 && echo '' && \
-docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /root/.rbenv/versions/3.2.2/bin/ruby /app/prime-number/ruby/cmd.rb 10000 2>&1'
+docker run mamchyts/benchmark:latest ruby --version 2>&1 && echo '' && \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p ruby /app/prime-number/ruby/cmd.rb 10000 2>&1'
 ```
 ```
 ruby 3.2.2 (2023-03-30 revision e51014f9c0) [x86_64-linux]
@@ -1005,6 +1005,19 @@ sys 0.01
 ```
 
 
+### [Zig](./prime-number/zig/cmd.zig)
+```
+docker run benchmark zig version 2>&1 && echo '' && \
+docker run --volume $(pwd):/app benchmark zig build-exe -O ReleaseSafe /app/prime-number/zig/cmd.zig -femit-bin=/app/prime-number/zig/cmd.zig_bin && \
+docker run --volume $(pwd):/app benchmark bash -c 'time -p /app/prime-number/zig/cmd.zig_bin 10000 2>&1'
+```
+```
+0.12.0-dev.2341+92211135f
+
+The latest prime number: 104729
+```
+
+
 ## Run all prime number
 
 ```
@@ -1045,7 +1058,7 @@ php run/run.php 'C/C++' 'Assembler/NASM' 'Rust' 'Lua (LuaJIT -j on)' 'Java'
 
 ```
 docker build -t benchmark .
-docker tag benchmark mamchyts/benchmark:1.4.5
+docker tag benchmark mamchyts/benchmark:1.4.7
 docker tag benchmark mamchyts/benchmark:latest
 docker push --all-tags mamchyts/benchmark
 ```
@@ -1056,9 +1069,9 @@ docker push --all-tags mamchyts/benchmark
 
 At the first - install `dive` (https://github.com/wagoodman/dive):
 ```
-wget https://github.com/wagoodman/dive/releases/download/v0.10.0/dive_0.10.0_linux_amd64.deb \
-&& sudo dpkg -i ./dive_0.10.0_linux_amd64.deb \
-&& rm dive_0.10.0_linux_amd64.deb
+wget https://github.com/wagoodman/dive/releases/download/v0.12.0/dive_0.12.0_linux_amd64.deb \
+&& sudo dpkg -i ./dive_0.12.0_linux_amd64.deb \
+&& rm dive_0.12.0_linux_amd64.deb
 ```
 
 At the second - analyze:
