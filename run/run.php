@@ -79,6 +79,8 @@ function executeCommand(array $command): string
     ];
 
     $tryCount = 3;
+
+    // HACK for most slowest programming languages
     if (in_array($command['test']['title'], ['PowerShell', 'Lisp', 'Bash'])) {
         $tryCount = 1;
     }

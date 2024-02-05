@@ -118,40 +118,21 @@ sys 0.04
 ```
 
 
-### [PHP 8.2](./prime-number/php/cmd.php)
+### [PHP 8.3](./prime-number/php/cmd.php)
 ```
-docker run mamchyts/benchmark:latest php8.2 -v 2>&1 && echo '' && \
-docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p php8.2 /app/prime-number/php/cmd.php 10000 2>&1'
+docker run mamchyts/benchmark:latest php8.3 -v 2>&1 && echo '' && \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p php8.3 /app/prime-number/php/cmd.php 10000 2>&1'
 ```
 ```
-PHP 8.2.10 (cli) (built: Sep  2 2023 06:59:22) (NTS)
-Copyright (c) The PHP Group
-Zend Engine v4.2.10, Copyright (c) Zend Technologies
-    with Zend OPcache v8.2.10, Copyright (c), by Zend Technologies
-
-The latest prime number: 104729
-
-real 134.74
-user 134.32
-sys 0.04
 ```
 
 
-### [PHP 8.2 (JIT)](./prime-number/php/cmd.php)
+### [PHP 8.3 (JIT)](./prime-number/php/cmd.php)
 ```
-docker run mamchyts/benchmark:latest php8.2 -v 2>&1 && echo '' && \
-docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p php8.2 -dopcache.enable_cli=1 -dopcache.jit=1255 -dopcache.jit_buffer_size=8M /app/prime-number/php/cmd.php 10000 2>&1'
+docker run mamchyts/benchmark:latest php8.3 -v 2>&1 && echo '' && \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p php8.3 -dopcache.enable_cli=1 -dopcache.jit=1255 -dopcache.jit_buffer_size=8M /app/prime-number/php/cmd.php 10000 2>&1'
 ```
 ```
-PHP 8.2.10 (cli) (built: Sep  2 2023 06:59:22) (NTS)
-Copyright (c) The PHP Group
-Zend Engine v4.2.10, Copyright (c) Zend Technologies
-    with Zend OPcache v8.2.10, Copyright (c), by Zend Technologies
-
-The latest prime number: 104729
-real 92.29
-user 91.98
-sys 0.05
 ```
 
 
@@ -204,43 +185,10 @@ sys 0.14
 ```
 
 
-### [Python 2](./prime-number/python/cmd.py2)
-```
-docker run mamchyts/benchmark:latest python2 --version 2>&1 && echo '' && \
-docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p python2 /app/prime-number/python/cmd.py2 10000 2>&1'
-```
-```
-Python 2.7.18
-
-The latest prime number:  104729
-
-real 494.19
-user 492.47
-sys 0.12
-```
-
-
-### [Python 2 (PyPy)](./prime-number/python/cmd.py2)
-```
-docker run mamchyts/benchmark:latest pypy --version 2>&1 && echo '' && \
-docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p pypy /app/prime-number/python/cmd.py2 10000 2>&1'
-```
-```
-Python 2.7.18 (7.3.9+dfsg-1, Apr 01 2022, 21:40:34)
-[PyPy 7.3.9 with GCC 11.2.0]
-
-The latest prime number:  104729
-
-real 70.48
-user 70.03
-sys 0.06
-```
-
-
-### [Python 3](./prime-number/python/cmd.py3)
+### [Python](./prime-number/python/cmd.py)
 ```
 docker run mamchyts/benchmark:latest python3 --version 2>&1 && echo '' && \
-docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p python3 /app/prime-number/python/cmd.py3 10000 2>&1'
+docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p python3 /app/prime-number/python/cmd.py 10000 2>&1'
 ```
 ```
 Python 3.10.12
@@ -253,10 +201,10 @@ sys 0.26
 ```
 
 
-### [Python 3 (PyPy)](./prime-number/python/cmd.py3)
+### [Python (PyPy)](./prime-number/python/cmd.py)
 ```
 docker run mamchyts/benchmark:latest pypy3 --version 2>&1 && echo '' && \
-docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p pypy3 /app/prime-number/python/cmd.py3 10000 2>&1'
+docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p pypy3 /app/prime-number/python/cmd.py 10000 2>&1'
 ```
 ```
 Python 3.8.13 (7.3.9+dfsg-1, Apr 01 2022, 21:41:47)
@@ -1028,7 +976,7 @@ php run/run.php
 ...
 ----------------------- PHP 7.4 -----------------------
 ...
------------------------ PHP 8.2 -----------------------
+----------------------- PHP 8.3 -----------------------
 ...
 ```
 
@@ -1058,7 +1006,7 @@ php run/run.php 'C/C++' 'Assembler/NASM' 'Rust' 'Lua (LuaJIT -j on)' 'Java'
 
 ```
 docker build -t benchmark .
-docker tag benchmark mamchyts/benchmark:1.4.7
+docker tag benchmark mamchyts/benchmark:1.4.8
 docker tag benchmark mamchyts/benchmark:latest
 docker push --all-tags mamchyts/benchmark
 ```

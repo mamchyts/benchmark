@@ -16,12 +16,12 @@ RUN apt-get install -y ca-certificates curl gnupg \
     && apt-get update \
     && apt-get install nodejs -y \
     && npm install -g ts-node
-RUN apt install --yes python2 python3 pypy pypy3
+RUN apt install --yes python3 pypy3
 RUN apt install --yes g++
 RUN apt install --yes nasm
 RUN apt install --yes fpc
 RUN apt install --yes golang
-RUN apt install --yes openjdk-18-jdk
+RUN apt install --yes openjdk-21-jdk
 RUN apt install --yes rustc
 RUN apt install --yes r-base
 RUN sh -c 'wget -qO- https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -' \
@@ -31,10 +31,7 @@ RUN sh -c 'wget -qO- https://dl-ssl.google.com/linux/linux_signing_key.pub | apt
 RUN apt install --yes perl
 RUN apt install --yes lua5.4 luajit
 RUN apt install --yes gnat
-RUN apt install --yes git bison libgdbm-dev libssl-dev libyaml-dev curl \
-    && curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash - \
-    && /root/.rbenv/bin/rbenv install 3.3.0 \
-    && ln -s /root/.rbenv/versions/3.3.0/bin/ruby /usr/local/bin/ruby
+RUN apt install --yes ruby3.0
 RUN apt install --yes ghc
 RUN wget https://github.com/JetBrains/kotlin/releases/download/v1.9.22/kotlin-compiler-1.9.22.zip \
     && unzip kotlin-compiler-1.9.22.zip -d /root \
