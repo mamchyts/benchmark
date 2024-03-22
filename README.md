@@ -992,6 +992,17 @@ sys 0.00
 ```
 
 
+### [Mojo](./prime-number/mojo/cmd.mojo)
+```
+docker run mamchyts/benchmark:latest mojo --version 2>&1 && echo '' && \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest mojo build /app/prime-number/mojo/cmd.mojo -o /app/prime-number/mojo/cmd.mojo_bin && \
+docker run --volume $(pwd):/app mamchyts/benchmark:latest bash -c 'time -p /app/prime-number/mojo/cmd.mojo_bin 10000 2>&1'
+```
+```
+mojo 24.1.1 (0ab415f7)
+```
+
+
 ## Run all prime number
 
 ```
@@ -1032,7 +1043,7 @@ php run/run.php 'C/C++' 'Assembler/NASM' 'Rust' 'Lua (LuaJIT -j on)' 'Java'
 
 ```
 docker build -t benchmark .
-docker tag benchmark mamchyts/benchmark:1.4.8
+docker tag benchmark mamchyts/benchmark:1.4.9
 docker tag benchmark mamchyts/benchmark:latest
 docker push --all-tags mamchyts/benchmark
 ```

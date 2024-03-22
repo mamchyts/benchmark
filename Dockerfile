@@ -89,3 +89,7 @@ RUN wget https://ziglang.org/builds/zig-linux-x86_64-0.12.0-dev.2341+92211135f.t
     && tar -xf zig-linux-x86_64-0.12.0-dev.2341+92211135f.tar.xz -C /root \
     && rm -f zig-linux-x86_64-0.12.0-dev.2341+92211135f.tar.xz \
     && ln -s /root/zig-linux-x86_64-0.12.0-dev.2341+92211135f/zig /usr/local/bin/zig
+RUN curl -fsSL https://get.modular.com | bash \
+    && modular auth mut_65f53ded690f497982fe0421207fb96f \
+    && modular install mojo \
+    && ln -s /root/.modular/pkg/packages.modular.com_mojo/bin/mojo /usr/local/bin/mojo
